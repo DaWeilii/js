@@ -12,7 +12,7 @@
           <a class="nav-link" href="#csjs">02-初识JavaScript</a>
         </li>
         <li>
-          <a class="nav-link" href="#bl">03-变量 </a>
+          <a class="nav-link" href="#bianLiang">03-变量 </a>
         </li>
         <li><a class="nav-link" href="#sjlx">04-数据类型 </a></li>
         <li><a class="nav-link" href="#kzydyjzy">05-扩展阅读以及作业</a></li>
@@ -23,22 +23,18 @@
           <a class="nav-link" href="#jslckzfz">07-JavaScript 流程控制-分支</a>
         </li>
         <li>
-          <a class="nav-link" href="#Global_variables">Global variables</a>
+          <a class="nav-link" href="#Global_variables">08</a>
         </li>
-        <li><a class="nav-link" href="#Constants">Constants</a></li>
-        <li><a class="nav-link" href="#Data_types">Data types</a></li>
+        <li><a class="nav-link" href="#Constants">09</a></li>
+        <li><a class="nav-link" href="#Data_types">10</a></li>
         <li>
-          <a class="nav-link" href="#if...else_statement"
-            >if...else statement</a
-          >
+          <a class="nav-link" href="#if...else_statement">11</a>
         </li>
-        <li><a class="nav-link" href="#while_statement">while statement</a></li>
+        <li><a class="nav-link" href="#while_statement">12</a></li>
         <li>
-          <a class="nav-link" href="#Function_declarations"
-            >Function declarations</a
-          >
+          <a class="nav-link" href="#Function_declarations">13</a>
         </li>
-        <li><a class="nav-link" href="#Reference">Reference</a></li>
+        <li><a class="nav-link" href="#Reference">14</a></li>
       </ul>
     </nav>
     <main id="main-doc">
@@ -478,330 +474,291 @@
           </p>
         </section>
       </div>
-      <div class="main-section" id="bl">
+      <div class="main-section" id="bianLiang">
         <header>03-变量</header>
-        <section></section>
-      </div>
-      <section class="main-section" id="sjlx">
-        <header>04-数据类型</header>
-        <article>
-          To get started with writing JavaScript, open the Scratchpad and write
-          your first "Hello world" JavaScript code:
-          <code
-            >function greetMe(yourName) { alert("Hello " + yourName); }
-            greetMe("World");
-          </code>
-
-          Select the code in the pad and hit Ctrl+R to watch it unfold in your
-          browser!
-        </article>
-      </section>
-      <section class="main-section" id="kzydyjzy">
-        <header>05-扩展阅读以及作业</header>
-        <p>
-          You use variables as symbolic names for values in your application.
-          The names of variables, called identifiers, conform to certain rules.
-        </p>
-        <p>
-          A JavaScript identifier must start with a letter, underscore (_), or
-          dollar sign ($); subsequent characters can also be digits (0-9).
-          Because JavaScript is case sensitive, letters include the characters
-          "A" through "Z" (uppercase) and the characters "a" through "z"
-          (lowercase).
-        </p>
-        <p>
-          You can use ISO 8859-1 or Unicode letters such as å and ü in
-          identifiers. You can also use the Unicode escape sequences as
-          characters in identifiers. Some examples of legal names are
-          Number_hits, temp99, and _name.
-        </p>
-      </section>
-      <section class="main-section" id="jsysf">
-        <header>06-JavaScript 运算符</header>
-        <article>
-          You can declare a variable in three ways:
-          <p>
-            With the keyword var. For example, <code>var x = 42.</code> This
-            syntax can be used to declare both local and global variables.
-          </p>
-          <p>
-            By simply assigning it a value. For example,
-            <code>x = 42.</code> This always declares a global variable. It
-            generates a strict JavaScript warning. You shouldn't use this
-            variant.
-          </p>
-          <p>
-            With the keyword let. For example,<code> let y = 13.</code> This
-            syntax can be used to declare a block scope local variable. See
-            Variable scope below.
-          </p>
-        </article>
-      </section>
-      <section class="main-section" id="jslckzfz">
-        <header>07-JavaScript 流程控制-分支</header>
-        <article>
-          <p>
-            When you declare a variable outside of any function, it is called a
-            global variable, because it is available to any other code in the
-            current document. When you declare a variable within a function, it
-            is called a local variable, because it is available only within that
-            function.
-          </p>
-
-          <p>
-            JavaScript before ECMAScript 2015 does not have block statement
-            scope; rather, a variable declared within a block is local to the
-            function (or global scope) that the block resides within. For
-            example the following code will log 5, because the scope of x is the
-            function (or global context) within which x is declared, not the
-            block, which in this case is an if statement.
-          </p>
-          <code>if (true) { var x = 5; } console.log(x); // 5</code>
-          <p>
-            This behavior changes, when using the let declaration introduced in
-            ECMAScript 2015.
-          </p>
-
-          <code
-            >if (true) { let y = 5; } console.log(y); // ReferenceError: y is
-            not defined</code
-          >
-        </article>
-      </section>
-      <section class="main-section" id="Global_variables">
-        <header>Global variables</header>
-        <article>
-          <p>
-            Global variables are in fact properties of the global object. In web
-            pages the global object is window, so you can set and access global
-            variables using the window.variable syntax.
-          </p>
-
-          <p>
-            Consequently, you can access global variables declared in one window
-            or frame from another window or frame by specifying the window or
-            frame name. For example, if a variable called phoneNumber is
-            declared in a document, you can refer to this variable from an
-            iframe as parent.phoneNumber.
-          </p>
-        </article>
-      </section>
-      <section class="main-section" id="Constants">
-        <header>Constants</header>
-        <article>
-          <p>
-            You can create a read-only, named constant with the const keyword.
-            The syntax of a constant identifier is the same as for a variable
-            identifier: it must start with a letter, underscore or dollar sign
-            and can contain alphabetic, numeric, or underscore characters.
-          </p>
-
-          <code>const PI = 3.14;</code>
-          <p>
-            A constant cannot change value through assignment or be re-declared
-            while the script is running. It has to be initialized to a value.
-          </p>
-
-          <p>
-            The scope rules for constants are the same as those for let block
-            scope variables. If the const keyword is omitted, the identifier is
-            assumed to represent a variable.
-          </p>
-
-          <p>
-            You cannot declare a constant with the same name as a function or
-            variable in the same scope. For example:
-          </p>
-
-          <code
-            >// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
-            WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
-            //statements }</code
-          >
-          However, object attributes are not protected, so the following
-          statement is executed without problems.
-          <code
-            >const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
-            "otherValue";</code
-          >
-        </article>
-      </section>
-      <section class="main-section" id="Data_types">
-        <header>Data types</header>
-        <article>
-          <p>The latest ECMAScript standard defines seven data types:</p>
+        <section id="bianLiangGaiShu">
+          <p>目录介绍：</p>
           <ul>
             <li>
-              <p>Six data types that are primitives:</p>
-              <ul>
-                <li>Boolean. true and false.</li>
-                <li>
-                  null. A special keyword denoting a null value. Because
-                  JavaScript is case-sensitive, null is not the same as Null,
-                  NULL, or any other variant.
-                </li>
-                <li>
-                  undefined. A top-level property whose value is undefined.
-                </li>
-                <li>Number. 42 or 3.14159.</li>
-                <li>String. "Howdy"</li>
-                <li>
-                  Symbol (new in ECMAScript 2015). A data type whose instances
-                  are unique and immutable.
-                </li>
-              </ul>
-            </li>
-
-            <li>and Object</li>
-          </ul>
-          Although these data types are a relatively small amount, they enable
-          you to perform useful functions with your applications. Objects and
-          functions are the other fundamental elements in the language. You can
-          think of objects as named containers for values, and functions as
-          procedures that your application can perform.
-        </article>
-      </section>
-      <section class="main-section" id="if...else_statement">
-        <header>if...else statement</header>
-        <article>
-          Use the if statement to execute a statement if a logical condition is
-          true. Use the optional else clause to execute a statement if the
-          condition is false. An if statement looks as follows:
-
-          <code>if (condition) { statement_1; } else { statement_2; }</code>
-          condition can be any expression that evaluates to true or false. See
-          Boolean for an explanation of what evaluates to true and false. If
-          condition evaluates to true, statement_1 is executed; otherwise,
-          statement_2 is executed. statement_1 and statement_2 can be any
-          statement, including further nested if statements.
-          <p>
-            You may also compound the statements using else if to have multiple
-            conditions tested in sequence, as follows:
-          </p>
-          <code
-            >if (condition_1) { statement_1; } else if (condition_2) {
-            statement_2; } else if (condition_n) { statement_n; } else {
-            statement_last; }
-          </code>
-          In the case of multiple conditions only the first logical condition
-          which evaluates to true will be executed. To execute multiple
-          statements, group them within a block statement ({ ... }) . In
-          general, it's good practice to always use block statements, especially
-          when nesting if statements:
-
-          <code
-            >if (condition) { statement_1_runs_if_condition_is_true;
-            statement_2_runs_if_condition_is_true; } else {
-            statement_3_runs_if_condition_is_false;
-            statement_4_runs_if_condition_is_false; }</code
-          >
-          It is advisable to not use simple assignments in a conditional
-          expression, because the assignment can be confused with equality when
-          glancing over the code. For example, do not use the following code:
-          <code>if (x = y) { /* statements here */ }</code> If you need to use
-          an assignment in a conditional expression, a common practice is to put
-          additional parentheses around the assignment. For example:
-
-          <code>if ((x = y)) { /* statements here */ }</code>
-        </article>
-      </section>
-      <section class="main-section" id="while_statement">
-        <header>while statement</header>
-        <article>
-          A while statement executes its statements as long as a specified
-          condition evaluates to true. A while statement looks as follows:
-
-          <code>while (condition) statement</code> If the condition becomes
-          false, statement within the loop stops executing and control passes to
-          the statement following the loop.
-
-          <p>
-            The condition test occurs before statement in the loop is executed.
-            If the condition returns true, statement is executed and the
-            condition is tested again. If the condition returns false, execution
-            stops and control is passed to the statement following while.
-          </p>
-
-          <p>
-            To execute multiple statements, use a block statement ({ ... }) to
-            group those statements.
-          </p>
-
-          Example:
-
-          <p>
-            The following while loop iterates as long as n is less than three:
-          </p>
-
-          <code>var n = 0; var x = 0; while (n &lt; 3) { n++; x += n; }</code>
-          <p>
-            With each iteration, the loop increments n and adds that value to x.
-            Therefore, x and n take on the following values:
-          </p>
-
-          <ul>
-            <li>After the first pass: n = 1 and x = 1</li>
-            <li>After the second pass: n = 2 and x = 3</li>
-            <li>After the third pass: n = 3 and x = 6</li>
-          </ul>
-          <p>
-            After completing the third pass, the condition n &lt; 3 is no longer
-            true, so the loop terminates.
-          </p>
-        </article>
-      </section>
-      <section class="main-section" id="Function_declarations">
-        <header>Function declarations</header>
-        <article>
-          A function definition (also called a function declaration, or function
-          statement) consists of the function keyword, followed by:
-
-          <ul>
-            <li>The name of the function.</li>
-            <li>
-              A list of arguments to the function, enclosed in parentheses and
-              separated by commas.
+              <a href="#bianLiangGaiShu"
+                ><span class="color-red">变量概述</span></a
+              >
             </li>
             <li>
-              The JavaScript statements that define the function, enclosed in
-              curly brackets, { }.
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
             </li>
           </ul>
+          <h1>1. 变量概述</h1>
+          <h2>1.1 什么是变量</h2>
+          <p>白话：变量就是一个装东西的盒子。</p>
           <p>
-            For example, the following code defines a simple function named
-            square:
+            通俗：变量是用于存放数据的<span class="color-red">容器</span>。
+            我们通过<span class="color-red">变量名</span>
+            获取数据，甚至数据可以修改。
           </p>
-
-          <code>function square(number) { return number * number; }</code>
-          <p>
-            The function square takes one argument, called number. The function
-            consists of one statement that says to return the argument of the
-            function (that is, number) multiplied by itself. The return
-            statement specifies the value returned by the function.
-          </p>
-          <code>return number * number;</code>
-          <p>
-            Primitive parameters (such as a number) are passed to functions by
-            value; the value is passed to the function, but if the function
-            changes the value of the parameter, this change is not reflected
-            globally or in the calling function.
-          </p>
-        </article>
-      </section>
-      <section class="main-section" id="Reference">
-        <header>Reference</header>
-        <article>
+          <img src="./images/03-变量/变量盒子.png" alt="" />
+          <h2>1.2 变量在内存中的存储</h2>
+          <p>本质：变量是程序在内存中申请的一块用来存放数据的空间。</p>
+          <p>类似我们酒店的房间，一个房间就可以看做是一个变量。</p>
+          <img src="./images/03-变量/变量的本质.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangShiYong">
+          <p>目录介绍：</p>
           <ul>
             <li>
-              All the documentation in this page is taken from
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
-                target="_blank"
-                >MDN</a
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"
+                ><span class="color-red">变量的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>2. 变量的使用</h1>
+          <p>变量在使用时分为两步： 1. 声明变量 2. 赋值</p>
+          <h2>2.1 声明变量</h2>
+          <code> // 声明变量<br />var age; // 声明一个 名称为age 的变量 </code>
+          <ul>
+            <li>
+              <span class="color-red">var</span> 是一个 JS关键字，用来声明变量(
+              variable 变量的意思
+              )。使用该关键字声明变量后，计算机会自动为变量分配内存空间，不需要程序员管
+            </li>
+            <li>
+              age 是程序员定义的变量名，我们要通过变量名来访问内存中分配的空间
+            </li>
+          </ul>
+          <h2>2.2 赋值</h2>
+          <code>age = 10; // 给 age 这个变量赋值为 10</code>
+          <ul>
+            <li>
+              <span class="color-red bold">=</span>
+              用来把右边的值赋给左边的变量空间中 此处代表赋值的意思
+            </li>
+            <li>变量值是程序员保存到变量空间里的值</li>
+          </ul>
+          <h2>2.3 变量的初始化</h2>
+          <code>var age = 18; // 声明变量同时赋值为 18 </code>
+          <p>
+            声明一个变量并赋值， 我们称之为<span class="color-red"
+              >变量的初始化。</span
+            >
+            <img src="./images/03-变量/变量的初始化.png" alt="" />
+          </p>
+          <h2>案例：变量的使用</h2>
+          <p>
+            有个叫卡卡西的人在旅店登记的时候前台让他填一张表，这张表里的内容要存到电脑上，表中的内容有：姓名、年龄、邮箱、家庭住址和工资，存储之后需要把这些信息显示出来，所显示的内容如下：
+          </p>
+          <p>
+            我叫旗木卡卡西，我住在火影村，我今年30岁了，我的邮箱是
+            kakaxi@itcast.cn，我的工资2000
+          </p>
+          <img src="./images/03-变量/变量案例.png" alt="" />
+          <h2>案例：变量的使用</h2>
+          <p>1. 弹出一个输入框，提示用户输入姓名</p>
+          <p>2. 弹出一个对话框，输出用户刚才输入的姓名。</p>
+          <img src="./images/03-变量/弹出用户名.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangYuFa">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"
+                ><span class="color-red">变量语法扩展</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>3. 变量语法扩展</h1>
+          <h2>3.1 更新变量</h2>
+          <p>
+            一个变量被重新复赋值后，它原有的值就会被覆盖，变量值将以最后一次赋的值为准。
+          </p>
+          <code
+            >var age = 18;<br />
+            age = 81;//最后的结果就是81因为18被覆盖掉了</code
+          >
+          <h2>3.2 同时声明多个变量</h2>
+          <p>
+            同时声明多个变量时，只需要写一个 var，
+            多个变量名之间使用英文逗号隔开。
+          </p>
+          <code>var age = 10, name = 'zs', sex = 2; </code>
+          <h2>3.3 声明变量特殊情况</h2>
+          <table>
+            <tr>
+              <th>情况</th>
+              <th>说明</th>
+              <th>结果</th>
+            </tr>
+            <tr>
+              <td>var age ; console.log (age);</td>
+              <td>只声明 不赋值</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>console.log(age)</td>
+              <td>不声明 不赋值 直接使用</td>
+              <td>报错</td>
+            </tr>
+            <tr>
+              <td>age = 10; console.log (age);</td>
+              <td>不声明 只赋值</td>
+              <td>10</td>
+            </tr>
+          </table>
+          <img src="./images/03-变量/更新变量.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangMinMing">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"
+                ><span class="color-red">变量命名规范</span>
+              </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>4. 变量命名规范</h1>
+          <ul>
+            <li>
+              由字母(A-Za-z)、数字(0-9)、下划线(_)、美元符号( $
+              )组成，如：usrAge, num01, _name
+            </li>
+            <li>严格区分大小写。var app; 和 var App; 是两个变量</li>
+            <li>不能 以数字开头。 18age 是错误的</li>
+            <li>不能 是关键字、保留字。例如：var、for、while</li>
+            <li>变量名必须有意义。 MMD BBD nl → age</li>
+            <li>
+              遵守驼峰命名法。首字母小写，后面单词的首字母需要大写。 myFirstName
+            </li>
+            <li>推荐翻译网站： 有道 爱词霸</li>
+          </ul>
+          <img src="./images/03-变量/骆驼.png" alt="" />
+          <img src="./images/03-变量/命名规范.png" alt="" />
+        </section>
+        <hr />
+        <section id="jiaoHuanBiaoLiang">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"
+                ><span class="color-red">交换变量案例</span></a
               >
             </li>
           </ul>
-        </article>
+          <h1>案例：课堂练习</h1>
+          <p>
+            要求：交换两个变量的值 ( 实现思路：使用一个 临时变量 用来做中间存储
+            )
+          </p>
+          <img src="./images/03-变量/交换.png" alt="" />
+          <h3>小结</h3>
+          <p>
+            1，为什么需要变量？ <br />
+            因为我们一些数据需要保存，所以需要变量。 <br />2，变量是什么？
+            <br />变量就是一个容器，用来存放数据的。方便我们以后使用里面的数据。
+            <br />3，变量的本质是什么?<br />
+            变量是内存里的一块空间，用来存储数据。<br />
+            4，变量怎么使用的？
+            <br />我们使用变量的时候，一定要声明变量，然后赋值。
+            声明变量本质是去内存申请空间。<br />
+            5，什么是变量的初始化？<br />
+            声明变量并赋值我们称之为变量的初始化。<br />
+            6，变量命名规范有哪些？
+            <br />变量名尽量要规范，见名知意——驼峰命名法。<br />
+            7，交换2个变量值的思路？<br />
+            区分哪些变量名不合法 学会交换2个变量
+          </p>
+        </section>
+      </div>
+      <section class="main-section" id="sjlx">
+        <header>04-数据类型</header>
+      </section>
+      <section class="main-section" id="kzydyjzy">
+        <header>05-扩展阅读以及作业</header>
+      </section>
+      <section class="main-section" id="jsysf">
+        <header>06-JavaScript 运算符</header>
+      </section>
+      <section class="main-section" id="jslckzfz">
+        <header>07-JavaScript 流程控制-分支</header>
+      </section>
+      <section class="main-section" id="Global_variables">
+        <header>08</header>
+      </section>
+      <section class="main-section" id="Constants">
+        <header>09</header>
+      </section>
+      <section class="main-section" id="Data_types">
+        <header>10</header>
+      </section>
+      <section class="main-section" id="if...else_statement">
+        <header>11</header>
+      </section>
+      <section class="main-section" id="while_statement">
+        <header>12</header>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>13</header>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>14</header>
       </section>
     </main>
   </body>
