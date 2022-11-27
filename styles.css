@@ -127,11 +127,9 @@ code {
   }
 }
 /* 我自己添加的css */
-@media (prefers-reduced-motion: no-preference) {
-  * {
+* {
     scroll-behavior: smooth;
   }
-}
 /* span {
   color: red;
   font-weight: bold;
