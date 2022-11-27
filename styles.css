@@ -127,9 +127,9 @@ code {
   }
 }
 /* 我自己添加的css */
-* {
-    scroll-behavior: smooth;
-  }
+/* * {
+  scroll-behavior: smooth;
+} */
 /* span {
   color: red;
   font-weight: bold;
@@ -159,4 +159,10 @@ section p {
   color: #4d4e53;
   margin: 15px;
   font-size: 0.96em;
+}
+/* width百分比，解决了一点导航栏，图片就跑出来的问题。 */
+img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
