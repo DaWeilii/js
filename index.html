@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>JavaScript 笔记 <br />(黑马前端)</header>
+      <ul>
+        <li><a class="nav-link" href="#jsjbcjc">01-计算机编程基础 </a></li>
+        <li>
+          <a class="nav-link" href="#csjs">02-初识JavaScript</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bl">03-变量 </a>
+        </li>
+        <li><a class="nav-link" href="#sjlx">04-数据类型 </a></li>
+        <li><a class="nav-link" href="#kzydyjzy">05-扩展阅读以及作业</a></li>
+        <li>
+          <a class="nav-link" href="#jsysf">06-JavaScript 运算符</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#jslckzfz">07-JavaScript 流程控制-分支</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Global_variables">Global variables</a>
+        </li>
+        <li><a class="nav-link" href="#Constants">Constants</a></li>
+        <li><a class="nav-link" href="#Data_types">Data types</a></li>
+        <li>
+          <a class="nav-link" href="#if...else_statement"
+            >if...else statement</a
+          >
+        </li>
+        <li><a class="nav-link" href="#while_statement">while statement</a></li>
+        <li>
+          <a class="nav-link" href="#Function_declarations"
+            >Function declarations</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <div class="main-section" id="jsjbcjc">
+        <header>01-计算机编程基础</header>
+        <section id="banChenYuYan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#banChenYuYan"
+                ><span class="bold color-red">编程语言</span></a
+              >
+            </li>
+            <li><a href="#jiShuanJiJiChu">计算机基础</a></li>
+          </ul>
+          <h1>1. 编程语言</h1>
+          <h2>1.1 编程</h2>
+          <p>
+            <span class="color-red bold">编程：</span
+            >就是让计算机为解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。
+          </p>
+          <p>
+            <span class="color-red bold">计算机程序：</span
+            >就是计算机所执行的一系列的<span class="color-red">指令集合</span
+            >，而程序全部都是用我们所掌握的语言来编写的，所以人们要控制计算机一定要通过计算机语言向计算机发出命令。
+          </p>
+          <p>
+            从事编程的人员，就是 <span class="color-red bold">程序员</span>。
+            但是一般程序员都比较幽默，为了形容自己的辛苦工作，也成为“码农”，
+            或者 “程序猿”/ “程序媛”
+          </p>
+          <p>
+            <span class="color-red bold">注意：</span>
+            上面所定义的计算机指的是<span>任何能够执行代码的设备</span>，可能是智能手机、ATM机、黑莓PI、服务器
+            等等
+          </p>
+          <h2>1.2 计算机语言</h2>
+          <p>
+            <span class="color-red bold">计算机语言</span>指用于<span
+              class="red"
+              >人与计算机之间通讯的语言</span
+            >，它是人与计算机之间传递信息的<span class="color-red">媒介</span>。
+          </p>
+          <p>
+            计算机语言的种类非常的多，总的来说可以分成<span class="color-red"
+              >机器语言，汇编语言和高级语言</span
+            >三大类。
+          </p>
+          <p>
+            实际上计算机最终所执行的都是
+            <span class="color-red bold">机器语言</span
+            >，它是由“0”和“1”组成的二进制数，<span class="color-red bold"
+              >二进制是计算机语言的基础</span
+            >。
+          </p>
+          <code
+            >0=00000000 1=00000001 2=00000010 3=00000011 4=00000100 5=00000101
+            6=00000110 7=00000111 8=00001000 9=00001001 10=00001010
+          </code>
+          <h2>1.3 编程语言</h2>
+          <p>
+            可以通过类似于人类语言的
+            ”语言”来控制计算机，让计算机为我们做事情，这样的语言就叫做编程语言（Programming
+            Language）
+          </p>
+          <p>
+            编程语言是用来控制计算机的一系列指令，它有固定的格式和词汇（不同编程语言的格式和词汇不一样），必须遵守。
+            如今通用的编程语言有两种形式：<span class="color-red">汇编语言</span
+            >和<span class="color-red">高级语言</span>。
+          </p>
+          <ul>
+            <li>
+              <span class="color-red bold">汇编语言</span
+              >和机器语言实质是相同的，都是直接对硬件操作，只不过指令采用了英文缩写的标识符，容易识别和记忆。
+            </li>
+            <li>
+              <span class="color-red bold">高级语言</span
+              >主要是相对于低级语言而言，它并不是特指某一种具体的语言，而是包括了很多编程语言，常用的有C语言、C++、
+              Java、C#、Python、PHP、JavaScript、Go语言、Objective-C、Swift等。
+            </li>
+          </ul>
+          <code
+            >C语言：puts("你好"); <br />PHP：echo "你好";<br />Java：System.out.println("你好");
+            JavaScript：alert("你好"）;
+          </code>
+          <h2>1.4 翻译器</h2>
+          <p>
+            高级语言所编制的程序不能直接被计算机识别，必须经过转换才能被执行，为此，我们需要一个翻译器。
+          </p>
+          <p>
+            翻译器可以将我们所编写的源代码转换为机器语言，这也被称为二进制化。
+            记住1和 0。
+          </p>
+          <img src="images/01计算机基础/翻译器.png" alt="fanyiqi" />
+          <h2>1.5 编程语言和标记语言区别</h2>
+          <ul>
+            <li>
+              <span class="color-red bold">编程语言</span
+              >有很强的逻辑和行为能力。在编程语言里, 你会看到很多 if else 、for
+              、while等具有逻辑性和行为能力的 指令，这是主动的。
+            </li>
+            <li>
+              <span class="color-red bold">标记语言</span
+              >（html）不用于向计算机发出指令，常用于格式化和链接。标记语言的存在是用来被读取的,
+              他是被动的
+            </li>
+          </ul>
+          <h2>总结</h2>
+          <ol>
+            <li>计算机可以帮助人类解决某些问题</li>
+            <li>程序员利用编程语言编写程序发出指令控制计算机来实现这些任务</li>
+            <li>编程语言有机器语言、汇编语言、高级语言</li>
+            <li>高级语言需要一个翻译器转换为计算机识别的机器语言</li>
+            <li>编程语言是主动的有很强的逻辑性</li>
+          </ol>
+          <hr />
+        </section>
+        <section id="jiShuanJiJiChu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#banChenYuYan">编程语言</a>
+            </li>
+            <li>
+              <a href="#jiShuanJiJiChu"
+                ><span class="bold color-red">计算机基础</span></a
+              >
+            </li>
+          </ul>
+          <h2>2. 计算机基础</h2>
+          <h3>2.1 计算机组成</h3>
+          <img
+            src="./images/01计算机基础/计算机组成.png"
+            alt="jiShuanJiZhuChen"
+          />
+          <h3>2.2 数据存储</h3>
+          <ol>
+            <li>计算机内部使用二进制 0 和 1来表示数据</li>
+            <li>
+              所有数据，包括文件、图片等最终都是以二进制数据（0 和
+              1）的形式存放在硬盘中的。
+            </li>
+            <li>
+              所有程序，包括操作系统，本质都是各种数据，也以二进制数据的形式存放在硬盘中。平时我们所说的安装软件，其实就是把程序文件复制到硬盘中。
+            </li>
+            <li>硬盘、内存都是保存的二进制数据。</li>
+          </ol>
+          <h3>2.3 数据存储单位</h3>
+          <p>bit < byte < kb < GB < TB<.....</p>
+          <ul>
+            <li>位(bit)： 1bit 可以保存一个 0 或者 1 （最小的存储单位）</li>
+            <li>字节(Byte)：1B = 8b</li>
+            <li>千字节(KB)：1KB = 1024B</li>
+            <li>兆字节(MB)：1MB = 1024KB</li>
+            <li>吉字节(GB): 1GB = 1024MB</li>
+            <li>太字节(TB): 1TB = 1024GB</li>
+            <li>......</li>
+          </ul>
+          <h3>2.4 程序运行</h3>
+          <img src="images/01/程序运行.png" alt="" />
+          <ul>
+            <li>1. 打开某个程序时，先从硬盘中把程序的代码加载到内存中</li>
+            <li>2. CPU执行内存中的代码</li>
+          </ul>
+          <p>
+            <span class="color-red">注意：</span
+            >之所以要内存的一个重要原因，是因为 cpu
+            运行太快了，如果只从硬盘中读数据，会浪费cpu性能，所以，才使用存取速度更快的内存来保存运行时的数据。（内存是电，硬盘是机械）
+          </p>
+        </section>
+      </div>
+      <div class="main-section" id="csjs">
+        <header>02-初识JavaScript</header>
+        <section id="chuShijs">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"
+                ><span class="color-red bold">初识 JavaScript</span></a
+              >
+            </li>
+            <li>
+              <a href="#jsZhuShi"><span>JavaScript 注释</span></a>
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"><span>JavaScript 输入输出语句</span></a>
+            </li>
+          </ul>
+          <h1>1. 初识 JavaScript</h1>
+          <h2>1.1 JavaScript 是什么</h2>
+          <ul>
+            <li>布兰登·艾奇（Brendan Eich，1961年～）。</li>
+            <li>神奇的大哥用10天完成 JavaScript 设计</li>
+            <li>
+              最初命名为 LiveScript，后来在与 Sun 合作之后将其改名为
+              JavaScript。
+            </li>
+            <li>
+              JavaScript 是世界上最流行的语言之一，是一种运行在客户端的脚本语言
+              （Script 是脚本的意思）
+            </li>
+            <li>
+              脚本语言：不需要编译，运行过程中由 js 解释器( js
+              引擎）逐行来进行解释并执行
+            </li>
+            <li>现在也可以基于 Node.js 技术进行服务器端编程</li>
+          </ul>
+          <img src="./images/02-初识js/客户端.png" alt="" />
+          <p class="color-red">
+            为了阅读方便，我们后面把JavaScript 简称为 JS。
+          </p>
+          <hr />
+          <h2>1.2 JavaScript 的作用</h2>
+          <ul>
+            <li>
+              表单动态校验（密码强度检测）<span class="color-red"
+                >（ JS 产生最初的目的 ）</span
+              >
+            </li>
+            <li>网页特效</li>
+            <li>服务端开发(Node.js)</li>
+            <li>桌面程序(Electron)</li>
+            <li>App(Cordova)</li>
+            <li>控制硬件-物联网(Ruff)</li>
+            <li>游戏开发(cocos2d-js)</li>
+          </ul>
+          <hr />
+          <h2>1.3 HTML/CSS/JS 的关系</h2>
+          <p class="color-red bold">HTML/CSS 标记语言--描述类语言</p>
+          <ul>
+            <li>HTML 决定网页结构和内容( 决定看到什么 )，相当 于人的身体</li>
+            <li>
+              CSS 决定网页呈现给用户的模样( 决定好不好看 )，
+              相当于给人穿衣服、化妆
+            </li>
+          </ul>
+          <p class="color-red bold">JS 脚本语言--编程类语言</p>
+          <ul>
+            <li>实现业务逻辑和页面控制( 决定功能 )，相当于人的各种动作</li>
+          </ul>
+          <hr />
+          <h2>1.4 浏览器执行 JS 简介</h2>
+          <p>浏览器分成两部分：渲染引擎和 JS 引擎</p>
+          <ul>
+            <li>
+              <span class="color-red bold">渲染引擎：</span
+              >用来解析HTML与CSS，俗称内核，比如 chrome 浏览器的 blink
+              ，老版本的 webkit
+            </li>
+            <li>
+              <span class="color-red bold">JS 引擎：</span>也称为 JS 解释器。
+              用来读取网页中的JavaScript代码，对其处理后运行，比如 chrome
+              浏览器的V8
+            </li>
+          </ul>
+          <p class="color-red">
+            浏览器本身并不会执行JS代码，而是通过内置 JavaScript 引擎(解释器)
+            来执行 JS 代码 。JS
+            引擎执行代码时逐行解释每一句源码（转换为机器语言），然后由计算机去执行，所以
+            JavaScript 语言归为脚本语言，会逐行解释执行。
+          </p>
+          <img src="./images/02-初识js/js引擎.png" alt="" />
+          <hr />
+          <h2>1.5 JS 的组成</h2>
+          <img src="./images/02-初识js/js组成.png" alt="" />
+          <h3>1.5.1 ECMAScript</h3>
+          <p>
+            <span class="color-red bold">ECMAScript</span> 是由ECMA 国际（
+            原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为
+            JavaScript 或 JScript，但实际上后两者是 ECMAScript
+            语言的实现和扩展。
+          </p>
+          <img src="./images/02-初识js/ecma.png" alt="" />
+          <p class="color-red">
+            ECMAScript：ECMAScript
+            规定了JS的编程语法和基础核心知识，是所有浏览器厂商共同遵守的一套JS语法工业标准。
+          </p>
+          <p>
+            更多参看MDN:
+            <a
+              href=":https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/JavaScript_technologies_overview"
+              >:
+              https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/JavaScript_technologies_overview</a
+            >
+          </p>
+          <h3>1.5.2 DOM ——文档对象模型</h3>
+          <p>
+            <span class="color-red bold">文档对象模型</span> （Document Object
+            Model，简称DOM），是W3C组织推荐的处理可扩展标记语言的<span
+              class="color-red"
+              >标准编程接口</span
+            >。通过 DOM
+            提供的接口可以对页面上的各种元素进行操作（大小、位置、颜色等）。
+          </p>
+          <h3>1.5.3 BOM ——浏览器对象模型</h3>
+          <p>
+            <span class="color-red bold"> BOM </span>(Browser Object
+            Model，简称BOM)
+            是指浏览器对象模型，它提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。通过BOM可以操作浏览器窗口，比如弹出框、控制浏览器跳转、获取分辨率等。
+          </p>
+          <hr />
+          <h2>1.6 JS 初体验</h2>
+          <p>
+            JS 有3种书写位置，分别为<span class="color-red">行内</span
+            >、内嵌和外部。
+          </p>
+          <h3>1.6.1 行内式 JS</h3>
+          <code>
+            <input
+              type="button"
+              value="点我试试"
+              onclick="alert('Hello World')"
+            />
+          </code>
+          <img src="./images/02-初识js/行内.png" alt="" />
+          <ul>
+            <li>
+              可以将单行或少量 JS 代码写在HTML标签的事件属性中（以 on
+              开头的属性），如：onclick
+            </li>
+            <li>
+              注意单双引号的使用：在<span class="color-red bold">HTML</span
+              >中我们推荐使用双引号,<span class="color-red bold">JS</span>
+              中我们推荐使用<span class="color-red bold">单引号</span>
+            </li>
+            <li>可读性差， 在html中编写JS大量代码时，不方便阅读；</li>
+            <li>引号易错，引号多层嵌套匹配时，非常容易弄混；</li>
+            <li>特殊情况下使用</li>
+          </ul>
+          <p>
+            JS 有3种书写位置，分别为行内、<span class="color-red">内嵌</span
+            >和外部。
+          </p>
+          <h3>1.6.2 内嵌 JS</h3>
+          <img src="./images/02-初识js/内嵌 JS.png" alt="" />
+          <ul>
+            <li>可以将多行JS代码写到script标签中</li>
+            <li>内嵌 JS 是学习时常用的方式</li>
+          </ul>
+          <p>
+            JS 有3种书写位置，分别为行内、内嵌和<span class="color-red"
+              >外部</span
+            >。
+          </p>
+          <h3>1.6.3 外部 JS文件</h3>
+          <img src="./images/02-初识js/外部.png" alt="" />
+          <ul>
+            <li>
+              利于HTML页面代码结构化，把大段 JS代码独立到 HTML
+              页面之外，既美观，也方便文件级别的复用
+            </li>
+            <li> 引用外部 JS文件的 script 标签中间不可以写代码</li>
+            <li>适合于JS 代码量比较大的情况</li>
+          </ul>
+        </section>
+        <section id="jsZhuShi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"><span>初识 JavaScript</span></a>
+            </li>
+            <li>
+              <a href="#jsZhuShi"
+                ><span class="color-red bold">JavaScript 注释</span></a
+              >
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"><span>JavaScript 输入输出语句</span></a>
+            </li>
+          </ul>
+          <h1>2. JavaScript注释</h1>
+          <h2>2.1 单行注释</h2>
+          <p>
+            为了提高代码的可读性，JS与CSS一样，也提供了注释功能。JS中的注释主要有两种，分别是<span
+              class="color-red"
+              >单行注释</span
+            >和<span class="color-red">多行注释</span>。单行注释的注释方式如下：
+          </p>
+          <code> // 我是一行文字，不想被 JS引擎 执行，所以 注释起来 </code>
+          <p>// 用来注释单行文字（ 快捷键 ctrl + / ）</p>
+          <h2>2.2 多行注释</h2>
+          <p>多行注释的注释方式如下：</p>
+          <code> /* 获取用户年龄和姓名 <br />并通过提示框显示出来 */ </code>
+          <p>/* */ 用来注释多行文字（ 默认快捷键 alt + shift + a ）</p>
+          <p>快捷键修改为： ctrl + shift + /</p>
+          <p>
+            vscode → 首选项按钮 → 键盘快捷方式 → 查找 原来的快捷键 →
+            修改为新的快捷键 → 回车确认
+          </p>
+          <hr />
+        </section>
+        <section id="ShuChuShuRu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"><span>初识 JavaScript</span></a>
+            </li>
+            <li>
+              <a href="#jsZhuShi"><span>JavaScript 注释</span></a>
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"
+                ><span class="color-red bold">JavaScript 输入输出语句</span></a
+              >
+            </li>
+          </ul>
+          <h1>3. JavaScript 输入输出语句</h1>
+          <p>
+            为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：
+          </p>
+          <table>
+            <tr>
+              <th>方法</th>
+              <th>说明</th>
+              <th>归属</th>
+            </tr>
+            <tr>
+              <td>alert(msg)</td>
+              <td>浏览器弹出警示框</td>
+              <td>浏览器</td>
+            </tr>
+            <tr>
+              <td>console.log(msg)</td>
+              <td>浏览器控制台打印输出信息</td>
+              <td>浏览器</td>
+            </tr>
+            <tr>
+              <td>prompt(info)</td>
+              <td>浏览器弹出输入框，用户可以输入</td>
+              <td>浏览器</td>
+            </tr>
+          </table>
+          <p>
+            <span class="color-red bold">注意：</span>alert()
+            主要用来显示消息给用户，console.log()
+            用来给程序员自己看运行时的消息。
+          </p>
+        </section>
+      </div>
+      <div class="main-section" id="bl">
+        <header>03-变量</header>
+        <section></section>
+      </div>
+      <section class="main-section" id="sjlx">
+        <header>04-数据类型</header>
+        <article>
+          To get started with writing JavaScript, open the Scratchpad and write
+          your first "Hello world" JavaScript code:
+          <code
+            >function greetMe(yourName) { alert("Hello " + yourName); }
+            greetMe("World");
+          </code>
+
+          Select the code in the pad and hit Ctrl+R to watch it unfold in your
+          browser!
+        </article>
+      </section>
+      <section class="main-section" id="kzydyjzy">
+        <header>05-扩展阅读以及作业</header>
+        <p>
+          You use variables as symbolic names for values in your application.
+          The names of variables, called identifiers, conform to certain rules.
+        </p>
+        <p>
+          A JavaScript identifier must start with a letter, underscore (_), or
+          dollar sign ($); subsequent characters can also be digits (0-9).
+          Because JavaScript is case sensitive, letters include the characters
+          "A" through "Z" (uppercase) and the characters "a" through "z"
+          (lowercase).
+        </p>
+        <p>
+          You can use ISO 8859-1 or Unicode letters such as å and ü in
+          identifiers. You can also use the Unicode escape sequences as
+          characters in identifiers. Some examples of legal names are
+          Number_hits, temp99, and _name.
+        </p>
+      </section>
+      <section class="main-section" id="jsysf">
+        <header>06-JavaScript 运算符</header>
+        <article>
+          You can declare a variable in three ways:
+          <p>
+            With the keyword var. For example, <code>var x = 42.</code> This
+            syntax can be used to declare both local and global variables.
+          </p>
+          <p>
+            By simply assigning it a value. For example,
+            <code>x = 42.</code> This always declares a global variable. It
+            generates a strict JavaScript warning. You shouldn't use this
+            variant.
+          </p>
+          <p>
+            With the keyword let. For example,<code> let y = 13.</code> This
+            syntax can be used to declare a block scope local variable. See
+            Variable scope below.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="jslckzfz">
+        <header>07-JavaScript 流程控制-分支</header>
+        <article>
+          <p>
+            When you declare a variable outside of any function, it is called a
+            global variable, because it is available to any other code in the
+            current document. When you declare a variable within a function, it
+            is called a local variable, because it is available only within that
+            function.
+          </p>
+
+          <p>
+            JavaScript before ECMAScript 2015 does not have block statement
+            scope; rather, a variable declared within a block is local to the
+            function (or global scope) that the block resides within. For
+            example the following code will log 5, because the scope of x is the
+            function (or global context) within which x is declared, not the
+            block, which in this case is an if statement.
+          </p>
+          <code>if (true) { var x = 5; } console.log(x); // 5</code>
+          <p>
+            This behavior changes, when using the let declaration introduced in
+            ECMAScript 2015.
+          </p>
+
+          <code
+            >if (true) { let y = 5; } console.log(y); // ReferenceError: y is
+            not defined</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Global_variables">
+        <header>Global variables</header>
+        <article>
+          <p>
+            Global variables are in fact properties of the global object. In web
+            pages the global object is window, so you can set and access global
+            variables using the window.variable syntax.
+          </p>
+
+          <p>
+            Consequently, you can access global variables declared in one window
+            or frame from another window or frame by specifying the window or
+            frame name. For example, if a variable called phoneNumber is
+            declared in a document, you can refer to this variable from an
+            iframe as parent.phoneNumber.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Constants">
+        <header>Constants</header>
+        <article>
+          <p>
+            You can create a read-only, named constant with the const keyword.
+            The syntax of a constant identifier is the same as for a variable
+            identifier: it must start with a letter, underscore or dollar sign
+            and can contain alphabetic, numeric, or underscore characters.
+          </p>
+
+          <code>const PI = 3.14;</code>
+          <p>
+            A constant cannot change value through assignment or be re-declared
+            while the script is running. It has to be initialized to a value.
+          </p>
+
+          <p>
+            The scope rules for constants are the same as those for let block
+            scope variables. If the const keyword is omitted, the identifier is
+            assumed to represent a variable.
+          </p>
+
+          <p>
+            You cannot declare a constant with the same name as a function or
+            variable in the same scope. For example:
+          </p>
+
+          <code
+            >// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
+            WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+            //statements }</code
+          >
+          However, object attributes are not protected, so the following
+          statement is executed without problems.
+          <code
+            >const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+            "otherValue";</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Data_types">
+        <header>Data types</header>
+        <article>
+          <p>The latest ECMAScript standard defines seven data types:</p>
+          <ul>
+            <li>
+              <p>Six data types that are primitives:</p>
+              <ul>
+                <li>Boolean. true and false.</li>
+                <li>
+                  null. A special keyword denoting a null value. Because
+                  JavaScript is case-sensitive, null is not the same as Null,
+                  NULL, or any other variant.
+                </li>
+                <li>
+                  undefined. A top-level property whose value is undefined.
+                </li>
+                <li>Number. 42 or 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>
+                  Symbol (new in ECMAScript 2015). A data type whose instances
+                  are unique and immutable.
+                </li>
+              </ul>
+            </li>
+
+            <li>and Object</li>
+          </ul>
+          Although these data types are a relatively small amount, they enable
+          you to perform useful functions with your applications. Objects and
+          functions are the other fundamental elements in the language. You can
+          think of objects as named containers for values, and functions as
+          procedures that your application can perform.
+        </article>
+      </section>
+      <section class="main-section" id="if...else_statement">
+        <header>if...else statement</header>
+        <article>
+          Use the if statement to execute a statement if a logical condition is
+          true. Use the optional else clause to execute a statement if the
+          condition is false. An if statement looks as follows:
+
+          <code>if (condition) { statement_1; } else { statement_2; }</code>
+          condition can be any expression that evaluates to true or false. See
+          Boolean for an explanation of what evaluates to true and false. If
+          condition evaluates to true, statement_1 is executed; otherwise,
+          statement_2 is executed. statement_1 and statement_2 can be any
+          statement, including further nested if statements.
+          <p>
+            You may also compound the statements using else if to have multiple
+            conditions tested in sequence, as follows:
+          </p>
+          <code
+            >if (condition_1) { statement_1; } else if (condition_2) {
+            statement_2; } else if (condition_n) { statement_n; } else {
+            statement_last; }
+          </code>
+          In the case of multiple conditions only the first logical condition
+          which evaluates to true will be executed. To execute multiple
+          statements, group them within a block statement ({ ... }) . In
+          general, it's good practice to always use block statements, especially
+          when nesting if statements:
+
+          <code
+            >if (condition) { statement_1_runs_if_condition_is_true;
+            statement_2_runs_if_condition_is_true; } else {
+            statement_3_runs_if_condition_is_false;
+            statement_4_runs_if_condition_is_false; }</code
+          >
+          It is advisable to not use simple assignments in a conditional
+          expression, because the assignment can be confused with equality when
+          glancing over the code. For example, do not use the following code:
+          <code>if (x = y) { /* statements here */ }</code> If you need to use
+          an assignment in a conditional expression, a common practice is to put
+          additional parentheses around the assignment. For example:
+
+          <code>if ((x = y)) { /* statements here */ }</code>
+        </article>
+      </section>
+      <section class="main-section" id="while_statement">
+        <header>while statement</header>
+        <article>
+          A while statement executes its statements as long as a specified
+          condition evaluates to true. A while statement looks as follows:
+
+          <code>while (condition) statement</code> If the condition becomes
+          false, statement within the loop stops executing and control passes to
+          the statement following the loop.
+
+          <p>
+            The condition test occurs before statement in the loop is executed.
+            If the condition returns true, statement is executed and the
+            condition is tested again. If the condition returns false, execution
+            stops and control is passed to the statement following while.
+          </p>
+
+          <p>
+            To execute multiple statements, use a block statement ({ ... }) to
+            group those statements.
+          </p>
+
+          Example:
+
+          <p>
+            The following while loop iterates as long as n is less than three:
+          </p>
+
+          <code>var n = 0; var x = 0; while (n &lt; 3) { n++; x += n; }</code>
+          <p>
+            With each iteration, the loop increments n and adds that value to x.
+            Therefore, x and n take on the following values:
+          </p>
+
+          <ul>
+            <li>After the first pass: n = 1 and x = 1</li>
+            <li>After the second pass: n = 2 and x = 3</li>
+            <li>After the third pass: n = 3 and x = 6</li>
+          </ul>
+          <p>
+            After completing the third pass, the condition n &lt; 3 is no longer
+            true, so the loop terminates.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>Function declarations</header>
+        <article>
+          A function definition (also called a function declaration, or function
+          statement) consists of the function keyword, followed by:
+
+          <ul>
+            <li>The name of the function.</li>
+            <li>
+              A list of arguments to the function, enclosed in parentheses and
+              separated by commas.
+            </li>
+            <li>
+              The JavaScript statements that define the function, enclosed in
+              curly brackets, { }.
+            </li>
+          </ul>
+          <p>
+            For example, the following code defines a simple function named
+            square:
+          </p>
+
+          <code>function square(number) { return number * number; }</code>
+          <p>
+            The function square takes one argument, called number. The function
+            consists of one statement that says to return the argument of the
+            function (that is, number) multiplied by itself. The return
+            statement specifies the value returned by the function.
+          </p>
+          <code>return number * number;</code>
+          <p>
+            Primitive parameters (such as a number) are passed to functions by
+            value; the value is passed to the function, but if the function
+            changes the value of the parameter, this change is not reflected
+            globally or in the calling function.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                target="_blank"
+                >MDN</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
