@@ -2,6 +2,8 @@
 <html lang="zh-CN">
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <nav id="navbar">
@@ -606,8 +608,8 @@
             一个变量被重新复赋值后，它原有的值就会被覆盖，变量值将以最后一次赋的值为准。
           </p>
           <code
-            ><span>var age = 18;</span>
-            <span>age = 81;//最后的结果就是81因为18被覆盖掉了</span></code
+            >var age = 18;<br />
+            age = 81;//最后的结果就是81因为18被覆盖掉了</code
           >
           <h2>3.2 同时声明多个变量</h2>
           <p>
@@ -816,12 +818,12 @@
           <h3>2.2.1 数字型进制</h3>
           <p>最常见的进制有二进制、八进制、十进制、十六进制。</p>
           <code
-            ><span>// 1.八进制数字序列范围：0~7</span>
-            <span>var num1 = 07; // 对应十进制的7</span>
-            <span>var num2 = 019; // 对应十进制的19</span>
-            <span>var num3 = 08;//对应十进制的8</span>
-            <span>// 2.十六进制数字序列范围：0~9以及A~F</span>
-            <span>var num = 0xA;</span>
+            >// 1.八进制数字序列范围：0~7<br />
+            var num1 = 07; // 对应十进制的7<br />
+            var num2 = 019; // 对应十进制的19<br />
+            var num3 = 08;//对应十进制的8<br />
+            // 2.十六进制数字序列范围：0~9以及A~F<br />
+            var num = 0xA;
           </code>
           <p>
             现阶段我们只需要记住，<span class="color-red"
@@ -842,9 +844,9 @@
           </ul>
           <h3>2.2.3 数值型三个特殊值</h3>
           <code
-            ><span>alert(Infinity); // Infinity</span>
-            <span>alert(-Infinity); // -Infinity</span>
-            <span>alert(NaN); // NaN</span>
+            >alert(Infinity); // Infinity<br />
+            alert(-Infinity); // -Infinity<br />
+            alert(NaN); // NaN<br />
           </code>
           <ul>
             <li>Infinity ，代表无穷大，大于任何数值</li>
@@ -855,10 +857,10 @@
           <p>用来判断一个变量是否为非数字的类型，返回 true 或者 false</p>
           <img src="./images/04-数据类型/isNoN.png" alt="" />
           <code
-            ><span>var usrAge = 21;</span>
-            <span>var isOk = isNaN(userAge);</span>
-            <span>console.log(isNum); // false ，21 不是一个非数字</span>
-            <span>var usrName = "andy";</span>
+            >var usrAge = 21;<br />
+            var isOk = isNaN(userAge);<br />
+            console.log(isNum); // false ，21 不是一个非数字<br />
+            var usrName = "andy";<br />
             <span
               >console.log(isNaN(userName)); // true ，"andy"是一个非数字</span
             >
@@ -1355,14 +1357,12 @@
           </p>
           <p>自己写的：</p>
           <code
-            ><span>var name = prompt("请输入你的姓名");</span>
-            <span>var age = prompt("请输入你的年龄");</span>
-            <span>var sex = prompt("请输入你的性别");</span>
-            <span>
-              var resul =   "你的姓名是:" + name + "\n你的年龄是:" + age + "岁"
-              + "\n你的性别是:" + sex;
-            </span>
-            <span>alert(resul);</span>
+            >var name = prompt("请输入你的姓名");<br />
+            var age = prompt("请输入你的年龄");<br />
+            var sex = prompt("请输入你的性别");<br />
+            var resul =   "你的姓名是:" + name + "\n你的年龄是:" + age + "岁" +
+            "\n你的性别是:" + sex;<br />
+            alert(resul);
           </code>
           <img src="./images/05-扩展阅读以及作业/作业答案.png" alt="" />
         </section>
@@ -1447,13 +1447,9 @@
             位小数，但在进行算术计算时其精确度远远不如整数。
           </p>
           <code
-            ><span
-              >var result = 0.1 + 0.2; // 结果不是
-              0.3，而是：0.30000000000000004</span
-            ><span
-              >console.log(0.07 * 100); // 结果不是 7，
-              而是：7.000000000000001</span
-            >
+            >var result = 0.1 + 0.2; // 结果不是
+            0.3，而是：0.30000000000000004<br />
+            >console.log(0.07 * 100); // 结果不是 7， 而是：7.000000000000001
           </code>
           <p>
             所以：<span class="color-red">不要直接判断两个浮点数是否相等</span>!
