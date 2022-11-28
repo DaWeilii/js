@@ -102,13 +102,16 @@ code {
     max-height: 275px;
     border: none;
     z-index: 1;
-    border-bottom: 2px solid;
+    /* zj：底线取消 */
+    /* border-bottom: 2px solid; */
   }
 
   #main-doc {
     position: relative;
     margin-left: 0px;
-    margin-top: 270px;
+    /* 自己改了一下270变320 */
+    /* margin-top: 270px; */
+    margin-top: 320px;
   }
 }
 
