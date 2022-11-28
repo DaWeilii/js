@@ -162,11 +162,12 @@ section p {
 }
 /* width百分比，解决了一点导航栏，图片就跑出来的问题。 */
 img {
-  width: 100%;
+  width: 80%;
   object-fit: cover;
   border-radius: 10px;
   /* margin-left: 60px; */
 }
-code span {
+/* span不转行，也会影响网页的浏览 */
+/* code span {
   white-space: nowrap;
-}
+} */
