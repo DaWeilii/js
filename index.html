@@ -25,7 +25,7 @@
           <a class="nav-link" href="#jslckzfz">07-JavaScript 流程控制-分支</a>
         </li>
         <li>
-          <a class="nav-link" href="#Global_variables">08</a>
+          <a class="nav-link" href="#jsXunHuan">08-JavaScript 流程控制-循环</a>
         </li>
         <li><a class="nav-link" href="#Constants">09</a></li>
         <li><a class="nav-link" href="#Data_types">10</a></li>
@@ -2225,9 +2225,504 @@
           </p>
         </section>
       </div>
-      <section class="main-section" id="Global_variables">
-        <header>08</header>
-      </section>
+      <div class="main-section" id="jsXunHuan">
+        <header>08-JavaScript 流程控制-循环</header>
+        <section id="XunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span class="color-red">循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+          <h1>1. 循环</h1>
+          <h2 class="bold">1.1 循环目的</h2>
+          <ul>
+            <li>
+              在实际问题中，有许多具有<span class="color-red"
+                >规律性的重复操作</span
+              >，因此在程序中要完成这类操作就需要<span class="color-red"
+                >重复执行某些语句</span
+              >
+            </li>
+          </ul>
+          <h2>JS 中的循环</h2>
+          <p>在Js 中，主要有三种类型的循环语句：</p>
+          <ul>
+            <li>for 循环</li>
+            <li>while 循环</li>
+            <li>do...while 循环</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="forXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span class="color-red">for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+          <h1>2. for 循环</h1>
+          <p>
+            在程序中，一组被重复执行的语句被称之为
+            <span class="color-red">循环体</span
+            >，能否继续重复执行，取决于循环的
+            <span class="color-red">终止条件。</span
+            >由循环体及循环的终止条件组成的语句，被称之为
+            <span class="color-red bold">循环语句</span>
+          </p>
+          <h2>2.1 语法结构</h2>
+          <p>
+            for
+            循环主要用于把某些代码循环若干次，通常跟计数有关系。其语法结构如下：
+          </p>
+          <code
+            >for(初始化变量; 条件表达式; 操作表达式 ){<br />
+            //循环体语句<br />
+            }</code
+          >
+          <ul>
+            <li>
+              <span class="color-red bold">初始化变量：</span
+              >通常被用于初始化一个计数器，该表达式可以使用 var
+              关键字声明新的变量，这个变量帮我们来记录次数。
+            </li>
+            <li>
+              <span class="color-red bold">条件表达式：</span
+              >用于确定每一次循环是否能被执行。如果结果是 true
+              就继续循环，否则退出循环。
+            </li>
+            <li>
+              <span class="color-red bold">操作表达式：</span
+              >每次循环的最后都要执行的表达式。通常被用于更新或者递增计数器变量。当然，递减变量也是可以的。
+            </li>
+          </ul>
+          <h3>执行过程：</h3>
+          <ol>
+            <li>
+              初始化变量，<span class="color-red"
+                >初始化操作在整个 for 循环只会执行一次。</span
+              >
+            </li>
+            <li>
+              执行条件表达式，如果为true，则执行循环体语句，否则退出循环，循环结束。
+            </li>
+            <li>执行操作表达式，此时第一轮结束。</li>
+            <li>
+              第二轮开始，直接去执行条件表达式（不再初始化变量），如果为 true
+              ，则去执行循环体语句，否则退出循环。
+            </li>
+            <li>继续执行操作表达式，第二轮结束。</li>
+            <li>后续跟第二轮一致，直至条件表达式为假，结束整个 for 循环。</li>
+          </ol>
+          <h3>断点调试：</h3>
+          <p>
+            断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。
+          </p>
+          <p class="bold color-red">断点调试可以帮我们观察程序的运行过程</p>
+          <p>
+            浏览器中按 F12--> sources
+            -->找到需要调试的文件-->在程序的某一行设置断点
+          </p>
+          <p>Watch: 监视，通过watch可以监视变量的值的变化，非常的常用。</p>
+          <p>
+            F11:
+            程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。
+          </p>
+          <p>
+            代码调试的能力非常重要，只有学会了代码调试，才能学会自己解决bug的能力。初学者不要觉得调试代码麻烦就不去调试，知识点花点功夫肯定学的会，但是代码调试这个东西，自己不去练，永远都学不会。
+          </p>
+          <p>
+            今天学的代码调试非常的简单，只要求同学们记住代码调试的这几个按钮的作用即可，后面还会学到很多的代码调试技巧。
+          </p>
+          <h2>2.2 for 循环重复相同的代码</h2>
+          <p>for循环可以重复相同的代码 ，比如我们要输出10句“媳妇我错了”</p>
+          <code
+            >// <b>基本写法</b><br />
+            for(var i = 1; i <= 10; i++){<br />
+            &nbsp;&nbsp;console.log(<b>'媳妇我错了~'</b>);<br />
+            }<br />
+            // <b>用户输入次数</b><br />
+            var num = prompt(<b>'请输入次数:'</b>)；<br />
+            for ( var i = 1 ; i <= num; i++) {<br />
+            &nbsp;&nbsp;console.log(<b>'媳妇我错了~'</b>);<br />
+            }
+          </code>
+          <h2>2.3 for 循环重复不相同的代码</h2>
+          <p>
+            for 循环还可以重复不同的代码，这主要是因为使用了计数器
+            ，计数器在每次循环过程中都会有变化。例如，求输出一个人1到100岁：
+          </p>
+          <code
+            >// 基本写法 for (var i = 1; i <= 100; i++) {
+            &nbsp;&nbsp;console.log('这个人今年' + i + '岁了');<br />}</code
+          >
+          <h2>2.3 for 循环重复不相同的代码</h2>
+          <p>
+            for 循环还可以重复不同的代码，这主要是因为使用了计数器
+            ，计数器在每次循环过程中都会有变化。例如，求输出一个人1到100岁：
+          </p>
+          <code
+            >// for 里面是可以添加其他语句的<br />
+            for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;if (i == 1) {<br />
+            &nbsp;&nbsp;console.log('这个人今年1岁了， 它出生了');<br />
+            } else if (i == 100) {<br />
+            &nbsp;&nbsp;console.log('这个人今年100岁了，它死了');<br />
+            } else {<br />
+            &nbsp;&nbsp;console.log('这个人今年' + i + '岁了');<br />
+            &nbsp;}<br />
+            }</code
+          >
+          <h2>2.4 for 循环重复某些相同操作</h2>
+          <span class="color-red"></span>
+          <p>
+            for
+            循环因为有了计数器的存在，我们还可以重复的执行某些操作，比如做一些算术运算。
+          </p>
+          <p class="color-red bold">课堂案例1： 求1-100之间所有整数的累加和</p>
+          <p>案例分析：</p>
+          <p>
+            ① 需要循环100次，我们需要一个<span class="color-red">计数器 i</span
+            ><br />
+            ② 我们需要一个存储<span class="color-red">结果</span>的变量
+            <span class="color-red">sum ，但是初始值一定是 0</span><br />
+            ③ 核心算法：1 + 2 + 3 + 4 .... ，sum = sum + i;
+          </p>
+          <p>实现代码：</p>
+          <code
+            >var sum = 0;<br />
+            for(var i = 1;i <= 100; i++){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;sumNum += i;<br />
+            } console.log('1-100之间整数的和 = ' + sum);</code
+          >
+          <p class="color-red bold">课堂练习</p>
+          <p>
+            ① 求1-100之间所有数的平均值<br />
+            ② 求1-100之间所有偶数和奇数的和<br />
+            ③ 求1-100之间所有能被3整除的数字的和
+          </p>
+          <p class="color-red bold">课堂案例 2： 求学生成绩</p>
+          <p>
+            要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩。
+          </p>
+          <img src="./images/08-js循环/课堂案例2-求学生成绩.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框输入总的班级人数 ( num )<br />
+            ② 依次输入学生的成绩（保存起来 score），<span class="color-red"
+              >此时我们需要用到 for 循环</span
+            >，弹出的次数跟班级总人数有关系
+            <span class="color-red">条件表达式 i <= num</span><br />
+            ③ 进行业务处理: 计算成绩。
+            先求总成绩（sum），之后求平均成绩（average）<br />
+            ④ 弹出结果
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var num = prompt('请输入班级总的人数:'); // num 班级总的人数<br />
+            var sum = 0; // 总成绩<br />
+            var average = 0; // 平均成绩<br />
+            for (var i = 1; i <= num; i++) {<br />
+            &nbsp;&nbsp;var score = prompt('请输入第' + i + '个学生的成绩');<br />
+            &nbsp;&nbsp;sum = sum + parseFloat(score);<br />
+            }<br />
+            average = sum / num;<br />
+            alert('班级总的成绩是：' + sum);<br />
+            alert('班级总的平均成绩是：' + average);</code
+          >
+          <p class="bold">一行打印五个星星</p>
+          <p>我们采取追加字符串的方式，这样可以打印到控制台上。</p>
+          <code
+            >var star = '';<br />
+            for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;&nbsp;star += '☆'<br />
+            }<br />
+            console.log(star);</code
+          >
+        </section>
+        <hr />
+        <section id="shuanChongFor">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"
+                ><span class="color-red">双重 for 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+          <h1>3. 双重 for 循环</h1>
+          <h2>3.1 双重 for 循环概述</h2>
+          <p>
+            很多情况下，单层 for 循环并不能满足我们的需求，比如我们要打印一个 5
+            行 5
+            列的图形、打印一个倒直角三角形等，此时就可以通过循环嵌套来实现。
+          </p>
+          <img src="./images/08-js循环/3.1双重for循环概述.png" alt="" />
+          <p>
+            <span class="color-red bold">循环嵌套</span>是指<span
+              class="color-red"
+              >在一个循环语句中再定义一个循环语句的语法结构，</span
+            >例如在for循环语句中，可以再嵌套一个for 循环，这样的 for
+            循环语句我们称之为<span class="color-red">双重for循环。</span>
+          </p>
+          <h2>3.2 双重 for 循环语法</h2>
+          <code
+            >for (外循环的初始; 外循环的条件; 外循环的操作表达式) {<br />
+            &nbsp;for (内循环的初始; 内循环的条件; 内循环的操作表达式) {<br />
+            &nbsp;&nbsp;&nbsp;需执行的代码;<br />
+            &nbsp;}<br />
+            &nbsp;}</code
+          >
+          <ul>
+            <li>内层循环可以看做外层循环的语句</li>
+            <li>内层循环执行的顺序也要遵循 for 循环的执行顺序</li>
+            <li>外层循环执行一次，内层循环要执行全部次数</li>
+          </ul>
+          <h2>3.4 打印五行五列星星</h2>
+          <img src="./images/08-js循环/3.4-打印五行星星.png" alt="" />
+          <p>核心：</p>
+          <p>
+            1. 内层循环负责一行打印五个星星<br />
+            2. 外层循环负责打印五行
+          </p>
+          <code
+            >var star = '';<br />
+            for (var j = 1; j <= 3; j++) {<br />
+            &nbsp;&nbsp;for (var i = 1; i <= 3; i++) {<br />
+            &nbsp;&nbsp;&nbsp;star += '☆'<br />
+            }<br />
+            &nbsp;&nbsp;// 每次满 5个星星 就 加一次换行<br />
+            &nbsp;&nbsp;star += '\n'<br />
+            }<br />
+            console.log(star);</code
+          >
+          <p class="bold color-red">课堂案例 1： 打印 n 行 n 列的星星</p>
+          <p>
+            要求用户<span class="color-red">输入行数和列数</span
+            >，之后在控制台打印出用户输入行数和列数的星星。
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var row = prompt('请输入您打印几行星星:');<br />
+            var col = prompt('请输入您打印几列星星:');<br />
+            var str = '';<br />
+            for (var i = 1; i <= row; i++) {<br />
+            &nbsp;&nbsp;for (j = 1; j <= col; j++) {<br />
+            &nbsp;&nbsp;&nbsp;str += '☆';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            &nbsp;console.log(str);</code
+          >
+          <p class="bold color-red">课堂案例 2：打印倒三角形</p>
+          <img src="./images/08-js循环/案例2打印倒三角形.png" alt="" />
+          <p class="bold color-red">案例分析</p>
+          <p>
+            ① 一共有10行，但是每行的星星个数不一样，因此需要用到双重 for 循环<br />
+            ② 外层的 for 控制行数 i ，循环10次可以打印10行<br />
+            ③ 内层的 for 控制每行的星星个数 j<br />
+            ④ 核心算法： 每一行星星的个数 j = i ; j <= 10; j++<br />
+            ⑤ 每行打印完毕后，都需要重新换一行
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var row = prompt('请输入您打印几行星星:');<br />
+            var col = prompt('请输入您打印几列星星:');<br />
+            var str = '';<br />
+            for (var i = 1; i <= row; i++) {<br />
+            &nbsp;&nbsp;for (j = 1; j <= col; j++) {<br />
+            &nbsp;&nbsp;&nbsp;str += '☆';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            &nbsp;console.log(str);</code
+          >
+          <p class="bold color-red">思考：打印正三角形</p>
+          <p class="bold color-red">课堂案例3： 打印九九乘法表</p>
+          <img src="./images/08-js循环/打印九九乘法表.png" alt="" />
+          <p class="bold color-red">案例分析</p>
+          <p>
+            ① 一共有9行，但是每行的个数不一样，因此需要用到双重 for 循环<br />
+            ② 外层的 for 循环控制行数 i ，循环9次 ，可以打印 9 行<br />
+            ③ 内层的 for 循环控制每行公式 j<br />
+            ④ 核心算法：每一行<span class="color-red"> 公式的个数</span
+            >正好和<span class="color-red">行数</span>一致， j <= i;<br />
+            ⑤ 每行打印完毕，都需要重新换一行<br />
+            ⑥ 把公式用 i 和 j 替换
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var str = ''<br />
+            for (var i = 1; i <= 9; i++) { // 外层for控制 行数 9行<br />
+            for (var j = 1; j <= i; j++) { // j 控制列数列数和行数是一样的j <= i
+            <br />
+            &nbsp;&nbsp;&nbsp;str += j + " × " + i + " = " + i * j + '\t';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            console.log(str);</code
+          >
+          <h2>3.5 for 循环小结</h2>
+          <ul>
+            <li>for 循环可以重复执行某些相同代码</li>
+            <li>for 循环可以重复执行些许不同的代码，因为我们有计数器</li>
+            <li>for 循环可以重复执行某些操作，比如算术运算符加法操作</li>
+            <li>随着需求增加，双重for循环可以做更多、更好看的效果</li>
+            <li>双重 for 循环，外层循环一次，内层 for 循环全部执行</li>
+            <li>for 循环是循环条件和数字直接相关的循环</li>
+            <li>分析要比写代码更重要</li>
+            <li>一些核心算法想不到，但是要学会，分析它执行过程</li>
+            <li>举一反三，自己经常总结，做一些相似的案例</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="whileXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"
+                ><span class="color-red">while 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+          <h1>4. while 循环</h1>
+          <p>
+            while
+            语句可以在条件表达式为真的前提下，循环执行指定的一段代码，直到表达式不为真时结束循环。
+          </p>
+          <p>while语句的语法结构如下：</p>
+          <code
+            >while (条件表达式) {<br />&nbsp;&nbsp;// 循环体代码<br />}</code
+          >
+          <p class="bold"></p>
+          <p>
+            ① 先执行条件表达式，如果结果为 true，则执行循环体代码；如果为
+            false，则退出循环，执行后面代码<br />② 执行循环体代码<br />
+            ③
+            循环体代码执行完毕后，程序会继续判断执行条件表达式，如条件仍为true，则会继续执行循环体，直到循环条件为
+            false 时，整个循环过程才会结束
+          </p>
+          <p class="color-red bold">注意：</p>
+          <p>
+            ① 使用 while
+            循环时一定要注意，它必须要有退出条件，否则会成为死循环<br />
+            ② while 循环和 for 循环的不同之处在于 while
+            循环可以做较为复杂的条件判断，比如判断用户名和密码
+          </p>
+        </section>
+        <hr />
+        <section id="doWhileXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"
+                ><span class="color-red">do while 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section id="conBre">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"
+                ><span class="color-red">continue break</span></a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
       <section class="main-section" id="Constants">
         <header>09</header>
       </section>
