@@ -9,7 +9,9 @@
     <nav id="navbar">
       <header>JavaScript 笔记 <br />(黑马前端)</header>
       <ul>
-        <li><a class="nav-link" href="#jsjbcjc">01-计算机编程基础 </a></li>
+        <li>
+          <a class="nav-link" href="#jsjbcjc">01-计算机编程基础 </a>
+        </li>
         <li>
           <a class="nav-link" href="#csjs">02-初识JavaScript</a>
         </li>
@@ -27,7 +29,11 @@
         <li>
           <a class="nav-link" href="#jsXunHuan">08-JavaScript 流程控制-循环</a>
         </li>
-        <li><a class="nav-link" href="#Constants">09</a></li>
+        <li>
+          <a class="nav-link" href="#jsMingMingGuiFan"
+            >09-JavaScript 命名规范以及语法格式</a
+          >
+        </li>
         <li><a class="nav-link" href="#Data_types">10</a></li>
         <li>
           <a class="nav-link" href="#if...else_statement">11</a>
@@ -2213,16 +2219,64 @@
           <h2>5.3 作业</h2>
           <p>
             ① 1. 判断时间阶段。 比如 用户输入12点 弹出 中午好 用户输入 18点
-            弹出傍晚好 用户输入 23点 弹出深夜好<br />② 2. 比较两个数的最大值
-            （用户依次输入2个值，最后弹出最大的那个值）<br />
-            ③ 3. 用户输入一个数，来判断是奇数还是偶数<br />
-            ④ 4. 根据用户输入的数值（数字1 到 数字 7），返回星期几<br />
-            ⑤ 5.
-            接收班长口袋里的钱数？若大于等于2000，请大家吃西餐。若小于2000，大于等于1500，请大家吃快餐。若小于1500，大于等于1000，请大家喝饮料。若小于1000，大于等于500，请大家吃棒棒糖。否则提醒班长下次把钱带够<br />
-            ⑥ 6. 分数转换,给一个分数，判定等级。大于等于90 A，大于等于80小于90
-            B，大于等于70小于80 C ，大于等于60小于70 D，小于60 E<br />
-            ⑦ 7. 预习下 循环控制 for 循环
+            弹出傍晚好 用户输入 23点 弹出深夜好
           </p>
+          <img src="./images/assignment/2-day/1.gif" alt="" />
+          <code
+            >var time = prompt("请输入一下现在的时间： ");<br />
+            if (time >= 25) {<br />
+            &nbsp;alert("不好意思，请您输入正确的时间点。");<br />
+            } else if (time >= 22) {<br />
+            &nbsp;alert("深夜好!");<br />
+            } else if (time >= 20) {<br />
+            &nbsp;alert("夜晚好!");<br />
+            } else if (time >= 18) {<br />
+            &nbsp;alert("傍晚好!");<br />
+            } else if (time >= 16) {<br />
+            &nbsp;alert("下午好!");<br />
+            } else if (time >= 12) {<br />
+            &nbsp;alert("中午好!");<br />
+            } else if (time >= 6) {<br />
+            &nbsp;alert("早上好!");<br />
+            } else if (time >= 0) {<br />
+            &nbsp;alert("凌晨好!");<br />
+            }</code
+          >
+          <p>
+            ② 2. 比较两个数的最大值 （用户依次输入2个值，最后弹出最大的那个值）
+          </p>
+          <img src="./images/assignment/2-day/2.gif" alt="" />
+          <code
+            >var num1 = prompt("请输入第一个数字:");<br />
+            var num2 = prompt("请输入第二个数字:");<br />
+            if (num1 > num2) {<br />
+            &nbsp;alert(num1);<br />
+            } else {<br />
+            &nbsp;alert(num2);<br />
+            }</code
+          >
+          <p>③ 3. 用户输入一个数，来判断是奇数还是偶数</p>
+          <img src="./images/assignment/2-day/3.gif" alt="" />
+          <code
+            >var num = prompt("请您输入一个数字: ");<br />
+            if (num % 2 == 0) {<br />
+            &nbsp;alert("您输入的数字是偶数");<br />
+            } else {<br />
+            &nbsp;alert("您输入的数字是奇数");<br />
+            }</code
+          >
+          <p>④ 4. 根据用户输入的数值（数字1 到 数字 7），返回星期几</p>
+          <img src="./images/assignment/2-day/4.gif" alt="" />
+          <code></code>
+          <p>
+            ⑤ 5.
+            接收班长口袋里的钱数？若大于等于2000，请大家吃西餐。若小于2000，大于等于1500，请大家吃快餐。若小于1500，大于等于1000，请大家喝饮料。若小于1000，大于等于500，请大家吃棒棒糖。否则提醒班长下次把钱带够
+          </p>
+          <p>
+            ⑥ 6. 分数转换,给一个分数，判定等级。大于等于90 A，大于等于80小于90
+            B，大于等于70小于80 C ，大于等于60小于70 D，小于60 E
+          </p>
+          <p>⑦ 7. 预习下 循环控制 for 循环</p>
         </section>
       </div>
       <div class="main-section" id="jsXunHuan">
@@ -2326,6 +2380,13 @@
               >每次循环的最后都要执行的表达式。通常被用于更新或者递增计数器变量。当然，递减变量也是可以的。
             </li>
           </ul>
+          <p>&nbsp;</p>
+          <p><span class="bold">代码体验:</span>我们重复打印100句你好。</p>
+          <code
+            >for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;&nbsp;console.log('你好吗');<br />
+            }</code
+          >
           <h3>执行过程：</h3>
           <ol>
             <li>
@@ -2344,6 +2405,8 @@
             <li>继续执行操作表达式，第二轮结束。</li>
             <li>后续跟第二轮一致，直至条件表达式为假，结束整个 for 循环。</li>
           </ol>
+          <img src="./images/08-js循环/代码-for循环执行过程1.png" alt="" />
+          <img src="./images/08-js循环/代码-for循环执行过程02.png" alt="" />
           <h3>断点调试：</h3>
           <p>
             断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。
@@ -2364,6 +2427,7 @@
           <p>
             今天学的代码调试非常的简单，只要求同学们记住代码调试的这几个按钮的作用即可，后面还会学到很多的代码调试技巧。
           </p>
+          <img src="./images/08-js循环/断点调试.png" alt="" />
           <h2>2.2 for 循环重复相同的代码</h2>
           <p>for循环可以重复相同的代码 ，比如我们要输出10句“媳妇我错了”</p>
           <code
@@ -2426,11 +2490,21 @@
             } console.log('1-100之间整数的和 = ' + sum);</code
           >
           <p class="color-red bold">课堂练习</p>
-          <p>
-            ① 求1-100之间所有数的平均值<br />
-            ② 求1-100之间所有偶数和奇数的和<br />
-            ③ 求1-100之间所有能被3整除的数字的和
-          </p>
+          <p>① 求1-100之间所有数的平均值</p>
+          <img
+            src="./images/08-js循环/1-求1-100之间所有数的平均值.png"
+            alt=""
+          />
+          <p>② 求1-100之间所有偶数和奇数的和</p>
+          <img
+            src="./images/08-js循环/2-求1-100之间所有偶数和奇数的和.png"
+            alt=""
+          />
+          <p>③ 求1-100之间所有能被3整除的数字的和</p>
+          <img
+            src="./images/08-js循环/3-求1-100之间所有能被3整除的数字的和.png"
+            alt=""
+          />
           <p class="color-red bold">课堂案例 2： 求学生成绩</p>
           <p>
             要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩。
@@ -2460,6 +2534,7 @@
             alert('班级总的成绩是：' + sum);<br />
             alert('班级总的平均成绩是：' + average);</code
           >
+          <img src="./images/08-js循环/代码-求学生成绩.png" alt="" />
           <p class="bold">一行打印五个星星</p>
           <p>我们采取追加字符串的方式，这样可以打印到控制台上。</p>
           <code
@@ -2523,6 +2598,7 @@
             <li>内层循环执行的顺序也要遵循 for 循环的执行顺序</li>
             <li>外层循环执行一次，内层循环要执行全部次数</li>
           </ul>
+          <img src="./images/08-js循环/代码-双for循环语法.png" alt="" />
           <h2>3.4 打印五行五列星星</h2>
           <img src="./images/08-js循环/3.4-打印五行星星.png" alt="" />
           <p>核心：</p>
@@ -2583,6 +2659,8 @@
             &nbsp;console.log(str);</code
           >
           <p class="bold color-red">思考：打印正三角形</p>
+          <img src="./images/08-js循环/正三角形图片.png" alt="" />
+          <img src="./images/08-js循环/代码-正三角形.png" alt="" />
           <p class="bold color-red">课堂案例3： 打印九九乘法表</p>
           <img src="./images/08-js循环/打印九九乘法表.png" alt="" />
           <p class="bold color-red">案例分析</p>
@@ -2662,6 +2740,7 @@
             循环体代码执行完毕后，程序会继续判断执行条件表达式，如条件仍为true，则会继续执行循环体，直到循环条件为
             false 时，整个循环过程才会结束
           </p>
+          <img src="./images/08-js循环/代码-while.png" alt="" />
           <p class="color-red bold">注意：</p>
           <p>
             ① 使用 while
@@ -2669,6 +2748,31 @@
             ② while 循环和 for 循环的不同之处在于 while
             循环可以做较为复杂的条件判断，比如判断用户名和密码
           </p>
+          <p class="color-red bold">课堂案例 1</p>
+          <p>① 打印人的一生，从1岁到100岁</p>
+          <img src="./images/08-js循环/代码-while-1-打印人的一生.png" alt="" />
+          <p>② 计算 1 ~ 100 之间所有整数的和</p>
+          <img
+            src="./images/08-js循环/2-求1-100之间所有偶数和奇数的和.png"
+            alt=""
+          />
+          <p class="color-red bold">课堂案例 2：询问你爱我吗</p>
+          <p>
+            弹出一个提示框， 你爱我吗？
+            如果输入我爱你，就提示结束，否则，一直询问。
+          </p>
+          <img src="./images/08-js循环/你爱我吗？.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框，要求用户输入。<br />
+            ② 判断条件比较复杂我们使用 while 循环。<br />
+            ③ while 循环语句中的条件表达式只要输入的不是 我爱你，<span
+              class="color-red"
+              >就一直循环。</span
+            >
+          </p>
+          <p class="color-red bold">实现代码：</p>
+          <img src="./images/08-js循环/代码-while-3-你爱我吗.png" alt="" />
         </section>
         <hr />
         <section id="doWhileXunHuan">
@@ -2693,6 +2797,89 @@
             </li>
             <li>
               <a href="#conBre"><span>continue break</span></a>
+            </li>
+          </ul>
+          <h1>5. do while 循环</h1>
+          <p>
+            do... while 语句其实是 while
+            语句的一个变体。该循环会先执行一次代码块，然后对条件表达式进行判断，如果条件为真，就会重复执行循环体，否则退出循环。
+          </p>
+          <p>do... while 语句的语法结构如下：</p>
+          <code
+            >do {<br />
+            &nbsp;// 循环体代码 - 条件表达式为 true 时重复执行循环体代码<br />
+            }while(条件表达式);</code
+          >
+          <h2>执行思路：</h2>
+          <p>
+            ① 先执行一次循环体代码<><br />
+            ② 再执行条件表达式，如果结果为 true，则继续执行循环体代码，如果为
+            false，则退出循环，继续执行后面代码
+          </p>
+          <img src="./images/08-js循环/代码-do-while.png" alt="" />
+          <p class="color-red">
+            <span class="bold">注意：</span>先再执行循环体，再判断，我们会发现
+            do…while 循环语句<span class="bold">至少会执行一次循环体代码</span>
+          </p>
+          <p class="color-red bold">课堂案例 1：</p>
+          <p>① 打印人的一生，从1岁到100岁</p>
+          <img
+            src="./images/08-js循环/代码-do-while-1-打印人的一生.png"
+            alt=""
+          />
+          <p>② 计算 1 ~ 100 之间所有整数的和</p>
+          <img
+            src="./images/08-js循环/代码-do-while-2-计算1-100之间所有整数和.png"
+            alt=""
+          />
+          <p>
+            ① 打印人的一生，从1岁到100岁<br />
+            ② 计算 1 ~ 100 之间所有整数的和
+          </p>
+          <p class="color-red bold">课堂案例 2：询问你爱我吗</p>
+          <p>
+            弹出一个提示框， 你爱我吗？
+            如果输入我爱你，就提示结束，否则，一直询问。
+          </p>
+          <img src="./images/08-js循环/你爱我吗？.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框，要求用户输入。<br />
+            ② 判断条件我们使用 do…while 循环。<br />
+            ③ do… while 循环语句中的条件表达式只要输入的不是我爱你，<span
+              class="color-red"
+              >就一直循环。</span
+            >
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >do {<br />
+            &nbsp;var love = prompt('你爱我吗？');<br />
+            } while (love != '我爱你')<br />
+            alert('我也爱你啊');</code
+          >
+          <h2>循环小结</h2>
+          <ul>
+            <li>JS 中循环有 for 、while 、 do while</li>
+            <li>三个循环很多情况下都可以相互替代使用</li>
+            <li>
+              如果是用来计次数，跟数字相关的，三者使用基本相同，但是我们更喜欢用
+              for
+            </li>
+            <li>
+              while 和 do…while 可以做更复杂的判断条件，比 for 循环灵活一些
+            </li>
+            <li>
+              while 和 do…while 执行顺序不一样，while 先判断后执行，do…while
+              先执行一次，再判断执行
+            </li>
+            <li>
+              while 和 do…while 执行次数不一样，do…while 至少会执行一次循环体，
+              而 while 可能一次也不执行
+            </li>
+            <li>
+              实际工作中，<span class="color-red">我们更常用for 循环语句，</span
+              >它写法更简洁直观， 所以这个要重点学习
             </li>
           </ul>
         </section>
@@ -2721,11 +2908,223 @@
               >
             </li>
           </ul>
+          <h1>6. continue break</h1>
+          <h2>6.1 continue 关键字</h2>
+          <p>
+            <span class="color-red bold">continue 关键字</span>用于立即<span
+              class="color-red bold"
+              >跳出本次循环，继续下一次循环</span
+            >（本次循环体中 continue 之后的代码就会少执行一次）。
+          </p>
+          <p>
+            <span class="color-red">案例1：</span
+            >吃5个包子，第3个有虫子，就扔掉第3个，继续吃第4个第5个包子，其代码实现如下：
+          </p>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;&nbsp;console.log('这个包子有虫子，扔掉');<br />
+            &nbsp;&nbsp;&nbsp;continue; // 跳出本次循环，跳出的是第3次循环<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+          <p>
+            <span class="color-red">案例2：</span>求1~100 之间，
+            除了能被7整除之外的整数和
+          </p>
+          <code
+            >var sum = 0;<br />
+            for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;&nbsp;if (i % 7 == 0) {<br />
+            &nbsp;&nbsp;&nbsp;continue;<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;sum += i;<br />
+            }<br />
+            console.log(sum);</code
+          >
+          <h2>6.2 break 关键字</h2>
+          <p>
+            <span class="color-red bold">break 关键字用于</span>立即<span
+              class="color-red bold"
+              >跳出整个循环</span
+            >（循环结束）。
+          </p>
+          <p>
+            例如，吃5个包子，吃到第3个发现里面有半个虫子，其余的不吃了，其代码实现如下：
+          </p>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;break; // 直接退出整个for 循环，跳到整个for下面的语句<br />
+            &nbsp;}<br />
+            &nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="xunHuanZuoYie">
+          <p>1. 求1-100之间所有数的总和与平均值</p>
+          <p>2. 求1-100之间所有偶数的和</p>
+          <p>3. 求100以内7的倍数的总和</p>
+          <p>
+            4. 使用for 循环打印矩形，要求每次只能输出一个☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆
+          </p>
+          <p>
+            5. 使用for循环打印三角形<br />
+            ☆<br />
+            ☆☆<br />
+            ☆☆☆<br />
+            ☆☆☆☆<br />
+            ☆☆☆☆☆
+          </p>
+          <p>6. 使用for循环打印99乘法表</p>
+          <p>
+            7.
+            接受用户输入的用户名和密码，若用户名为“admin”，密码为“123456”，则提示用户登录成功！否则，让用户一直登录。
+          </p>
+          <p>
+            8.
+            求整数1~100的累加值，但要求跳过所有个位为3的数【用continue实现】。
+          </p>
+          <p class="bold">小组项目：简易ATM</p>
+          <table>
+            <tr>
+              <td><img src="./images/assignment/3-day/ATM.gif" alt="" /></td>
+              <td>
+                <ul>
+                  <li>里面现存有100块钱</li>
+                  <li>
+                    如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提示框
+                  </li>
+                  <li>如果取钱，就减去取的钱数，之后弹出显示余额提示框</li>
+                  <li>如果显示余额，就输出余额</li>
+                  <li>如果退出，弹出退出信息提示框</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
         </section>
       </div>
-      <section class="main-section" id="Constants">
-        <header>09</header>
-      </section>
+      <div class="main-section" id="jsMingMingGuiFan">
+        <header>09-JavaScript 命名规范以及语法格式</header>
+        <section id="biaoZhiFuMingMIngGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"
+                ><span class="color-red">标识符命名规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>标识符命名规范</h1>
+          <ul>
+            <li>变量、函数的命名必须要有意义</li>
+            <li>变量的名称一般用名词</li>
+            <li>函数的名称一般用动词</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="chaoZuoFuFuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"
+                ><span class="color-red">操作符规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>2. 操作符的规范</h1>
+          <code
+            >//运算符(也叫操作符)的左右两侧各保留一个空格,例如下面的“=”赋值运算符,“<="比较运算符，“==”判断运算符，比较特殊的就是“i++”的++不用保留空格<br />
+            for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;&nbsp;console.log('这个包子有虫子，扔掉');<br />
+            &nbsp;&nbsp;&nbsp;continue; // 跳出本次循环，跳出的是第3次循环<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="danHangZhuShiGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"
+                ><span class="color-red">单行注释规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>3. 单行注释规范</h1>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;break; // 单行注释前面注意有个空格，（//+空格+文本）<br />
+            &nbsp;}<br />
+            &nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="otherGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span class="color-red">其他规范</span></a>
+            </li>
+          </ul>
+          <img
+            src="./images/09-JavaScript 命名规范以及语法格式/4-其他规范.png"
+            alt=""
+          />
+          <ul>
+            <li>小括号两侧包含空格</li>
+            <li>左大括号和if在同一行上</li>
+            <li>右大括号和if的i对其</li>
+          </ul>
+        </section>
+      </div>
       <section class="main-section" id="Data_types">
         <header>10</header>
       </section>
