@@ -154,9 +154,9 @@ section a:active {
 }
 table,
 th,
-td {
+td {left
   border: 1px solid black;
-  text-align: center;
+  text-align: left;
 }
 section p {
   color: #4d4e53;
