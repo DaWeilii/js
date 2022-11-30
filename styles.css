@@ -154,9 +154,9 @@ section a:active {
 }
 table,
 th,
-td {left
+td {
   border: 1px solid black;
-  text-align: left;
+  text-align: center;
 }
 section p {
   color: #4d4e53;
@@ -174,3 +174,6 @@ img {
 /* code span {
   white-space: nowrap;
 } */
+.no-border {
+  border: none;
+}
