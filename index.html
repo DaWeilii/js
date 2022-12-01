@@ -1,187 +1,4575 @@
-html,
-body {
-  min-width: 290px;
-  color: #4d4e53;
-  background-color: #ffffff;
-  font-family: "Open Sans", Arial, sans-serif;
-  line-height: 1.5;
-  /* 以下自己添加 */
-  overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script>
+      var question = prompt("这个笔记是谁写的？");
+      while (question !== "李伟杰") {
+        alert("不好意思，您输入错误，麻烦您重新输入一下。");
+        question = prompt("这个笔记是谁写的？");
+      }
+      alert("回答正确，欢迎您观看我的笔记。");
+    </script> -->
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>JavaScript 基础语法 <br />(学习笔记)</header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#jsjbcjc">01-计算机编程基础 </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#csjs">02-初识JavaScript</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bianLiang">03-变量 </a>
+        </li>
+        <li><a class="nav-link" href="#shuJuLeiXing">04-数据类型 </a></li>
+        <li><a class="nav-link" href="#kzydyjzy">05-扩展阅读以及作业</a></li>
+        <li>
+          <a class="nav-link" href="#jsYunShuanFu">06-运算符</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#jslckzfz">07-流程控制-分支</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#jsXunHuan">08-流程控制-循环</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#jsMingMingGuiFan"
+            >09-命名规范以及语法格式</a
+          >
+        </li>
+        <li><a class="nav-link" href="#jsShuZhu">10-数组</a></li>
+        <li>
+          <a class="nav-link" href="#jsHanShu">11-函数</a>
+        </li>
+        <li><a class="nav-link" href="#while_statement">12</a></li>
+        <li>
+          <a class="nav-link" href="#Function_declarations">13</a>
+        </li>
+        <li><a class="nav-link" href="#Reference">14</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <div class="main-section" id="jsjbcjc">
+        <header>01-计算机编程基础</header>
+        <section id="banChenYuYan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#banChenYuYan"
+                ><span class="bold color-red">编程语言</span></a
+              >
+            </li>
+            <li><a href="#jiShuanJiJiChu">计算机基础</a></li>
+          </ul>
+          <h1>1. 编程语言</h1>
+          <h2>1.1 编程</h2>
+          <p>
+            <span class="color-red bold">编程：</span
+            >就是让计算机为解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。
+          </p>
+          <p>
+            <span class="color-red bold">计算机程序：</span
+            >就是计算机所执行的一系列的<span class="color-red">指令集合</span
+            >，而程序全部都是用我们所掌握的语言来编写的，所以人们要控制计算机一定要通过计算机语言向计算机发出命令。
+          </p>
+          <p>
+            从事编程的人员，就是 <span class="color-red bold">程序员</span>。
+            但是一般程序员都比较幽默，为了形容自己的辛苦工作，也成为“码农”，
+            或者 “程序猿”/ “程序媛”
+          </p>
+          <p>
+            <span class="color-red bold">注意：</span>
+            上面所定义的计算机指的是<span>任何能够执行代码的设备</span>，可能是智能手机、ATM机、黑莓PI、服务器
+            等等
+          </p>
+          <h2>1.2 计算机语言</h2>
+          <p>
+            <span class="color-red bold">计算机语言</span>指用于<span
+              class="red"
+              >人与计算机之间通讯的语言</span
+            >，它是人与计算机之间传递信息的<span class="color-red">媒介</span>。
+          </p>
+          <p>
+            计算机语言的种类非常的多，总的来说可以分成<span class="color-red"
+              >机器语言，汇编语言和高级语言</span
+            >三大类。
+          </p>
+          <p>
+            实际上计算机最终所执行的都是
+            <span class="color-red bold">机器语言</span
+            >，它是由“0”和“1”组成的二进制数，<span class="color-red bold"
+              >二进制是计算机语言的基础</span
+            >。
+          </p>
+          <code
+            >0=00000000 1=00000001 2=00000010 3=00000011 4=00000100 5=00000101
+            6=00000110 7=00000111 8=00001000 9=00001001 10=00001010
+          </code>
+          <h2>1.3 编程语言</h2>
+          <p>
+            可以通过类似于人类语言的
+            ”语言”来控制计算机，让计算机为我们做事情，这样的语言就叫做编程语言（Programming
+            Language）
+          </p>
+          <p>
+            编程语言是用来控制计算机的一系列指令，它有固定的格式和词汇（不同编程语言的格式和词汇不一样），必须遵守。
+            如今通用的编程语言有两种形式：<span class="color-red">汇编语言</span
+            >和<span class="color-red">高级语言</span>。
+          </p>
+          <ul>
+            <li>
+              <span class="color-red bold">汇编语言</span
+              >和机器语言实质是相同的，都是直接对硬件操作，只不过指令采用了英文缩写的标识符，容易识别和记忆。
+            </li>
+            <li>
+              <span class="color-red bold">高级语言</span
+              >主要是相对于低级语言而言，它并不是特指某一种具体的语言，而是包括了很多编程语言，常用的有C语言、C++、
+              Java、C#、Python、PHP、JavaScript、Go语言、Objective-C、Swift等。
+            </li>
+          </ul>
+          <code
+            >C语言：puts("你好"); <br />PHP：echo "你好";<br />Java：System.out.println("你好");
+            JavaScript：alert("你好"）;
+          </code>
+          <h2>1.4 翻译器</h2>
+          <p>
+            高级语言所编制的程序不能直接被计算机识别，必须经过转换才能被执行，为此，我们需要一个翻译器。
+          </p>
+          <p>
+            翻译器可以将我们所编写的源代码转换为机器语言，这也被称为二进制化。
+            记住1和 0。
+          </p>
+          <img src="images/01计算机基础/翻译器.png" alt="fanyiqi" />
+          <h2>1.5 编程语言和标记语言区别</h2>
+          <ul>
+            <li>
+              <span class="color-red bold">编程语言</span
+              >有很强的逻辑和行为能力。在编程语言里, 你会看到很多 if else 、for
+              、while等具有逻辑性和行为能力的 指令，这是主动的。
+            </li>
+            <li>
+              <span class="color-red bold">标记语言</span
+              >（html）不用于向计算机发出指令，常用于格式化和链接。标记语言的存在是用来被读取的,
+              他是被动的
+            </li>
+          </ul>
+          <h2>总结</h2>
+          <ol>
+            <li>计算机可以帮助人类解决某些问题</li>
+            <li>程序员利用编程语言编写程序发出指令控制计算机来实现这些任务</li>
+            <li>编程语言有机器语言、汇编语言、高级语言</li>
+            <li>高级语言需要一个翻译器转换为计算机识别的机器语言</li>
+            <li>编程语言是主动的有很强的逻辑性</li>
+          </ol>
+          <hr />
+        </section>
+        <section id="jiShuanJiJiChu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#banChenYuYan">编程语言</a>
+            </li>
+            <li>
+              <a href="#jiShuanJiJiChu"
+                ><span class="bold color-red">计算机基础</span></a
+              >
+            </li>
+          </ul>
+          <h2>2. 计算机基础</h2>
+          <h3>2.1 计算机组成</h3>
+          <img
+            src="./images/01计算机基础/计算机组成.png"
+            alt="jiShuanJiZhuChen"
+          />
+          <h3>2.2 数据存储</h3>
+          <ol>
+            <li>计算机内部使用二进制 0 和 1来表示数据</li>
+            <li>
+              所有数据，包括文件、图片等最终都是以二进制数据（0 和
+              1）的形式存放在硬盘中的。
+            </li>
+            <li>
+              所有程序，包括操作系统，本质都是各种数据，也以二进制数据的形式存放在硬盘中。平时我们所说的安装软件，其实就是把程序文件复制到硬盘中。
+            </li>
+            <li>硬盘、内存都是保存的二进制数据。</li>
+          </ol>
+          <h3>2.3 数据存储单位</h3>
+          <p>bit < byte < kb < GB < TB<.....</p>
+          <ul>
+            <li>位(bit)： 1bit 可以保存一个 0 或者 1 （最小的存储单位）</li>
+            <li>字节(Byte)：1B = 8b</li>
+            <li>千字节(KB)：1KB = 1024B</li>
+            <li>兆字节(MB)：1MB = 1024KB</li>
+            <li>吉字节(GB): 1GB = 1024MB</li>
+            <li>太字节(TB): 1TB = 1024GB</li>
+            <li>......</li>
+          </ul>
+          <h3>2.4 程序运行</h3>
+          <img src="images/01/程序运行.png" alt="" />
+          <ul>
+            <li>1. 打开某个程序时，先从硬盘中把程序的代码加载到内存中</li>
+            <li>2. CPU执行内存中的代码</li>
+          </ul>
+          <p>
+            <span class="color-red">注意：</span
+            >之所以要内存的一个重要原因，是因为 cpu
+            运行太快了，如果只从硬盘中读数据，会浪费cpu性能，所以，才使用存取速度更快的内存来保存运行时的数据。（内存是电，硬盘是机械）
+          </p>
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="csjs">
+        <header>02-初识JavaScript</header>
+        <section id="chuShijs">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"
+                ><span class="color-red bold">初识 JavaScript</span></a
+              >
+            </li>
+            <li>
+              <a href="#jsZhuShi"><span>JavaScript 注释</span></a>
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"><span>JavaScript 输入输出语句</span></a>
+            </li>
+          </ul>
+          <h1>1. 初识 JavaScript</h1>
+          <h2>1.1 JavaScript 是什么</h2>
+          <ul>
+            <li>布兰登·艾奇（Brendan Eich，1961年～）。</li>
+            <li>神奇的大哥用10天完成 JavaScript 设计</li>
+            <li>
+              最初命名为 LiveScript，后来在与 Sun 合作之后将其改名为
+              JavaScript。
+            </li>
+            <li>
+              JavaScript 是世界上最流行的语言之一，是一种运行在客户端的脚本语言
+              （Script 是脚本的意思）
+            </li>
+            <li>
+              脚本语言：不需要编译，运行过程中由 js 解释器( js
+              引擎）逐行来进行解释并执行
+            </li>
+            <li>现在也可以基于 Node.js 技术进行服务器端编程</li>
+          </ul>
+          <img src="./images/02-初识js/客户端.png" alt="" />
+          <p class="color-red">
+            为了阅读方便，我们后面把JavaScript 简称为 JS。
+          </p>
+          <hr />
+          <h2>1.2 JavaScript 的作用</h2>
+          <ul>
+            <li>
+              表单动态校验（密码强度检测）<span class="color-red"
+                >（ JS 产生最初的目的 ）</span
+              >
+            </li>
+            <li>网页特效</li>
+            <li>服务端开发(Node.js)</li>
+            <li>桌面程序(Electron)</li>
+            <li>App(Cordova)</li>
+            <li>控制硬件-物联网(Ruff)</li>
+            <li>游戏开发(cocos2d-js)</li>
+          </ul>
+          <hr />
+          <h2>1.3 HTML/CSS/JS 的关系</h2>
+          <p class="color-red bold">HTML/CSS 标记语言--描述类语言</p>
+          <ul>
+            <li>HTML 决定网页结构和内容( 决定看到什么 )，相当 于人的身体</li>
+            <li>
+              CSS 决定网页呈现给用户的模样( 决定好不好看 )，
+              相当于给人穿衣服、化妆
+            </li>
+          </ul>
+          <p class="color-red bold">JS 脚本语言--编程类语言</p>
+          <ul>
+            <li>实现业务逻辑和页面控制( 决定功能 )，相当于人的各种动作</li>
+          </ul>
+          <hr />
+          <h2>1.4 浏览器执行 JS 简介</h2>
+          <p>浏览器分成两部分：渲染引擎和 JS 引擎</p>
+          <ul>
+            <li>
+              <span class="color-red bold">渲染引擎：</span
+              >用来解析HTML与CSS，俗称内核，比如 chrome 浏览器的 blink
+              ，老版本的 webkit
+            </li>
+            <li>
+              <span class="color-red bold">JS 引擎：</span>也称为 JS 解释器。
+              用来读取网页中的JavaScript代码，对其处理后运行，比如 chrome
+              浏览器的V8
+            </li>
+          </ul>
+          <p class="color-red">
+            浏览器本身并不会执行JS代码，而是通过内置 JavaScript 引擎(解释器)
+            来执行 JS 代码 。JS
+            引擎执行代码时逐行解释每一句源码（转换为机器语言），然后由计算机去执行，所以
+            JavaScript 语言归为脚本语言，会逐行解释执行。
+          </p>
+          <img src="./images/02-初识js/js引擎.png" alt="" />
+          <hr />
+          <h2>1.5 JS 的组成</h2>
+          <img src="./images/02-初识js/js组成.png" alt="" />
+          <h3>1.5.1 ECMAScript</h3>
+          <p>
+            <span class="color-red bold">ECMAScript</span> 是由ECMA 国际（
+            原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为
+            JavaScript 或 JScript，但实际上后两者是 ECMAScript
+            语言的实现和扩展。
+          </p>
+          <img src="./images/02-初识js/ecma.png" alt="" />
+          <p class="color-red">
+            ECMAScript：ECMAScript
+            规定了JS的编程语法和基础核心知识，是所有浏览器厂商共同遵守的一套JS语法工业标准。
+          </p>
+          <p>
+            更多参看MDN:
+            <a
+              href=":https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/JavaScript_technologies_overview"
+              >:
+              https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/JavaScript_technologies_overview</a
+            >
+          </p>
+          <h3>1.5.2 DOM ——文档对象模型</h3>
+          <p>
+            <span class="color-red bold">文档对象模型</span> （Document Object
+            Model，简称DOM），是W3C组织推荐的处理可扩展标记语言的<span
+              class="color-red"
+              >标准编程接口</span
+            >。通过 DOM
+            提供的接口可以对页面上的各种元素进行操作（大小、位置、颜色等）。
+          </p>
+          <h3>1.5.3 BOM ——浏览器对象模型</h3>
+          <p>
+            <span class="color-red bold"> BOM </span>(Browser Object
+            Model，简称BOM)
+            是指浏览器对象模型，它提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。通过BOM可以操作浏览器窗口，比如弹出框、控制浏览器跳转、获取分辨率等。
+          </p>
+          <hr />
+          <h2>1.6 JS 初体验</h2>
+          <p>
+            JS 有3种书写位置，分别为<span class="color-red">行内</span
+            >、内嵌和外部。
+          </p>
+          <h3>1.6.1 行内式 JS</h3>
+          <code>
+            <input
+              type="button"
+              value="点我试试"
+              onclick="alert('Hello World')"
+            />
+          </code>
+          <img src="./images/02-初识js/行内.png" alt="" />
+          <ul>
+            <li>
+              可以将单行或少量 JS 代码写在HTML标签的事件属性中（以 on
+              开头的属性），如：onclick
+            </li>
+            <li>
+              注意单双引号的使用：在<span class="color-red bold">HTML</span
+              >中我们推荐使用双引号,<span class="color-red bold">JS</span>
+              中我们推荐使用<span class="color-red bold">单引号</span>
+            </li>
+            <li>可读性差， 在html中编写JS大量代码时，不方便阅读；</li>
+            <li>引号易错，引号多层嵌套匹配时，非常容易弄混；</li>
+            <li>特殊情况下使用</li>
+          </ul>
+          <p>
+            JS 有3种书写位置，分别为行内、<span class="color-red">内嵌</span
+            >和外部。
+          </p>
+          <h3>1.6.2 内嵌 JS</h3>
+          <img src="./images/02-初识js/内嵌 JS.png" alt="" />
+          <ul>
+            <li>可以将多行JS代码写到script标签中</li>
+            <li>内嵌 JS 是学习时常用的方式</li>
+          </ul>
+          <p>
+            JS 有3种书写位置，分别为行内、内嵌和<span class="color-red"
+              >外部</span
+            >。
+          </p>
+          <h3>1.6.3 外部 JS文件</h3>
+          <img src="./images/02-初识js/外部.png" alt="" />
+          <ul>
+            <li>
+              利于HTML页面代码结构化，把大段 JS代码独立到 HTML
+              页面之外，既美观，也方便文件级别的复用
+            </li>
+            <li> 引用外部 JS文件的 script 标签中间不可以写代码</li>
+            <li>适合于JS 代码量比较大的情况</li>
+          </ul>
+        </section>
+        <section id="jsZhuShi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"><span>初识 JavaScript</span></a>
+            </li>
+            <li>
+              <a href="#jsZhuShi"
+                ><span class="color-red bold">JavaScript 注释</span></a
+              >
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"><span>JavaScript 输入输出语句</span></a>
+            </li>
+          </ul>
+          <h1>2. JavaScript注释</h1>
+          <h2>2.1 单行注释</h2>
+          <p>
+            为了提高代码的可读性，JS与CSS一样，也提供了注释功能。JS中的注释主要有两种，分别是<span
+              class="color-red"
+              >单行注释</span
+            >和<span class="color-red">多行注释</span>。单行注释的注释方式如下：
+          </p>
+          <code> // 我是一行文字，不想被 JS引擎 执行，所以 注释起来 </code>
+          <p>// 用来注释单行文字（ 快捷键 ctrl + / ）</p>
+          <h2>2.2 多行注释</h2>
+          <p>多行注释的注释方式如下：</p>
+          <code> /* 获取用户年龄和姓名 <br />并通过提示框显示出来 */ </code>
+          <p>/* */ 用来注释多行文字（ 默认快捷键 alt + shift + a ）</p>
+          <p>快捷键修改为： ctrl + shift + /</p>
+          <p>
+            vscode → 首选项按钮 → 键盘快捷方式 → 查找 原来的快捷键 →
+            修改为新的快捷键 → 回车确认
+          </p>
+          <hr />
+        </section>
+        <section id="ShuChuShuRu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#chuShijs"><span>初识 JavaScript</span></a>
+            </li>
+            <li>
+              <a href="#jsZhuShi"><span>JavaScript 注释</span></a>
+            </li>
+            <li>
+              <a href="#ShuChuShuRu"
+                ><span class="color-red bold">JavaScript 输入输出语句</span></a
+              >
+            </li>
+          </ul>
+          <h1>3. JavaScript 输入输出语句</h1>
+          <p>
+            为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：
+          </p>
+          <table>
+            <tr>
+              <th>方法</th>
+              <th>说明</th>
+              <th>归属</th>
+            </tr>
+            <tr>
+              <td>alert(msg)</td>
+              <td>浏览器弹出警示框</td>
+              <td>浏览器</td>
+            </tr>
+            <tr>
+              <td>console.log(msg)</td>
+              <td>浏览器控制台打印输出信息</td>
+              <td>浏览器</td>
+            </tr>
+            <tr>
+              <td>prompt(info)</td>
+              <td>浏览器弹出输入框，用户可以输入</td>
+              <td>浏览器</td>
+            </tr>
+          </table>
+          <p>
+            <span class="color-red bold">注意：</span>alert()
+            主要用来显示消息给用户，console.log()
+            用来给程序员自己看运行时的消息。
+          </p>
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="bianLiang">
+        <header>03-变量</header>
+        <section id="bianLiangGaiShu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"
+                ><span class="color-red">变量概述</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>1. 变量概述</h1>
+          <h2>1.1 什么是变量</h2>
+          <p>白话：变量就是一个装东西的盒子。</p>
+          <p>
+            通俗：变量是用于存放数据的<span class="color-red">容器</span>。
+            我们通过<span class="color-red">变量名</span>
+            获取数据，甚至数据可以修改。
+          </p>
+          <img src="./images/03-变量/变量盒子.png" alt="" />
+          <h2>1.2 变量在内存中的存储</h2>
+          <p>本质：变量是程序在内存中申请的一块用来存放数据的空间。</p>
+          <p>类似我们酒店的房间，一个房间就可以看做是一个变量。</p>
+          <img src="./images/03-变量/变量的本质.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangShiYong">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"
+                ><span class="color-red">变量的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>2. 变量的使用</h1>
+          <p>变量在使用时分为两步： 1. 声明变量 2. 赋值</p>
+          <h2>2.1 声明变量</h2>
+          <code> // 声明变量<br />var age; // 声明一个 名称为age 的变量 </code>
+          <ul>
+            <li>
+              <span class="color-red">var</span> 是一个 JS关键字，用来声明变量(
+              variable 变量的意思
+              )。使用该关键字声明变量后，计算机会自动为变量分配内存空间，不需要程序员管
+            </li>
+            <li>
+              age 是程序员定义的变量名，我们要通过变量名来访问内存中分配的空间
+            </li>
+          </ul>
+          <h2>2.2 赋值</h2>
+          <code>age = 10; // 给 age 这个变量赋值为 10</code>
+          <ul>
+            <li>
+              <span class="color-red bold">=</span>
+              用来把右边的值赋给左边的变量空间中 此处代表赋值的意思
+            </li>
+            <li>变量值是程序员保存到变量空间里的值</li>
+          </ul>
+          <h2>2.3 变量的初始化</h2>
+          <code>var age = 18; // 声明变量同时赋值为 18 </code>
+          <p>
+            声明一个变量并赋值， 我们称之为<span class="color-red"
+              >变量的初始化。</span
+            >
+            <img src="./images/03-变量/变量的初始化.png" alt="" />
+          </p>
+          <h2>案例：变量的使用</h2>
+          <p>
+            有个叫卡卡西的人在旅店登记的时候前台让他填一张表，这张表里的内容要存到电脑上，表中的内容有：姓名、年龄、邮箱、家庭住址和工资，存储之后需要把这些信息显示出来，所显示的内容如下：
+          </p>
+          <p>
+            我叫旗木卡卡西，我住在火影村，我今年30岁了，我的邮箱是
+            kakaxi@itcast.cn，我的工资2000
+          </p>
+          <img src="./images/03-变量/变量案例.png" alt="" />
+          <h2>案例：变量的使用</h2>
+          <p>1. 弹出一个输入框，提示用户输入姓名</p>
+          <p>2. 弹出一个对话框，输出用户刚才输入的姓名。</p>
+          <img src="./images/03-变量/弹出用户名.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangYuFa">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"
+                ><span class="color-red">变量语法扩展</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>3. 变量语法扩展</h1>
+          <h2>3.1 更新变量</h2>
+          <p>
+            一个变量被重新复赋值后，它原有的值就会被覆盖，变量值将以最后一次赋的值为准。
+          </p>
+          <code
+            >var age = 18;<br />
+            age = 81;//最后的结果就是81因为18被覆盖掉了</code
+          >
+          <h2>3.2 同时声明多个变量</h2>
+          <p>
+            同时声明多个变量时，只需要写一个 var，
+            多个变量名之间使用英文逗号隔开。
+          </p>
+          <code>var age = 10, name = 'zs', sex = 2; </code>
+          <h2>3.3 声明变量特殊情况</h2>
+          <table>
+            <tr>
+              <th>情况</th>
+              <th>说明</th>
+              <th>结果</th>
+            </tr>
+            <tr>
+              <td>var age ; console.log (age);</td>
+              <td>只声明 不赋值</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>console.log(age)</td>
+              <td>不声明 不赋值 直接使用</td>
+              <td>报错</td>
+            </tr>
+            <tr>
+              <td>age = 10; console.log (age);</td>
+              <td>不声明 只赋值</td>
+              <td>10</td>
+            </tr>
+          </table>
+          <img src="./images/03-变量/更新变量.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiangMinMing">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"
+                ><span class="color-red">变量命名规范</span>
+              </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"><span>交换变量案例</span></a>
+            </li>
+          </ul>
+          <h1>4. 变量命名规范</h1>
+          <ul>
+            <li>
+              由字母(A-Za-z)、数字(0-9)、下划线(_)、美元符号( $
+              )组成，如：usrAge, num01, _name
+            </li>
+            <li>严格区分大小写。var app; 和 var App; 是两个变量</li>
+            <li>不能 以数字开头。 18age 是错误的</li>
+            <li>不能 是关键字、保留字。例如：var、for、while</li>
+            <li>变量名必须有意义。 MMD BBD nl → age</li>
+            <li>
+              遵守驼峰命名法。首字母小写，后面单词的首字母需要大写。 myFirstName
+            </li>
+            <li>推荐翻译网站： 有道 爱词霸</li>
+          </ul>
+          <img src="./images/03-变量/骆驼.png" alt="" />
+          <img src="./images/03-变量/命名规范.png" alt="" />
+        </section>
+        <hr />
+        <section id="jiaoHuanBiaoLiang">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#bianLiangGaiShu"><span>变量概述</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangShiYong"><span>变量的使用</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangYuFa"><span>变量语法扩展</span></a>
+            </li>
+            <li>
+              <a href="#bianLiangMinMing"><span>变量命名规范</span> </a>
+            </li>
+            <li>
+              <a href="#jiaoHuanBiaoLiang"
+                ><span class="color-red">交换变量案例</span></a
+              >
+            </li>
+          </ul>
+          <h1>案例：课堂练习</h1>
+          <p>
+            要求：交换两个变量的值 ( 实现思路：使用一个 临时变量 用来做中间存储
+            )
+          </p>
+          <img src="./images/03-变量/交换.png" alt="" />
+          <h3>小结</h3>
+          <p>
+            1，为什么需要变量？ <br />
+            因为我们一些数据需要保存，所以需要变量。 <br />2，变量是什么？
+            <br />变量就是一个容器，用来存放数据的。方便我们以后使用里面的数据。
+            <br />3，变量的本质是什么?<br />
+            变量是内存里的一块空间，用来存储数据。<br />
+            4，变量怎么使用的？
+            <br />我们使用变量的时候，一定要声明变量，然后赋值。
+            声明变量本质是去内存申请空间。<br />
+            5，什么是变量的初始化？<br />
+            声明变量并赋值我们称之为变量的初始化。<br />
+            6，变量命名规范有哪些？
+            <br />变量名尽量要规范，见名知意——驼峰命名法。<br />
+            7，交换2个变量值的思路？<br />
+            区分哪些变量名不合法 学会交换2个变量
+          </p>
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="shuJuLeiXing">
+        <header>04-数据类型</header>
+        <section id="ShuJuLeiXingJianJie">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#ShuJuLeiXingJianJie"
+                ><span class="color-red">数据类型简介</span></a
+              >
+            </li>
+            <li>
+              <a href="#jianDanShuJu"><span>简单数据类型</span></a>
+            </li>
+            <li>
+              <a href="#huoQuBianLiang"><span>获取变量数据类型</span></a>
+            </li>
+            <li>
+              <a href="#ShuJuZhuanHuan"><span>数据类型转换</span></a>
+            </li>
+          </ul>
+          <h1>1. 数据类型简介</h1>
+          <h2>1.1 为什么需要数据类型</h2>
+          <p>
+            在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，充分利用存储空间，于是定义了不同的数据类型。
+          </p>
+          <p>
+            简单来说，数据类型就是数据的类别型号。比如姓名“张三”，年龄18，这些数据的类型是不一样的
+          </p>
+          <h2>1.2 变量的数据类型</h2>
+          <p>
+            变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。<span
+              class="color-red bold"
+              >JavaScript 是一种弱类型或者说动态语言。</span
+            >
+            这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。
+          </p>
+          <code
+            ><span>var age = 10; // 这是一个数字型</span>
+            var areYouOk = '是的'; //这是一个字符串
+          </code>
+          <p>
+            在代码运行时，变量的数据类型是由 JS引擎
+            <span class="color-red"> 根据 = 右边变量值的数据类型来判断</span>
+            的，运行完毕之后， 变量就确定了数据类型。<span class="color-red"
+              >JavaScript
+              拥有动态类型，同时也意味着相同的变量可用作不同的类型：</span
+            >
+          </p>
+          <code
+            >var x = 6; // x 为数字<br />var x = "Bill"; // x 为字符串
+          </code>
+          <h2>1.3 数据类型的分类</h2>
+          <p>JS 把数据类型分为两类：</p>
+          <ul>
+            <li>简单数据类型 （Number,String,Boolean,Undefined,Null）</li>
+            <li>复杂数据类型 （object）</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="jianDanShuJu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#ShuJuLeiXingJianJie"><span>数据类型简介</span></a>
+            </li>
+            <li>
+              <a href="#jianDanShuJu"
+                ><span class="color-red">简单数据类型</span></a
+              >
+            </li>
+            <li>
+              <a href="#huoQuBianLiang"><span>获取变量数据类型</span></a>
+            </li>
+            <li>
+              <a href="#ShuJuZhuanHuan"><span>数据类型转换</span></a>
+            </li>
+          </ul>
+          <h1>2. 简单数据类型</h1>
+          <h2>2.1 简单数据类型（基本数据类型）</h2>
+          <p>JavaScript 中的简单数据类型及其说明如下：</p>
+          <img src="./images/04-数据类型/简单数据类型.png" alt="" />
+          <h2>2.2 数字型<span class="color-red"> Number</span></h2>
+          <p>
+            JavaScript 数字类型既可以用来保存整数值，也可以保存小数(浮点数）。
+          </p>
+          <code> var age = 21; // 整数<br />var Age = 21.3747; // 小数 </code>
+          <h3>2.2.1 数字型进制</h3>
+          <p>最常见的进制有二进制、八进制、十进制、十六进制。</p>
+          <code
+            >// 1.八进制数字序列范围：0~7<br />
+            var num1 = 07; // 对应十进制的7<br />
+            var num2 = 019; // 对应十进制的19<br />
+            var num3 = 08;//对应十进制的8<br />
+            // 2.十六进制数字序列范围：0~9以及A~F<br />
+            var num = 0xA;
+          </code>
+          <p>
+            现阶段我们只需要记住，<span class="color-red"
+              >在JS中八进制前面加0，十六进制前面加 0x
+            </span>
+          </p>
+          <h3>2.2.2 数字型范围</h3>
+          <p>JavaScript中数值的最大和最小值</p>
+          <code
+            >alert(Number.MAX_VALUE);// 1.7976931348623157e+308
+            alert(Number.MIN_VALUE); // 5e-324</code
+          >
+          <ul>
+            <li>
+              最大值：Number.MAX_VALUE，这个值为： 1.7976931348623157e+308
+            </li>
+            <li>最小值：Number.MIN_VALUE，这个值为：5e-32</li>
+          </ul>
+          <h3>2.2.3 数值型三个特殊值</h3>
+          <code
+            >alert(Infinity); // Infinity<br />
+            alert(-Infinity); // -Infinity<br />
+            alert(NaN); // NaN<br />
+          </code>
+          <ul>
+            <li>Infinity ，代表无穷大，大于任何数值</li>
+            <li>-Infinity ，代表无穷小，小于任何数值</li>
+            <li>NaN ，Not a number，代表一个非数值</li>
+          </ul>
+          <h3>2.2.4 isNaN()</h3>
+          <p>用来判断一个变量是否为非数字的类型，返回 true 或者 false</p>
+          <img src="./images/04-数据类型/isNoN.png" alt="" />
+          <code
+            >var usrAge = 21;<br />
+            var isOk = isNaN(userAge);<br />
+            console.log(isNum); // false ，21 不是一个非数字<br />
+            var usrName = "andy";<br />
+            <span
+              >console.log(isNaN(userName)); // true ，"andy"是一个非数字</span
+            >
+          </code>
+          <img src="./images/04-数据类型/13-isNoN.png" alt="" />
+          <img src="./images/04-数据类型/12-数字型Number.png" alt="" />
+          <h2>2.3 字符串型 <span class="color-red">String</span></h2>
+          <p>
+            字符串型可以是引号中的任意文本，其语法为
+            <span class="color-red">双引号""</span> 和<span class="color-red"
+              >单引号''</span
+            >
+          </p>
+          <code
+            ><span
+              >var strMsg = "我爱北京天安门~"; // 使用双引号表示字符串</span
+            >
+            <span>var strMsg2 = '我爱吃猪蹄~'; // 使用单引号表示字符串</span>
+            <span>// 常见错误</span>
+            <span>var strMsg3 = 我爱大肘子; //</span>
+            <span>报错，没使用引号，会被认为是js代码，但js没有这些语法</span>
+          </code>
+          <p>
+            因为 HTML 标签里面的属性使用的是双引号，JS 这里我们更<span
+              class="color-red"
+              >推荐使用单引号。</span
+            >
+          </p>
+          <h3>2.3.1 字符串引号嵌套</h3>
+          <p>
+            JS 可以用<span class="color-red">单引号嵌套双引号</span
+            >，或者用<span class="color-red"
+              >双引号嵌套单引号 (外双内单，外单内双)</span
+            >
+          </p>
+          <code
+            ><span>var strMsg = '我是"高帅富"程序猿'; // 可以用''包含""</span>
+            <span
+              >var strMsg2 = "我是'高帅富'程序猿"; // 也可以用"" 包含''</span
+            >
+            <span>// 常见错误</span>
+            <span
+              >var badQuotes = 'What on earth?"; // 报错，不能 单双引号搭</span
+            >
+          </code>
+          <img src="./images/04-数据类型/14-字符串型String.png" alt="" />
+          <h3>2.3.2 字符串转义符</h3>
+          <p>
+            类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符。
+          </p>
+          <p>转义符都是 \ 开头的，常用的转义符及其说明如下：</p>
+          <table>
+            <tr>
+              <th>转义符</th>
+              <th>解释说明</th>
+            </tr>
+            <tr>
+              <td>\n</td>
+              <td>换行符，n 是 newline 的意思</td>
+            </tr>
+            <tr>
+              <td>\ \</td>
+              <td>斜杠 \</td>
+            </tr>
+            <tr>
+              <td>\'</td>
+              <td>' 单引号</td>
+            </tr>
+            <tr>
+              <td>\"</td>
+              <td>”双引号</td>
+            </tr>
+            <tr>
+              <td>\t</td>
+              <td>tab 缩进</td>
+            </tr>
+            <tr>
+              <td>\b</td>
+              <td>空格 ，b 是 blank 的</td>
+            </tr>
+          </table>
+          <p>案例：弹出网页警示框</p>
+          <img src="./images/04-数据类型/警示案例.png" alt="" />
+          <p>
+            酷热难耐，火辣的太阳底下，我挺拔的身姿，成为了最为独特的风景。我审视四周，这里，是我的舞台，我就
+            是天地间的王者。这一刻，我豪气冲天，终于大喊一声："收破烂啦～"
+          </p>
+          <img src="./images/04-数据类型/15-弹出警示案例.png" alt="" />
+          <h3>2.2.3 字符串长度</h3>
+          <p>
+            字符串是由若干字符组成的，这些字符的数量就是字符串的长度。通过字符串的
+            length 属性可以获取整个字符串的长度
+          </p>
+          <code
+            >var strMsg = "我是帅气多金的程序猿！";<br />
+            alert(strMsg.length); // 显示 11
+          </code>
+          <h3>2.3.4 字符串拼接</h3>
+          <ul>
+            <li>
+              多个字符串之间可以使用 + 进行拼接，其拼接方式为<span
+                class="color-red"
+                >字符串 + 任何类型 = 拼接之后的新字符串</span
+              >
+            </li>
+            <li>
+              拼接前会把与字符串相加的任何类型转成字符串，再拼接成一个新的字符串
+            </li>
+          </ul>
+          <code
+            >//1.1 字符串 "相加"<br />
+            alert('hello' + ' ' + 'world'); // hello world<br />
+            //1.2 数值字符串 "相加"<br />
+            alert('100' + '100'); // 100100<br />
+            //1.3 数值字符串 + 数值<br />
+            alert('11' + 12); // 1112
+          </code>
+          <p class="color-red bold">+ 号总结口诀：数值相加 ，字符相连</p>
+          <img src="./images/04-数据类型/16-字符串拼接.png" alt="" />
+          <h3>2.3.5 字符串拼接加强</h3>
+          <code
+            >console.log('pink老师' + 18); // 只要有字符就会相连<br />
+            var age = 18;<br />
+            // console.log('pink老师age岁啦'); // 这样不行哦<br />
+            console.log('pink老师' + age); // pink老师18<br />
+            console.log('pink老师' + age + '岁啦'); // pink老师18岁啦
+          </code>
+          <ul>
+            <li>
+              我们经常会将字符串和变量来拼接，因为变量可以很方便地修改里面的值
+            </li>
+            <li>变量是不能添加引号的，因为加引号的变量会变成字符串</li>
+            <li>
+              如果变量两侧都有字符串拼接，口诀“<span class="color-red bold"
+                >引引加加</span
+              >”，删掉数字，变量写加中间
+            </li>
+          </ul>
+          <img src="./images/04-数据类型/17-字符串拼接加强.png" alt="" />
+          <p>案例：显示年龄</p>
+          <p>
+            弹出一个输入框，需要用户输入年龄，之后弹出一个警示框显示“您今年 xx
+            岁啦”（xx 表示刚才输
+          </p>
+          <img src="./images/04-数据类型/显示年龄.png" alt="" />
+          <p>案例分析</p>
+          <p>这是利用 JS 编写的一个非常简单的交互效果程</p>
+          <p>交互编程的三个基本要素：</p>
+          <p>
+            1. 你喜欢我吗？→ 这是<span class="color-red">用户输入</span><br />
+            2. 女孩想了想 → 这是 <span class="color-red">程序内部处理</span
+            ><br />
+            3. 女孩回答：“我也喜欢你。” → 这是<span class="color-red"
+              >输出结果</span
+            >
+          </p>
+          <p>那么在程序中要如何实现呢？</p>
+          <p>
+            ① 弹出一个输入框（prompt)，让用户输入年龄（<span class="color-red"
+              >用户输入</span
+            >）<br />
+            ②把用户输入的值用变量保存起来,把刚才输入的年龄与所要输出的字符串拼接
+            （<span class="color-red">程序内部处理</span>）<br />
+            ③ 使用alert语句弹出警示框（<span class="color-red">输出结果</span>）
+          </p>
+          <p>案例代码</p>
+          <code
+            ><span>// 弹出一个输入框（prompt)，让用户输入年龄（用户输入）</span>
+            <span
+              >//把用户输入的值用变量保存起来,把刚才输入的年龄与所要输出的字符串拼接（程序内部处理）</span
+            >
+            <span>// 使用alert语句弹出警示框（输出结果）</span>
+            <span>var age = prompt('请输入您的年龄');</span>
+            <span>var str = '您今年已经' + age + '岁了';</span>
+            <span>alert(str);</span>
+          </code>
+          <img src="./images/04-数据类型/18-显示年龄案例.png" alt="" />
+          <h2>2.4 布尔型 Boolean</h2>
+          <p>
+            布尔类型有两个值：true 和 false ，其中 true 表示真（对），而 fals
+          </p>
+          <p>布尔型和数字型相加的时候， true 的值为 1 ，false 的值为 0。</p>
+          <code
+            >console.log(true + 1); // 2<br />
+            console.log(false + 1); // 1
+          </code>
+          <h2>2.5 Undefined 和 Null</h2>
+          <p>
+            一个声明后没有被赋值的变量会有一个默认值 undefined (
+            如果进行相连或者相加时，注意结果）
+          </p>
+          <code
+            >var variable;<br />
+            console.log(variable); // undefined<br />
+            console.log('你好' + variable); // 你好undefined<br />
+            console.log(11 + variable); // NaN<br />
+            console.log(true + variable); // NaN
+          </code>
+          <p>
+            一个声明变量给 null
+            值，里面存的值为空（学习对象时，我们继续研究null)
+          </p>
+          <code
+            >var vari = null;<br />
+            console.log('你好' + vari); // 你好null<br />
+            console.log(11 + vari); // 11<br />
+            console.log(true + vari); // 1
+          </code>
+          <img
+            src="./images/04-数据类型/19-布尔型Boolean和undefined，Null.png"
+            alt=""
+          />
+        </section>
+        <hr />
+        <section id="huoQuBianLiang">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#ShuJuLeiXingJianJie"><span>数据类型简介</span></a>
+            </li>
+            <li>
+              <a href="#jianDanShuJu"><span>简单数据类型</span></a>
+            </li>
+            <li>
+              <a href="#huoQuBianLiang"
+                ><span class="color-red">获取变量数据类型</span></a
+              >
+            </li>
+            <li>
+              <a href="#ShuJuZhuanHuan"><span>数据类型转换</span></a>
+            </li>
+          </ul>
+          <h1>3. 获取变量数据类型</h1>
+          <h2>3.1 获取检测变量的数据类型</h2>
+          <p>typeof 可用来获取检测变量的数据类型</p>
+          <code
+            >var num = 18;<br />
+            console.log(typeof num) // 结果 number
+          </code>
+          <p>不同类型的返回值</p>
+          <img src="./images/04-数据类型/不同类型返回值.png" alt="" />
+          <h2>3.2 字面量</h2>
+          <p>
+            字面量是在源代码中一个固定值的表示法，通俗来说，就是字面量表示如何表达这个值。
+          </p>
+          <ul>
+            <li>数字字面量：8, 9, 10</li>
+            <li>字符串字面量：'黑马程序员', "大前端"</li>
+            <li>布尔字面量：true，false</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="ShuJuZhuanHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#ShuJuLeiXingJianJie"><span>数据类型简介</span></a>
+            </li>
+            <li>
+              <a href="#jianDanShuJu"><span>简单数据类型</span></a>
+            </li>
+            <li>
+              <a href="#huoQuBianLiang"><span>获取变量数据类型</span></a>
+            </li>
+            <li>
+              <a href="#ShuJuZhuanHuan"
+                ><span class="color-red">数据类型转换</span></a
+              >
+            </li>
+          </ul>
+          <h1>4. 数据类型转换</h1>
+          <h2>4.1 什么是数据类型转换</h2>
+          <p>
+            使用表单、prompt
+            获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变
+            量的数据类型。通俗来说，就是<span class="color-red"
+              >把一种数据类型的变量转换成另外一种数据类型</span
+            >
+          </p>
+          <p>我们通常会实现3种方式的转换：</p>
+          <ul>
+            <li>转换为字符串类型</li>
+            <li>转换为数字型</li>
+            <li>转换为布尔型</li>
+          </ul>
+          <h2>4.2 转换为字符串</h2>
+          <img src="./images/04-数据类型/转换为字符串.png" alt="" />
+          <img src="./images/04-数据类型/toString().png" alt="" />
+          <ul>
+            <li>toString() 和 String() 使用方式不一样</li>
+            <li>
+              三种转换方式，我们更喜欢用第三种加号拼接字符串转换方式，
+              这一种方式也称之为隐式转换
+            </li>
+          </ul>
+          <h2>4.3 转换为数字型（重点）</h2>
+          <img src="./images/04-数据类型/转换成数字型.png" alt="" />
+          <img src="./images/04-数据类型/转换为数字型（重点）.png" alt="" />
+          <ul>
+            <li>
+              注意 parseInt 和 parseFloat
+              <span class="color-red">单词的大小写</span>，这2个是重点
+            </li>
+            <li>隐式转换是我们在进行算数运算的时候，JS 自动转换了数据类型</li>
+          </ul>
+          <p class="color-red bold">案例 1：计算年龄</p>
+          <p>
+            此案例要求在页面中弹出一个输入框，我们输入出生年份后，
+            能计算出我们的年龄
+          </p>
+          <img src="./images/04-数据类型/出生日期.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出一个输入框（prompt)，让用户输入出生年份 （<span
+              class="color-red"
+              >用户输入</span
+            >）<br />
+            ②把用户输入的值用变量保存起来，然后用今年的年份减去变量值，结果就是现在的年龄
+            （<span class="color-red">程序内部处理</span>）<br />
+            ③ 弹出警示框（alert) ， 把计算的结果输出 （<span class="color-red"
+              >输出结果</span
+            >）
+          </p>
+          <p class="color-red bold">案例代码</p>
+          <code
+            >// 1. 弹出输入框，输入出生年份，并存储在变量中<br />
+            var year = prompt('请输入您的出生年份：'); // <b>用户输入</b> <br />
+            // 2. 用今年减去刚才输入的年份<br />
+            var result = 2019 - year; // <b>程序内部处理</b><br />
+            // 3. 弹出提示框<br />
+            alert('您的年龄是:' + result + '岁'); // <b>输出结果</b>
+          </code>
+          <img src="./images/04-数据类型/计算年龄.png" alt="" />
+          <p class="color-red bold">案例 2：简单加法</p>
+          <p>
+            计算两个数的值，
+            用户输入第一个值后，继续弹出第二个输入框并输入第二个值，最后通过弹出窗口显示出两次输入值相加的结果。
+          </p>
+          <img src="./images/04-数据类型/简单加法器.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 先弹出第一个输入框，提示用户输入第一个值 保存起来<br />
+            ② 再弹出第二个框，提示用户输入第二个值 保存起来<br />
+            ③ 把这两个值相加，并将结果赋给新的变量（注意数据类型转换）<br />
+            ④ 弹出警示框（alert) ， 把计算的结果输出 （<span class="color-red"
+              >输出结果</span
+            >
+            ）
+          </p>
+          <p class="color-red bold">案例代码</p>
+          <code
+            >// 1. 先弹出第一个输入框，提示用户输入第一个值<br />
+            var num1 = prompt('请输入第一个值：');<br />
+            // 2. 再弹出第二个框，提示用户输入第二个值<br />
+            var num2 = prompt('请输入第二个值：');<br />
+            // 3. 将输入的值转换为数字型后，把这两个值相加，并将结果赋给新的变量
+            var result = parseFloat(num1) + parseFloat(num2);<br />
+            // 4. 弹出结果 alert('结果是:' + result);
+          </code>
+          <img src="./images/04-数据类型/2简单加法器.png" alt="" />
+          <h2>4.4 转换为布尔型</h2>
+          <img src="./images/04-数据类型/布尔型.png" alt="" />
+          <ul>
+            <li>
+              代表<span class="color-red">空、否定的值</span>会被转换为 false
+              ，如 ''、0、NaN、null、undefine
+            </li>
+            <li>其余值都会被转换为 true</li>
+          </ul>
+          <code
+            >console.log(Boolean('')); // false<br />
+            console.log(Boolean(0)); // false<br />
+            console.log(Boolean(NaN)); // false<br />
+            console.log(Boolean(null)); // false<br />
+            console.log(Boolean(undefined)); // false<br />
+            console.log(Boolean('小白')); // true<br />
+            console.log(Boolean(12)); // true
+          </code>
+          <img src="./images/04-数据类型/转换为布尔型.png" alt="" />
+        </section>
+        <hr />
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="kzydyjzy">
+        <header>05-扩展阅读以及作业</header>
+        <section id="jieShiXingBianYiXing">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#jieShiXingBianYiXing"
+                ><span class="color-red">解释型语言和编译型语言</span></a
+              >
+            </li>
+            <li>
+              <a href="#GuanJianFu"><span>标识符、关键字、保留字</span></a>
+            </li>
+            <li>
+              <a href="#zuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>1. 解释型语言和编译型语言</h1>
+          <h2>1.1 概述</h2>
+          <p>
+            计算机不能直接理解任何除机器语言以外的语言，所以必须要把程序员所写的程序语言翻译成机器语言才能执行程序。程序语言翻译成机器语言的工具，被称为翻译器。
+          </p>
+          <img src="./images/05-扩展阅读以及作业/翻译器.png" alt="" />
+          <ul>
+            <li>
+              翻译器翻译的方式有两种：一个是<span class="color-red">编译</span
+              >，另外一个是<span class="color-red">解释</span
+              >。两种方式之间的区别在于<span class="color-red"
+                >翻译的时间点不同</span
+              >
+            </li>
+            <li>
+              编译器是在<span class="color-red">代码执行之前进行编译</span
+              >，生成中间代码文件
+            </li>
+            <li>
+              解释器是在<span class="color-red">运行时进行及时解释</span
+              >，并立即执行(当编译器以解释方式运行的时候，也称之为解释器)
+            </li>
+          </ul>
+          <h2>2.2 执行过程</h2>
+          <p>类似于请客吃饭：</p>
+          <ul>
+            <li>编译语言：首先把所有菜做好，才能上桌吃饭</li>
+            <li>解释语言：好比吃火锅，边吃边涮，同时进行</li>
+          </ul>
+          <img src="./images/05-扩展阅读以及作业/执行过程.png" alt="" />
+        </section>
+        <hr />
+        <section id="GuanJianFu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#jieShiXingBianYiXing"
+                ><span>解释型语言和编译型语言</span></a
+              >
+            </li>
+            <li>
+              <a href="#GuanJianFu"
+                ><span class="color-red">标识符、关键字、保留字</span></a
+              >
+            </li>
+            <li>
+              <a href="#zuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>2. 标识符、关键字、保留字</h1>
+          <h2>2.1 标识符</h2>
+          <p>标识(zhi)符：就是指开发人员为变量、属性、函数、参数取的名字。</p>
+          <p class="color-red">标识符不能是关键字或保留字。</p>
+          <h2>2.3 关键字</h2>
+          <p>
+            关键字：是指 JS本身已经使用了的字，不能再用它们充当变量名、方法名。
+          </p>
+          <p>
+            包括：break、case、catch、continue、default、delete、do、else、finally、for、function、if、in、instanceof、new、return、switch、this、throw、try、typeof、var、void、while、with
+            等。
+          </p>
+          <h2>2.3 保留字</h2>
+          <p>
+            保留字：实际上就是预留的“关键字”，意思是现在虽然还不是关键字，但是未来可能会成为关键字，同样不能使用它们当变量名或方法名。
+          </p>
+          <p>
+            包括：boolean、byte、char、class、const、debugger、double、enum、export、extends、fimal、float、goto、implements、import、int、interface、long、mative、package、private、protected、public、short、static、super、synchronized、throws、transient、volatile
+            等。
+          </p>
+          <p>
+            <span class="color-red">注意</span
+            >：如果将保留字用作变量名或函数名，那么除非将来的浏览器实现了该保留字，否则很可能收不到任何错误消息。当浏览器将其实现后，该单词将被看做关键字，如此将出现关键字错误。
+          </p>
+        </section>
+        <hr />
+        <section id="zuoYie">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#jieShiXingBianYiXing"
+                ><span>解释型语言和编译型语言</span></a
+              >
+            </li>
+            <li>
+              <a href="#GuanJianFu"><span>标识符、关键字、保留字</span></a>
+            </li>
+            <li>
+              <a href="#zuoYie"><span class="color-red">课后作业</span></a>
+            </li>
+          </ul>
+          <h1>3. 课后作业</h1>
+          <p>
+            1. 给同桌讲讲交换两个变量的值 算法（不管他愿不愿听）<br />
+            2. 依次询问并获取用户的姓名、年龄、性别，并打印用户信息如图
+          </p>
+          <p>自己写的：</p>
+          <code
+            >var name = prompt("请输入你的姓名");<br />
+            var age = prompt("请输入你的年龄");<br />
+            var sex = prompt("请输入你的性别");<br />
+            var resul =   "你的姓名是:" + name + "\n你的年龄是:" + age + "岁" +
+            "\n你的性别是:" + sex;<br />
+            alert(resul);
+          </code>
+          <img src="./images/05-扩展阅读以及作业/作业答案.png" alt="" />
+        </section>
+        <hr />
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsYunShuanFu">
+        <header>06-JavaScript 运算符</header>
+        <section id="yunShuanFu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span class="color-red">运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>1. 运算符</h1>
+          <p>
+            运算符（operator）也被称为<span class="color-red">操作符</span
+            >，是用于实现赋值、比较和执行算数运算等功能的符号。
+          </p>
+          <p>JavaScript中常用的运算符有：</p>
+          <ul>
+            <li>算数运算符</li>
+            <li>递增和递减运算符</li>
+            <li>比较运算符</li>
+            <li>逻辑运算符</li>
+            <li>赋值运算符</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="shuanShuYunShuanFu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"
+                ><span class="color-red">算数运算符</span></a
+              >
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>2. 算数运算符</h1>
+          <h2>2.1 算术运算符概述</h2>
+          <p>概念：算术运算使用的符号，用于执行两个变量或值的算术运算。</p>
+          <img src="./images/06-运算符/2.1 算术运算符概述.png" alt="" />
+          <h2>2.2 浮点数的精度问题</h2>
+          <p>
+            浮点数值的最高精度是 17
+            位小数，但在进行算术计算时其精确度远远不如整数。
+          </p>
+          <code
+            >var result = 0.1 + 0.2; // 结果不是
+            0.3，而是：0.30000000000000004<br />
+            >console.log(0.07 * 100); // 结果不是 7， 而是：7.000000000000001
+          </code>
+          <p>
+            所以：<span class="color-red">不要直接判断两个浮点数是否相等</span>!
+          </p>
+          <p class="color-red bold">
+            （问题在于计算机将小数转换成二进制的数，这个二进制的数是个约数！)
+          </p>
+          <img src="./images/06-运算符/2.2 浮点数的精度问题.png" alt="" />
+          <h2>2.3 课堂提问</h2>
+          <p>1. 我们怎么判断 一个数能够被整除呢？</p>
+          <p class="color-red">
+            它的余数是0 就说明这个数能被整除， 这就是 % 取余运算符的主要用途
+          </p>
+          <p>2. 请问 1 + 2 * 3 结果是？</p>
+          <p class="color-red">
+            结果是7
+            ，注意算术运算符优先级的，先乘除，后加减，有小括号先算小括号里面的
+          </p>
+          <h2>2.4 表达式和返回值</h2>
+          <p>
+            <span class="bold">表达式：</span
+            >是由数字、运算符、变量等以能求得数值的有意义排列方法所得的组合
+          </p>
+          <p>简单理解：是由数字、运算符、变量等组成的式子</p>
+          <p class="color-red">
+            表达式最终都会有一个结果，返回给我们，我们成为返回值
+          </p>
+          <img src="./images/06-运算符/2.4 表达式和返回值.png" alt="" />
+        </section>
+        <hr />
+        <section id="diZhenDiJian">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"
+                ><span class="color-red">递增和递减运算符</span></a
+              >
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>3. 递增和递减运算符</h1>
+          <h2>3.1 递增和递减运算符概述</h2>
+          <p>
+            如果需要反复给数字变量添加或减去1，可以使用<span
+              class="color-red bold"
+              >递增（++）和递减（ -- ）</span
+            >运算符来完成。
+          </p>
+          <p>
+            在 JavaScript 中，递增（++）和递减（ --
+            ）既可以放在变量前面，也可以放在变量后面。<span class="color-red"
+              >放在变量前面</span
+            >时，我们可以称为<span class="color-red"
+              >前置递增（递减）运算符，放在变量后面</span
+            >时，我们可以称为<span class="color-red"
+              >后置递增（递减）运算符</span
+            >。
+          </p>
+          <p>
+            <span class="color-red bold">注意: </span
+            ><span class="color-red">递增和递减运算符必须和变量配合使用。</span>
+          </p>
+          <h2>3.2 递增运算符</h2>
+          <h3>3.2.1 前置递增运算符</h3>
+          <p>
+            <span class="color-red">++num</span> 前置递增，就是自加1，类似于 num
+            = num + 1，但是 ++num 写起来更简单。
+          </p>
+          <p>使用口诀：<span class="color-red">先自加，后返回值</span></p>
+          <code
+            >var num = 10;<br />
+            alert(++num + 10); // 21</code
+          >
+          <h3>3.2.2 后置递增运算符</h3>
+          <p>
+            <span class="color-red">num++</span> 后置递增，就是自加1，类似于 num
+            = num + 1 ，但是 num++ 写起来更简单。
+          </p>
+          <p>使用口诀：<span class="color-red">先返回原值，后自加</span></p>
+          <code
+            >var num = 10;<br />
+            alert(10 + num++); // 20</code
+          >
+          <h2>3.3 前置递增和后置递增小结</h2>
+          <ul>
+            <li>
+              前置递增和后置递增运算符可以简化代码的编写，让变量的值 + 1
+              比以前写法更简单
+            </li>
+            <li>单独使用时，运行结果相同</li>
+            <li>与其他代码联用时，执行结果会不同</li>
+            <li>后置：先原值运算，后自加（先人后己）</li>
+            <li>前置：先自加，后运算（先已后人）</li>
+            <li>
+              开发时，大多使用后置递增/减，并且代码独占一行，例如：num++; 或者
+              num--;
+            </li>
+          </ul>
+          <img
+            src="./images/06-运算符/3.2.3 前置递增和后置递增小结.png"
+            alt=""
+          />
+        </section>
+        <hr />
+        <section id="biJiao">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span class="color-red">比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>4. 比较运算符</h1>
+          <h2>4.1 比较运算符概述</h2>
+          <p>
+            概念：比较运算符（关系运算符<span class="color-red"
+              >是两个数据进行比较时所使用的运算符</span
+            >
+            ，比较运算后，<span class="color-red">会返回一个布尔值</span>（true
+            / false）作为比较运算的结果
+          </p>
+          <img src="./images/06-运算符/4.1 比较运算符概述.png" alt="" />
+          <h2>4.2 =小结</h2>
+          <img src="./images/06-运算符/4.2 =小结.png" alt="" />
+          <code
+            >console.log(18 == '18');<br />
+            console.log(18 === '18');
+          </code>
+          <img src="./images/06-运算符/4.2 =小结代码.png" alt="" />
+        </section>
+        <hr />
+        <section id="luoJiYunShuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"
+                ><span class="color-red">逻辑运算符</span></a
+              >
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>5. 逻辑运算符</h1>
+          <h2>5.1 逻辑运算符概述</h2>
+          <p>
+            概念：逻辑运算符是用来进行布尔值运算的运算符，其返回值也是布尔值。后面开发中经常用于多个条件的判断
+          </p>
+          <img src="./images/06-运算符/5.1 逻辑运算符概述.png" alt="" />
+          <h2>5.2 逻辑与&&</h2>
+          <p>两边都是 true才返回 true，否则返回 false</p>
+          <img src="./images/06-运算符/5.2 逻辑与&&.png" alt="" />
+          <h2>5.3 逻辑或 ||</h2>
+          <p>两边都为 false 才返回 false，否则都为true</p>
+          <img src="./images/06-运算符/5.3 逻辑或.png" alt="" />
+          <h2>5.3 逻辑非 ！</h2>
+          <p>
+            逻辑非（<span class="color-red">!</span>也叫作<span
+              class="color-red"
+              >取反符</span
+            >，用来取一个布尔值相反的值，如 true 的相反值是 false
+          </p>
+          <code
+            >var isOk = !true;<br />
+            console.log(isOk); // false</code
+          >
+          <h2>5.4 短路运算（逻辑中断）</h2>
+          <p>
+            <span class="bold">短路运算的原理：</span
+            >当有多个表达式（值）时,左边的表达式值可以确定结果时,就不再继续运算右边的表达式的值;
+          </p>
+          <h3>5.4.1 逻辑与</h3>
+          <ul>
+            <li>语法：<span class="color-red">表达式1 && 表达式2</span></li>
+            <li>如果第一个表达式的值为真，则返回表达式2</li>
+            <li>如果第一个表达式的值为假，则返回表达式1</li>
+          </ul>
+          <code
+            >console.log( 123 && 456 ); // 456<br />
+            console.log( 0 && 456 ); // 0<br />
+            console.log( 123 && 456&& 789 ); // 789</code
+          >
+          <p class="color-red bold">
+            (谈一下自己的理解：逻辑与&&本质上就是为了"找假"，一旦找到了“假”，就直接选择”假“，如果找不到“假”，就取最后一个值，最后一个值也就是“真”。)
+          </p>
+          <h3>5.4.1 逻辑或</h3>
+          <ul>
+            <li>语法：<span class="color-red">表达式1 || 表达式2</span></li>
+            <li>如果第一个表达式的值为真，则返回表达式1</li>
+            <li>如果第一个表达式的值为假，则返回表达式2</li>
+          </ul>
+          <code
+            >console.log( 123 || 456 ); // 123<br />
+            console.log( 0 || 456 ); // 456<br />
+            console.log( 123 || 456 || 789 ); // 123</code
+          >
+          <p class="color-red bold">
+            (谈一下自己的理解：逻辑或||本质上就是为了"找真"，一旦找到了“真”，就直接选择”真“，如果找不到“真”，就取最后一个值，最后一个值也就是“假”。)
+          </p>
+          <img src="./images/06-运算符/2. 逻辑或代码.png" alt="" />
+        </section>
+        <hr />
+        <section id="fuZhiYunShuanFu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"
+                ><span class="color-red">赋值运算符</span></a
+              >
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"><span>运算符优先级</span></a>
+            </li>
+          </ul>
+          <h1>6. 赋值运算符</h1>
+          <p>概念：用来把数据赋值给变量的运算符。</p>
+          <img src="./images/06-运算符/6. 赋值运算符.png" alt="" />
+          <code
+            >var age = 10;<br />
+            age += 5; // 相当于 age = age + 5;<br />
+            age -= 5; // 相当于 age = age - 5;<br />
+            age *= 10; // 相当于 age = age * 10;</code
+          >
+        </section>
+        <hr />
+        <section id="yunShuanFuYouXianJi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#yunShuanFu"><span>运算符</span></a>
+            </li>
+            <li>
+              <a href="#shuanShuYunShuanFu"><span>算数运算符</span></a>
+            </li>
+            <li>
+              <a href="#diZhenDiJian"><span>递增和递减运算符</span></a>
+            </li>
+            <li>
+              <a href="#biJiao"><span>比较运算符</span></a>
+            </li>
+            <li>
+              <a href="#luoJiYunShuan"><span>逻辑运算符</span></a>
+            </li>
+            <li>
+              <a href="#fuZhiYunShuanFu"><span>赋值运算符</span></a>
+            </li>
+            <li>
+              <a href="#yunShuanFuYouXianJi"
+                ><span class="color-red">运算符优先级</span></a
+              >
+            </li>
+          </ul>
+          <h1>7. 运算符优先级</h1>
+          <img src="./images/06-运算符/7. 运算符优先级.png" alt="" />
+          <ul>
+            <li>
+              一元运算符里面的<span class="color-red">逻辑非优先级很高</span>
+            </li>
+            <li>逻辑与比逻辑或优先级高</li>
+          </ul>
+        </section>
+        <hr />
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jslckzfz">
+        <header>07-JavaScript 流程控制-分支</header>
+        <section id="liuChenKongZhi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"
+                ><span class="color-red">流程控制</span></a
+              >
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"><span>顺序流程控制</span></a>
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"><span>分支流程控制 if 语句</span></a>
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"><span>三元表达式</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span>分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>1. 流程控制</h1>
+          <p>
+            在一个程序执行的过程中，各条代码的执行顺序对程序的结果是有直接影响的。很多时候我们要通过控制代码的执行顺序来实现我们要完成的功能。
+          </p>
+          <p>简单理解： 流程控制就是来控制我们的代码按照什么结构顺序来执行</p>
+          <p>
+            流程控制主要有三种结构，分别是
+            <span class="color-red">顺序结构、分支结构</span>和<span
+              class="color-red"
+              >循环结构</span
+            >，这三种结构代表三种代码执行的顺序
+          </p>
+          <img src="./images/07-js流程控制/1-流程控制.png" alt="" />
+        </section>
+        <section id="shunXuLiuChenif">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"><span>流程控制</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"
+                ><span class="color-red">顺序流程控制</span></a
+              >
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"><span>分支流程控制 if 语句</span></a>
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"><span>三元表达式</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span>分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>2. 顺序流程控制</h1>
+          <p>
+            顺序结构是程序中最简单、最基本的流程控制，它没有特定的语法结构，程序会按照<span
+              class="color-red"
+              >代码的先后顺序，依次执行，</span
+            >程序中大多数的代码都是这样执行的。
+          </p>
+          <img src="./images/07-js流程控制/2-顺序流程控制.png" alt="" />
+        </section>
+        <section id="fenZhiLiuChen">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"><span>流程控制</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"><span>顺序流程控制</span></a>
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"
+                ><span class="color-red">分支流程控制 if 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"><span>三元表达式</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span>分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>3. 分支流程控制 if 语句</h1>
+          <h2>3.1 分支结构</h2>
+          <img src="./images/07-js流程控制/3.1 分支结构.png" alt="" />
+          <p>JS 语言提供了两种分支结构语句</p>
+          <ul>
+            <li>if 语句</li>
+            <li>switch 语句</li>
+          </ul>
+          <h2>3.2 if 语句</h2>
+          <h3>3.2.1 语法结构</h3>
+          <code
+            >// 条件成立执行代码，否则什么也不做<br />if (条件表达式) {
+            <pre>
+     // 条件成立执行的代码语句
+              }</pre
+            >
+          </code>
+          <p>
+            语句可以理解为一个行为，循环语句和分支语句就是典型的语句。一个程序由很多个语句组成，一般情况下，会分割成一个一个的语句。
+          </p>
+          <h3>3.2.2 执行流程</h3>
+          <img
+            src="./images/07-js流程控制/3.2 if 语句3.2.2 执行流程.png"
+            alt=""
+          />
+          <p class="color-red bold">案例： 进入网吧</p>
+          <p>
+            弹出一个输入框，要求用户输入年龄，如果年龄大于等于 18 岁，允许进网吧
+          </p>
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出 prompt 输入框，用户输入年龄， 程序把这个值取过来保存到变量中
+            <br />② 使用 if 语句来判断年龄，如果年龄大于18 就执行 if
+            大括号里面的输出语句
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var usrAge = prompt('请输入您的年龄：');<br />
+            if(usrAge >= 18){
+            <pre>
+    alert('您的年龄合法，欢迎来天际网吧享受学习的乐趣！');
+  }</pre
+            >
+          </code>
+          <h2>3.3 if else语句（双分支语句）</h2>
+          <h3>3.3.1 语法结构</h3>
+          <code
+            >// 条件成立 执行 if 里面代码，否则执行else 里面的代码<br />
+            if (条件表达式) {<br />
+            // [如果] 条件成立执行的代码<br />
+            } else {<br />
+            // [否则] 执行的代码<br />
+            }</code
+          >
+          <h2>3.3 if else语句（双分支语句）</h2>
+          <h3>3.3.2 执行流程</h3>
+          <img src="./images/07-js流程控制/3.3.2 执行流程.png" alt="" />
+          <p class="color-red bold">案例 2：判断闰年</p>
+          <p>接收用户输入的年份，如果是闰年就弹出闰年，否则弹出是平年</p>
+          <img src="./images/07-js流程控制/案例 2：判断闰年.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 算法：能被4整除<span class="color-red">且</span
+            >不能整除100的为闰年（如2004年就是闰年，1901年不是闰年）<span
+              class="color-red"
+              >或者</span
+            >能够被400 整除的就是闰年<br />
+            ② 弹出prompt 输入框，让用户输入年份，把这个值取过来保存到变量中<br />
+            ③ 使用 if 语句来判断是否是闰年，如果是闰年，就执行 if
+            大括号里面的输出语句，否则就执行else 里面的输出语句<br />
+            ④ 一定要注意里面的且 && 还有或者 ||
+            的写法，同时注意判断整除的方法是取余为 0
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {<br />
+            alert("这个年份是闰年");<br />
+            } else { // 剩下的是平年<br />
+            alert("这个年份是平年");<br />
+            }</code
+          >
+          <p class="color-red bold">独立完成案例： 判断是否中奖</p>
+          <p>
+            接收用户输入的姓名，来判断是否中奖，
+            如果输入的是刘德华，则提示中了5块钱， 否则提示没有中奖。
+          </p>
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出 prompt 输入框，让用户输入姓名，把这个值取过来保存到变量中<br />
+            ② 使用 if 语句来判断是否存在这个姓名，如果存在，就执行 if
+            大括号里面的输出语句，否则就执行 else 里面的输出语句<br />
+            ③ 一定要注意判断是否相等，用 == 或者 ===
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >// 算法 如果你叫刘德华 恭喜您中奖了，否则没有中奖<br />
+            // 获得用户名<br />
+            var username = prompt("请输入您的姓名：");<br />
+            if( username == "刘德华")<br />
+            { alert("恭喜发财");<br />
+            } else {<br />
+            alert("谢谢惠顾,欢迎下次再来");<br />
+            }</code
+          >
+          <h2>3.4 if else if 语句(多分支语句)</h2>
+          <h3>3.4.1 语法结构</h3>
+          <code
+            >// 适合于检查多重条件。<br />
+            if (条件表达式1) {<br />
+            语句1；<br />
+            } else if (条件表达式2) {<br />
+            语句2；<br />
+            } else if (条件表达式3) {<br />
+            语句3；<br />
+            ....<br />
+            } else {<br />
+            // 上述条件都不成立执行此处代码<br />
+            }</code
+          >
+          <h3>3.4.2 执行流程</h3>
+          <img src="./images/07-js流程控制/3.4.2 执行流程.png" alt="" />
+          <p class="color-red bold">案例： 判断成绩级别</p>
+          <p>
+            要求：接收用户输入的分数，根据分数输出对应的等级字母
+            A、B、C、D、E。<br />
+            其中：<br />
+            1. 90分(含)以上 ，输出：A<br />
+            2. 80分(含)~ 90 分(不含)，输出：B<br />
+            3. 70分(含)~ 80 分(不含)，输出：C<br />
+            4. 60分(含)~ 70 分(不含)，输出：D<br />
+            5. 60分(不含) 以下，输出： E
+          </p>
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 按照从大到小判断的思路<br />
+            ② 弹出prompt输入框，让用户输入分数，把这个值取过来保存到变量中<br />
+            ③ 使用多分支 if else if 语句来分别判断输出不同的值
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var score = prompt('请您输入分数:');<br />
+            if (score >= 90) {<br />
+            alert('宝贝，你是我的骄傲');<br />
+            } else if (score >= 80) {<br />
+            alert('宝贝，你已经很出色了');<br />
+            } else if (score >= 70) {<br />
+            alert('你要继续加油喽');<br />
+            } else if (score >= 60) {<br />
+            alert('孩子，你很危险');<br />
+            } else {<br />
+            alert('熊孩子，我不想和你说话，我只想用鞭子和你说话');</code
+          >
+        </section>
+        <section id="shanYuanBiaoDa">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"><span>流程控制</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"><span>顺序流程控制</span></a>
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"><span>分支流程控制 if 语句</span></a>
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"
+                ><span class="color-red">三元表达式</span></a
+              >
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span>分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>4. 三元表达式</h1>
+          <p>
+            三元表达式也能做一些简单的条件选择。
+            有三元运算符组成的式子称为三元表达式
+          </p>
+          <h2>4.1 语法结构</h2>
+          <span class="color-red"></span>
+          <code
+            ><span
+              >表达式1 <span class="color-red">?</span> 表达式2<span
+                class="color-red"
+                >:</span
+              >
+              表达式3;</span
+            >
+          </code>
+          <h2>4.2 执行思路</h2>
+          <ul>
+            <li>
+              如果表达式1为 true ，则返回表达式2的<span class="color-red"
+                >值</span
+              >，如果表达式1为 false，则返回表达式3的<span class="color-red"
+                >值</span
+              >
+            </li>
+            <li>简单理解： 就类似于 if else （双分支） 的简写</li>
+          </ul>
+          <p class="color-red bold">案例： 数字补0</p>
+          <p>
+            用户输入数字，如果数字小于10，则在前面补 0 ，比如01，09
+            ，如果数字大于10，则不需要补，比如20。
+          </p>
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 用户输入0~59之间的一个数字<br />
+            ② 如果数字小于10，则在这个数字前面补0,（加0） 否则 不做操作<br />
+            ③ 用一个变量接受这个返回值，输出
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var time = prompt('请您输入一个 0 ~ 59 之间的一个数字');<br />
+            // 三元表达式 表达式 ？ 表达式1 ：表达式2<br />
+            <span
+              >var result = time < 10 ? '0' + time : time;
+              //把返回值赋值给一个变量</span
+            ><br />
+            alert(result);</code
+          >
+        </section>
+        <section id="shunXuLiuChenswitch">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"><span>流程控制</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"><span>顺序流程控制</span></a>
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"><span>分支流程控制 if 语句</span></a>
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"><span>三元表达式</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span class="color-red">分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>5. 分支流程控制 switch 语句</h1>
+          <h2>5.1 语法结构</h2>
+          <p>
+            switch
+            语句也是多分支语句，它用于基于不同的条件来执行不同的代码。当要针对变量设置一系列的特定值的选项时，就可以使用
+            switch。
+          </p>
+          <code
+            >switch( 表达式 ){<br />
+            case value1:<br />
+            // 表达式 等于 value1 时要执行的代码<br />
+            break;<br />
+            case value2:<br />
+            // 表达式 等于 value2 时要执行的代码<br />
+            break;<br />
+            default:<br />
+            // 表达式 不等于任何一个 value 时要执行的代码<br />
+            }</code
+          >
+          <h2>5.1 语法结构</h2>
+          <span class="color-red"></span>
+          <ul>
+            <li>switch ：开关 转换 ， case ：小例子 选项</li>
+            <li>
+              关键字 switch 后面<span class="color-red">括号内</span>可以是<span
+                class="color-red"
+                >表达式</span
+              >或<span class="color-red">值</span>， 通常是一个<span
+                class="color-red"
+                >变量</span
+              >
+            </li>
+            <li>
+              关键字 <span class="color-red">case</span> ,
+              后跟一个选项的表达式或值，<span class="color-red"
+                >后面跟一个冒号</span
+              >
+            </li>
+            <li>switch 表达式的值会与结构中的 case 的值做比较</li>
+            <li>
+              如果存在匹配<span class="color-red">全等</span>(===) ，则与该 case
+              关联的代码块会被执行，并在<span class="color-red"
+                >遇到 break 时停止</span
+              >，整个switch 语句代码执行结束
+            </li>
+            <li>
+              如果所有的 case 的值都和表达式的值不匹配，则执行 default 里的代码
+            </li>
+          </ul>
+          <p class="color-red">
+            <span class="bold">注意：</span>执行case
+            里面的语句时，如果没有break，则继续执行下一个case里面的语句。
+          </p>
+          <p class="color-red bold">案例: 查询水果</p>
+          <p>
+            用户在弹出框里面输入一个水果，如果有就弹出该水果的价格，
+            如果没有该水果就弹出“没有此水果”。
+          </p>
+          <img src="./images/07-js流程控制/案例查询水果.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出 prompt
+            输入框，让用户输入水果名称，把这个值取过来保存到变量中。<br />
+            ② 将这个变量作为 switch 括号里面的表达式。<br />
+            ③ case 后面的值写几个不同的水果名称，注意一定要加引号
+            ，因为必须是全等匹配。<br />
+            ④ 弹出不同价格即可。同样注意每个 case 之后加上 break ，以便退出
+            switch 语句。<br />
+            ⑤ 将 default 设置为没有此水果。
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var fruit = prompt('请您输入查询的水果:');<br />
+            switch (fruit) {<br />
+            case '苹果'<br />: alert('苹果的价格是 3.5/斤');<br />
+            break;<br />
+            case '榴莲':<br />
+            alert('榴莲的价格是 35/斤');<br />
+            break;<br />
+            default:<br />
+            alert('没有此水果');<br />
+            }
+          </code>
+          <h2>5.2 switch 语句和 if else if 语句的区别</h2>
+          <p>
+            ① 一般情况下，它们两个语句可以相互替换<br />
+            ② switch...case 语句通常处理 case为比较确定值的情况， 而
+            if…else…语句更加灵活，常用于范围判断(大于、等于某个范围)<br />
+            ③
+            switch语句进行条件判断后直接执行到程序的条件语句，效率更高。而if…else语句有几种条件，就得判断多少次。<br />
+            ④ 当分支比较少时，if… else语句的执行效率比 switch语句高。<br />
+            ⑤ 当分支比较多时，switch语句的执行效率比较高，而且结构更清晰。
+          </p>
+        </section>
+        <hr />
+        <section id="fengZhiZuoYie">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#liuChenKongZhi"><span>流程控制</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenif"><span>顺序流程控制</span></a>
+            </li>
+            <li>
+              <a href="#fenZhiLiuChen"><span>分支流程控制 if 语句</span></a>
+            </li>
+            <li>
+              <a href="#shanYuanBiaoDa"><span>三元表达式</span></a>
+            </li>
+            <li>
+              <a href="#shunXuLiuChenswitch"
+                ><span>分支流程控制 switch 语句</span></a
+              >
+            </li>
+            <li>
+              <a href="#fengZhiZuoYie"
+                ><span class="color-red">课后作业</span></a
+              >
+            </li>
+          </ul>
+          <h2>6. 课后作业</h2>
+          <p>
+            ① 1. 判断时间阶段。 比如 用户输入12点 弹出 中午好 用户输入 18点
+            弹出傍晚好 用户输入 23点 弹出深夜好
+          </p>
+          <img src="./images/assignment/2-day/1.gif" alt="" />
+          <p class="color-red">参考答案：</p>
+          <img src="./images/07-js流程控制/1-课后作业.png" alt="" />
+          <p>
+            ② 2. 比较两个数的最大值 （用户依次输入2个值，最后弹出最大的那个值）
+          </p>
+          <img src="./images/assignment/2-day/2.gif" alt="" />
+          <p class="color-red">参考答案：</p>
+          <img src="./images/07-js流程控制/2-课后作业.png" alt="" />
+          <p>（扩展）2.2 比较三个数的最大值</p>
+          <img src="./images/07-js流程控制/2.2-课后作业.png" alt="" />
+          <p>③ 3. 用户输入一个数，来判断是奇数还是偶数</p>
+          <img src="./images/assignment/2-day/3.gif" alt="" />
+          <p class="color-red">参考答案：</p>
+          <img src="./images/07-js流程控制/3-作业.png" alt="" />
+          <p>④ 4. 根据用户输入的数值（数字1 到 数字 7），返回星期几</p>
+          <img src="./images/assignment/2-day/4.gif" alt="" />
+          <p class="color-red">参考答案：</p>
+          <img src="./images/07-js流程控制/4-作业.png" alt="" />
+          <p>
+            ⑤ 5.
+            接收班长口袋里的钱数？若大于等于2000，请大家吃西餐。若小于2000，大于等于1500，请大家吃快餐。若小于1500，大于等于1000，请大家喝饮料。若小于1000，大于等于500，请大家吃棒棒糖。否则提醒班长下次把钱带够
+          </p>
+          <p class="color-red">自己思考的答案：</p>
+          <img src="./images/07-js流程控制/5-作业.png" alt="" />
 
-#navbar {
-  position: fixed;
-  min-width: 290px;
-  top: 0px;
-  left: 0px;
-  width: 300px;
-  height: 100%;
-  border-right: solid;
-  border-color: rgba(0, 22, 22, 0.4);
-}
+          <p>
+            ⑥ 6. 分数转换,给一个分数，判定等级。大于等于90 A，大于等于80小于90
+            B，大于等于70小于80 C ，大于等于60小于70 D，小于60 E
+          </p>
+          <p class="color-red">自己思考的答案：</p>
+          <img src="./images/07-js流程控制/6-作业.png" alt="" />
 
-header {
-  color: black;
-  margin: 10px;
-  text-align: center;
-  font-size: 1.8em;
-  font-weight: thin;
-}
+          <p>⑦ 7. 预习下 循环控制 for 循环</p>
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsXunHuan">
+        <header>08-JavaScript 流程控制-循环</header>
+        <section id="XunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span class="color-red">循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>1. 循环</h1>
+          <h2 class="bold">1.1 循环目的</h2>
+          <ul>
+            <li>
+              在实际问题中，有许多具有<span class="color-red"
+                >规律性的重复操作</span
+              >，因此在程序中要完成这类操作就需要<span class="color-red"
+                >重复执行某些语句</span
+              >
+            </li>
+          </ul>
+          <h2>JS 中的循环</h2>
+          <p>在Js 中，主要有三种类型的循环语句：</p>
+          <ul>
+            <li>for 循环</li>
+            <li>while 循环</li>
+            <li>do...while 循环</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="forXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span class="color-red">for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>2. for 循环</h1>
+          <p>
+            在程序中，一组被重复执行的语句被称之为
+            <span class="color-red">循环体</span
+            >，能否继续重复执行，取决于循环的
+            <span class="color-red">终止条件。</span
+            >由循环体及循环的终止条件组成的语句，被称之为
+            <span class="color-red bold">循环语句</span>
+          </p>
+          <h2>2.1 语法结构</h2>
+          <p>
+            for
+            循环主要用于把某些代码循环若干次，通常跟计数有关系。其语法结构如下：
+          </p>
+          <code
+            >for(初始化变量; 条件表达式; 操作表达式 ){<br />
+            //循环体语句<br />
+            }</code
+          >
+          <ul>
+            <li>
+              <span class="color-red bold">初始化变量：</span
+              >通常被用于初始化一个计数器，该表达式可以使用 var
+              关键字声明新的变量，这个变量帮我们来记录次数。
+            </li>
+            <li>
+              <span class="color-red bold">条件表达式：</span
+              >用于确定每一次循环是否能被执行。如果结果是 true
+              就继续循环，否则退出循环。
+            </li>
+            <li>
+              <span class="color-red bold">操作表达式：</span
+              >每次循环的最后都要执行的表达式。通常被用于更新或者递增计数器变量。当然，递减变量也是可以的。
+            </li>
+          </ul>
+          <p>&nbsp;</p>
+          <p><span class="bold">代码体验:</span>我们重复打印100句你好。</p>
+          <code
+            >for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;&nbsp;console.log('你好吗');<br />
+            }</code
+          >
+          <h3>执行过程：</h3>
+          <ol>
+            <li>
+              初始化变量，<span class="color-red"
+                >初始化操作在整个 for 循环只会执行一次。</span
+              >
+            </li>
+            <li>
+              执行条件表达式，如果为true，则执行循环体语句，否则退出循环，循环结束。
+            </li>
+            <li>执行操作表达式，此时第一轮结束。</li>
+            <li>
+              第二轮开始，直接去执行条件表达式（不再初始化变量），如果为 true
+              ，则去执行循环体语句，否则退出循环。
+            </li>
+            <li>继续执行操作表达式，第二轮结束。</li>
+            <li>后续跟第二轮一致，直至条件表达式为假，结束整个 for 循环。</li>
+          </ol>
+          <img src="./images/08-js循环/代码-for循环执行过程1.png" alt="" />
+          <img src="./images/08-js循环/代码-for循环执行过程02.png" alt="" />
+          <h3>断点调试：</h3>
+          <p>
+            断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。
+          </p>
+          <p class="bold color-red">断点调试可以帮我们观察程序的运行过程</p>
+          <p>
+            浏览器中按 F12--> sources
+            -->找到需要调试的文件-->在程序的某一行设置断点
+          </p>
+          <p>Watch: 监视，通过watch可以监视变量的值的变化，非常的常用。</p>
+          <p>
+            F11:
+            程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。
+          </p>
+          <p>
+            代码调试的能力非常重要，只有学会了代码调试，才能学会自己解决bug的能力。初学者不要觉得调试代码麻烦就不去调试，知识点花点功夫肯定学的会，但是代码调试这个东西，自己不去练，永远都学不会。
+          </p>
+          <p>
+            今天学的代码调试非常的简单，只要求同学们记住代码调试的这几个按钮的作用即可，后面还会学到很多的代码调试技巧。
+          </p>
+          <img src="./images/08-js循环/断点调试.png" alt="" />
+          <h2>2.2 for 循环重复相同的代码</h2>
+          <p>for循环可以重复相同的代码 ，比如我们要输出10句“媳妇我错了”</p>
+          <code
+            >// <b>基本写法</b><br />
+            for(var i = 1; i <= 10; i++){<br />
+            &nbsp;&nbsp;console.log(<b>'媳妇我错了~'</b>);<br />
+            }<br />
+            // <b>用户输入次数</b><br />
+            var num = prompt(<b>'请输入次数:'</b>)；<br />
+            for ( var i = 1 ; i <= num; i++) {<br />
+            &nbsp;&nbsp;console.log(<b>'媳妇我错了~'</b>);<br />
+            }
+          </code>
+          <h2>2.3 for 循环重复不相同的代码</h2>
+          <p>
+            for 循环还可以重复不同的代码，这主要是因为使用了计数器
+            ，计数器在每次循环过程中都会有变化。例如，求输出一个人1到100岁：
+          </p>
+          <code
+            >// 基本写法 for (var i = 1; i <= 100; i++) {
+            &nbsp;&nbsp;console.log('这个人今年' + i + '岁了');<br />}</code
+          >
+          <h2>2.3 for 循环重复不相同的代码</h2>
+          <p>
+            for 循环还可以重复不同的代码，这主要是因为使用了计数器
+            ，计数器在每次循环过程中都会有变化。例如，求输出一个人1到100岁：
+          </p>
+          <code
+            >// for 里面是可以添加其他语句的<br />
+            for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;if (i == 1) {<br />
+            &nbsp;&nbsp;console.log('这个人今年1岁了， 它出生了');<br />
+            } else if (i == 100) {<br />
+            &nbsp;&nbsp;console.log('这个人今年100岁了，它死了');<br />
+            } else {<br />
+            &nbsp;&nbsp;console.log('这个人今年' + i + '岁了');<br />
+            &nbsp;}<br />
+            }</code
+          >
+          <h2>2.4 for 循环重复某些相同操作</h2>
+          <span class="color-red"></span>
+          <p>
+            for
+            循环因为有了计数器的存在，我们还可以重复的执行某些操作，比如做一些算术运算。
+          </p>
+          <p class="color-red bold">课堂案例1： 求1-100之间所有整数的累加和</p>
+          <p>案例分析：</p>
+          <p>
+            ① 需要循环100次，我们需要一个<span class="color-red">计数器 i</span
+            ><br />
+            ② 我们需要一个存储<span class="color-red">结果</span>的变量
+            <span class="color-red">sum ，但是初始值一定是 0</span><br />
+            ③ 核心算法：1 + 2 + 3 + 4 .... ，sum = sum + i;
+          </p>
+          <p>实现代码：</p>
+          <code
+            >var sum = 0;<br />
+            for(var i = 1;i <= 100; i++){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;sumNum += i;<br />
+            } console.log('1-100之间整数的和 = ' + sum);</code
+          >
+          <p class="color-red bold">课堂练习</p>
+          <p>① 求1-100之间所有数的平均值</p>
+          <img
+            src="./images/08-js循环/1-求1-100之间所有数的平均值.png"
+            alt=""
+          />
+          <p>② 求1-100之间所有偶数和奇数的和</p>
+          <img
+            src="./images/08-js循环/2-求1-100之间所有偶数和奇数的和.png"
+            alt=""
+          />
+          <p>③ 求1-100之间所有能被3整除的数字的和</p>
+          <img
+            src="./images/08-js循环/3-求1-100之间所有能被3整除的数字的和.png"
+            alt=""
+          />
+          <p class="color-red bold">课堂案例 2： 求学生成绩</p>
+          <p>
+            要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩。
+          </p>
+          <img src="./images/08-js循环/课堂案例2-求学生成绩.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框输入总的班级人数 ( num )<br />
+            ② 依次输入学生的成绩（保存起来 score），<span class="color-red"
+              >此时我们需要用到 for 循环</span
+            >，弹出的次数跟班级总人数有关系
+            <span class="color-red">条件表达式 i <= num</span><br />
+            ③ 进行业务处理: 计算成绩。
+            先求总成绩（sum），之后求平均成绩（average）<br />
+            ④ 弹出结果
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >var num = prompt('请输入班级总的人数:'); // num 班级总的人数<br />
+            var sum = 0; // 总成绩<br />
+            var average = 0; // 平均成绩<br />
+            for (var i = 1; i <= num; i++) {<br />
+            &nbsp;&nbsp;var score = prompt('请输入第' + i + '个学生的成绩');<br />
+            &nbsp;&nbsp;sum = sum + parseFloat(score);<br />
+            }<br />
+            average = sum / num;<br />
+            alert('班级总的成绩是：' + sum);<br />
+            alert('班级总的平均成绩是：' + average);</code
+          >
+          <img src="./images/08-js循环/代码-求学生成绩.png" alt="" />
+          <p class="bold">一行打印五个星星</p>
+          <p>我们采取追加字符串的方式，这样可以打印到控制台上。</p>
+          <code
+            >var star = '';<br />
+            for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;&nbsp;star += '☆'<br />
+            }<br />
+            console.log(star);</code
+          >
+        </section>
+        <hr />
+        <section id="shuanChongFor">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"
+                ><span class="color-red">双重 for 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>3. 双重 for 循环</h1>
+          <h2>3.1 双重 for 循环概述</h2>
+          <p>
+            很多情况下，单层 for 循环并不能满足我们的需求，比如我们要打印一个 5
+            行 5
+            列的图形、打印一个倒直角三角形等，此时就可以通过循环嵌套来实现。
+          </p>
+          <img src="./images/08-js循环/3.1双重for循环概述.png" alt="" />
+          <p>
+            <span class="color-red bold">循环嵌套</span>是指<span
+              class="color-red"
+              >在一个循环语句中再定义一个循环语句的语法结构，</span
+            >例如在for循环语句中，可以再嵌套一个for 循环，这样的 for
+            循环语句我们称之为<span class="color-red">双重for循环。</span>
+          </p>
+          <h2>3.2 双重 for 循环语法</h2>
+          <code
+            >for (外循环的初始; 外循环的条件; 外循环的操作表达式) {<br />
+            &nbsp;for (内循环的初始; 内循环的条件; 内循环的操作表达式) {<br />
+            &nbsp;&nbsp;&nbsp;需执行的代码;<br />
+            &nbsp;}<br />
+            &nbsp;}</code
+          >
+          <ul>
+            <li>内层循环可以看做外层循环的语句</li>
+            <li>内层循环执行的顺序也要遵循 for 循环的执行顺序</li>
+            <li>外层循环执行一次，内层循环要执行全部次数</li>
+          </ul>
+          <img src="./images/08-js循环/代码-双for循环语法.png" alt="" />
+          <h2>3.4 打印五行五列星星</h2>
+          <img src="./images/08-js循环/3.4-打印五行星星.png" alt="" />
+          <p>核心：</p>
+          <p>
+            1. 内层循环负责一行打印五个星星<br />
+            2. 外层循环负责打印五行
+          </p>
+          <code
+            >var star = '';<br />
+            for (var j = 1; j <= 3; j++) {<br />
+            &nbsp;&nbsp;for (var i = 1; i <= 3; i++) {<br />
+            &nbsp;&nbsp;&nbsp;star += '☆'<br />
+            }<br />
+            &nbsp;&nbsp;// 每次满 5个星星 就 加一次换行<br />
+            &nbsp;&nbsp;star += '\n'<br />
+            }<br />
+            console.log(star);</code
+          >
+          <p class="bold color-red">课堂案例 1： 打印 n 行 n 列的星星</p>
+          <p>
+            要求用户<span class="color-red">输入行数和列数</span
+            >，之后在控制台打印出用户输入行数和列数的星星。
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var row = prompt('请输入您打印几行星星:');<br />
+            var col = prompt('请输入您打印几列星星:');<br />
+            var str = '';<br />
+            for (var i = 1; i <= row; i++) {<br />
+            &nbsp;&nbsp;for (j = 1; j <= col; j++) {<br />
+            &nbsp;&nbsp;&nbsp;str += '☆';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            &nbsp;console.log(str);</code
+          >
+          <p class="bold color-red">课堂案例 2：打印倒三角形</p>
+          <img src="./images/08-js循环/案例2打印倒三角形.png" alt="" />
+          <p class="bold color-red">案例分析</p>
+          <p>
+            ① 一共有10行，但是每行的星星个数不一样，因此需要用到双重 for 循环<br />
+            ② 外层的 for 控制行数 i ，循环10次可以打印10行<br />
+            ③ 内层的 for 控制每行的星星个数 j<br />
+            ④ 核心算法： 每一行星星的个数 j = i ; j <= 10; j++<br />
+            ⑤ 每行打印完毕后，都需要重新换一行
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var row = prompt('请输入您打印几行星星:');<br />
+            var col = prompt('请输入您打印几列星星:');<br />
+            var str = '';<br />
+            for (var i = 1; i <= row; i++) {<br />
+            &nbsp;&nbsp;for (j = 1; j <= col; j++) {<br />
+            &nbsp;&nbsp;&nbsp;str += '☆';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            &nbsp;console.log(str);</code
+          >
+          <p class="bold color-red">思考：打印正三角形</p>
+          <img src="./images/08-js循环/正三角形图片.png" alt="" />
+          <img src="./images/08-js循环/代码-正三角形.png" alt="" />
+          <p class="bold color-red">课堂案例3： 打印九九乘法表</p>
+          <img src="./images/08-js循环/打印九九乘法表.png" alt="" />
+          <p class="bold color-red">案例分析</p>
+          <p>
+            ① 一共有9行，但是每行的个数不一样，因此需要用到双重 for 循环<br />
+            ② 外层的 for 循环控制行数 i ，循环9次 ，可以打印 9 行<br />
+            ③ 内层的 for 循环控制每行公式 j<br />
+            ④ 核心算法：每一行<span class="color-red"> 公式的个数</span
+            >正好和<span class="color-red">行数</span>一致， j <= i;<br />
+            ⑤ 每行打印完毕，都需要重新换一行<br />
+            ⑥ 把公式用 i 和 j 替换
+          </p>
+          <p class="bold color-red">实现代码</p>
+          <code
+            >var str = ''<br />
+            for (var i = 1; i <= 9; i++) { // 外层for控制 行数 9行<br />
+            for (var j = 1; j <= i; j++) { // j 控制列数列数和行数是一样的j <= i
+            <br />
+            &nbsp;&nbsp;&nbsp;str += j + " × " + i + " = " + i * j + '\t';<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;str += '\n';<br />
+            }<br />
+            console.log(str);</code
+          >
+          <h2>3.5 for 循环小结</h2>
+          <ul>
+            <li>for 循环可以重复执行某些相同代码</li>
+            <li>for 循环可以重复执行些许不同的代码，因为我们有计数器</li>
+            <li>for 循环可以重复执行某些操作，比如算术运算符加法操作</li>
+            <li>随着需求增加，双重for循环可以做更多、更好看的效果</li>
+            <li>双重 for 循环，外层循环一次，内层 for 循环全部执行</li>
+            <li>for 循环是循环条件和数字直接相关的循环</li>
+            <li>分析要比写代码更重要</li>
+            <li>一些核心算法想不到，但是要学会，分析它执行过程</li>
+            <li>举一反三，自己经常总结，做一些相似的案例</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="whileXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"
+                ><span class="color-red">while 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>4. while 循环</h1>
+          <p>
+            while
+            语句可以在条件表达式为真的前提下，循环执行指定的一段代码，直到表达式不为真时结束循环。
+          </p>
+          <p>while语句的语法结构如下：</p>
+          <code
+            >while (条件表达式) {<br />&nbsp;&nbsp;// 循环体代码<br />}</code
+          >
+          <p class="bold"></p>
+          <p>
+            ① 先执行条件表达式，如果结果为 true，则执行循环体代码；如果为
+            false，则退出循环，执行后面代码<br />② 执行循环体代码<br />
+            ③
+            循环体代码执行完毕后，程序会继续判断执行条件表达式，如条件仍为true，则会继续执行循环体，直到循环条件为
+            false 时，整个循环过程才会结束
+          </p>
+          <img src="./images/08-js循环/代码-while.png" alt="" />
+          <p class="color-red bold">注意：</p>
+          <p>
+            ① 使用 while
+            循环时一定要注意，它必须要有退出条件，否则会成为死循环<br />
+            ② while 循环和 for 循环的不同之处在于 while
+            循环可以做较为复杂的条件判断，比如判断用户名和密码
+          </p>
+          <p class="color-red bold">课堂案例 1</p>
+          <p>① 打印人的一生，从1岁到100岁</p>
+          <img src="./images/08-js循环/代码-while-1-打印人的一生.png" alt="" />
+          <p>② 计算 1 ~ 100 之间所有整数的和</p>
+          <img
+            src="./images/08-js循环/2-求1-100之间所有偶数和奇数的和.png"
+            alt=""
+          />
+          <p class="color-red bold">课堂案例 2：询问你爱我吗</p>
+          <p>
+            弹出一个提示框， 你爱我吗？
+            如果输入我爱你，就提示结束，否则，一直询问。
+          </p>
+          <img src="./images/08-js循环/你爱我吗？.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框，要求用户输入。<br />
+            ② 判断条件比较复杂我们使用 while 循环。<br />
+            ③ while 循环语句中的条件表达式只要输入的不是 我爱你，<span
+              class="color-red"
+              >就一直循环。</span
+            >
+          </p>
+          <p class="color-red bold">实现代码：</p>
+          <img src="./images/08-js循环/代码-while-3-你爱我吗.png" alt="" />
+        </section>
+        <hr />
+        <section id="doWhileXunHuan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"
+                ><span class="color-red">do while 循环</span></a
+              >
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>5. do while 循环</h1>
+          <p>
+            do... while 语句其实是 while
+            语句的一个变体。该循环会先执行一次代码块，然后对条件表达式进行判断，如果条件为真，就会重复执行循环体，否则退出循环。
+          </p>
+          <p>do... while 语句的语法结构如下：</p>
+          <code
+            >do {<br />
+            &nbsp;// 循环体代码 - 条件表达式为 true 时重复执行循环体代码<br />
+            }while(条件表达式);</code
+          >
+          <h2>执行思路：</h2>
+          <p>
+            ① 先执行一次循环体代码<><br />
+            ② 再执行条件表达式，如果结果为 true，则继续执行循环体代码，如果为
+            false，则退出循环，继续执行后面代码
+          </p>
+          <img src="./images/08-js循环/代码-do-while.png" alt="" />
+          <p class="color-red">
+            <span class="bold">注意：</span>先再执行循环体，再判断，我们会发现
+            do…while 循环语句<span class="bold">至少会执行一次循环体代码</span>
+          </p>
+          <p class="color-red bold">课堂案例 1：</p>
+          <p>① 打印人的一生，从1岁到100岁</p>
+          <img
+            src="./images/08-js循环/代码-do-while-1-打印人的一生.png"
+            alt=""
+          />
+          <p>② 计算 1 ~ 100 之间所有整数的和</p>
+          <img
+            src="./images/08-js循环/代码-do-while-2-计算1-100之间所有整数和.png"
+            alt=""
+          />
+          <p>
+            ① 打印人的一生，从1岁到100岁<br />
+            ② 计算 1 ~ 100 之间所有整数的和
+          </p>
+          <p class="color-red bold">课堂案例 2：询问你爱我吗</p>
+          <p>
+            弹出一个提示框， 你爱我吗？
+            如果输入我爱你，就提示结束，否则，一直询问。
+          </p>
+          <img src="./images/08-js循环/你爱我吗？.png" alt="" />
+          <p class="color-red bold">案例分析</p>
+          <p>
+            ① 弹出输入框，要求用户输入。<br />
+            ② 判断条件我们使用 do…while 循环。<br />
+            ③ do… while 循环语句中的条件表达式只要输入的不是我爱你，<span
+              class="color-red"
+              >就一直循环。</span
+            >
+          </p>
+          <p class="color-red bold">实现代码</p>
+          <code
+            >do {<br />
+            &nbsp;var love = prompt('你爱我吗？');<br />
+            } while (love != '我爱你')<br />
+            alert('我也爱你啊');</code
+          >
+          <h2>循环小结</h2>
+          <ul>
+            <li>JS 中循环有 for 、while 、 do while</li>
+            <li>三个循环很多情况下都可以相互替代使用</li>
+            <li>
+              如果是用来计次数，跟数字相关的，三者使用基本相同，但是我们更喜欢用
+              for
+            </li>
+            <li>
+              while 和 do…while 可以做更复杂的判断条件，比 for 循环灵活一些
+            </li>
+            <li>
+              while 和 do…while 执行顺序不一样，while 先判断后执行，do…while
+              先执行一次，再判断执行
+            </li>
+            <li>
+              while 和 do…while 执行次数不一样，do…while 至少会执行一次循环体，
+              而 while 可能一次也不执行
+            </li>
+            <li>
+              实际工作中，<span class="color-red">我们更常用for 循环语句，</span
+              >它写法更简洁直观， 所以这个要重点学习
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section id="conBre">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"
+                ><span class="color-red">continue break</span></a
+              >
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"><span>课后作业</span></a>
+            </li>
+          </ul>
+          <h1>6. continue break</h1>
+          <h2>6.1 continue 关键字</h2>
+          <p>
+            <span class="color-red bold">continue 关键字</span>用于立即<span
+              class="color-red bold"
+              >跳出本次循环，继续下一次循环</span
+            >（本次循环体中 continue 之后的代码就会少执行一次）。
+          </p>
+          <p>
+            <span class="color-red">案例1：</span
+            >吃5个包子，第3个有虫子，就扔掉第3个，继续吃第4个第5个包子，其代码实现如下：
+          </p>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;&nbsp;console.log('这个包子有虫子，扔掉');<br />
+            &nbsp;&nbsp;&nbsp;continue; // 跳出本次循环，跳出的是第3次循环<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+          <p>
+            <span class="color-red">案例2：</span>求1~100 之间，
+            除了能被7整除之外的整数和
+          </p>
+          <code
+            >var sum = 0;<br />
+            for (var i = 1; i <= 100; i++) {<br />
+            &nbsp;&nbsp;if (i % 7 == 0) {<br />
+            &nbsp;&nbsp;&nbsp;continue;<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;sum += i;<br />
+            }<br />
+            console.log(sum);</code
+          >
+          <h2>6.2 break 关键字</h2>
+          <p>
+            <span class="color-red bold">break 关键字用于</span>立即<span
+              class="color-red bold"
+              >跳出整个循环</span
+            >（循环结束）。
+          </p>
+          <p>
+            例如，吃5个包子，吃到第3个发现里面有半个虫子，其余的不吃了，其代码实现如下：
+          </p>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;break; // 直接退出整个for 循环，跳到整个for下面的语句<br />
+            &nbsp;}<br />
+            &nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="xunHuanZuoYie">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#XunHuan"><span>循环</span></a>
+            </li>
+            <li>
+              <a href="#forXunHuan"><span>for 循环</span></a>
+            </li>
+            <li>
+              <a href="#shuanChongFor"><span>双重 for 循环</span></a>
+            </li>
+            <li>
+              <a href="#whileXunHuan"><span>while 循环</span></a>
+            </li>
+            <li>
+              <a href="#doWhileXunHuan"><span>do while 循环</span></a>
+            </li>
+            <li>
+              <a href="#conBre"><span>continue break</span></a>
+            </li>
+            <li>
+              <a href="#xunHuanZuoYie"
+                ><span class="color-red">课后作业</span></a
+              >
+            </li>
+          </ul>
 
-#main-doc header {
-  text-align: left;
-  margin: 0px;
-}
+          <h1>7. 作业</h1>
+          <p>1. 求1-100之间所有数的总和与平均值</p>
+          <p>2. 求1-100之间所有偶数的和</p>
+          <p>3. 求100以内7的倍数的总和</p>
+          <p>
+            4. 使用for 循环打印矩形，要求每次只能输出一个☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆<br />
+            ☆☆☆☆☆
+          </p>
+          <p>
+            5. 使用for循环打印三角形<br />
+            ☆<br />
+            ☆☆<br />
+            ☆☆☆<br />
+            ☆☆☆☆<br />
+            ☆☆☆☆☆
+          </p>
+          <p>（扩展）打印正金字塔</p>
+          <p>
+                  ☆<br />
+                ☆☆☆<br />
+              ☆☆☆☆☆<br />
+            ☆☆☆☆☆☆☆
+          </p>
+          <p class="color-red">参考答案：</p>
+          <img src="./images/08-js循环/正金字塔2.png" alt="" />
+          <p>改变一下document.write("&nbsp;&ensp;");</p>
+          <img src="./images/08-js循环/正金字塔.png" alt="" />
+          <p></p>
+          <p>（扩展）打印倒金字塔</p>
+          <p>
+            ☆☆☆☆☆☆☆<br />
+              ☆☆☆☆☆<br />
+                ☆☆☆<br />
+                  ☆
+          </p>
+          <p class="color-red">参考答案：</p>
+          <img src="./images/08-js循环/倒金字塔.png" alt="" />
+          <p>6. 使用for循环打印99乘法表</p>
+          <p>
+            7.
+            接受用户输入的用户名和密码，若用户名为“admin”，密码为“123456”，则提示用户登录成功！否则，让用户一直登录。
+          </p>
+          <p class="color-red">参考答案：</p>
+          <img src="./images/08-js循环/作业-用户验证-方法1.png" alt="" />
+          <img src="./images/08-js循环/作业-用户验证-方法2.png" alt="" />
+          <p>
+            8.
+            求整数1~100的累加值，但要求跳过所有个位为3的数【用continue实现】。
+          </p>
+          <p class="color-red">参考答案：</p>
+          <img src="./images/08-js循环/作业-不为3-代码.png" alt="" />
+          <p>Math.floor() 函数总是返回小于等于一个给定数字的最大整数。</p>
+          <p>代码验证：</p>
+          <code
+            >console.log(Math.floor(5.95)); // expected output: 5
+            console.log(Math.floor(5.05)); // expected output: 5
+            console.log(Math.floor(5)); // expected output: 5
+            console.log(Math.floor(-5.05)); // expected output: -6</code
+          >
+          <p>控制台输出：</p>
+          <img src="./images/08-js循环/不为3-控制台输出.png" alt="" />
 
-#navbar ul {
-  height: 88%;
-  padding: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-#navbar li {
-  color: #4d4e53;
-  border-top: 1px solid;
-  list-style: none;
-  position: relative;
-  width: 100%;
-}
-
-#navbar a {
-  display: block;
-  padding: 10px 30px;
-  color: #4d4e53;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#main-doc {
-  position: absolute;
-  margin-left: 310px;
-  padding: 20px;
-  margin-bottom: 110px;
-}
-
-/* section article {
-  color: #4d4e53;
-  margin: 15px;
-  font-size: 0.96em;
-} */
-
-section li {
-  margin: 15px 0px 0px 20px;
-}
-
-code {
-  display: block;
-  text-align: left;
-  white-space: pre-line;
-  position: relative;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 2;
-  background-color: #f7f7f7;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 5px;
-}
-
-@media only screen and (max-width: 815px) {
-  /* For mobile phones: */
-  #navbar ul {
-    border: 1px solid;
-    height: 207px;
-  }
-
-  #navbar {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-height: 275px;
-    border: none;
-    z-index: 1;
-    /* zj：底线取消 */
-    /* border-bottom: 2px solid; */
-  }
-
-  #main-doc {
-    position: relative;
-    margin-left: 0px;
-    /* 自己改了一下270变320 */
-    /* margin-top: 270px; */
-    margin-top: 320px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  #main-doc {
-    margin-left: -10px;
-  }
-
-  code {
-    margin-left: -20px;
-    width: 100%;
-    padding: 15px;
-    padding-left: 10px;
-    padding-right: 45px;
-    min-width: 233px;
-  }
-}
-/* 我自己添加的css */
-/* * {
-  scroll-behavior: smooth;
-} */
-/* span {
-  color: red;
-  font-weight: bold;
-} */
-.color-red {
-  color: red;
-}
-.bold {
-  font-weight: bold;
-}
-section a:link,
-section a:visited {
-  text-decoration: none;
-  color: black;
-}
-section a:hover,
-section a:active {
-  background-color: aquamarine;
-}
-table,
-th,
-td {
-  border: 1px solid black;
-  text-align: center;
-}
-section p {
-  color: #4d4e53;
-  margin: 15px;
-  font-size: 0.96em;
-}
-/* width百分比，解决了一点导航栏，图片就跑出来的问题。 */
-img {
-  width: 80%;
-  object-fit: cover;
-  border-radius: 10px;
-  /* margin-left: 60px; */
-}
-/* span不转行，也会影响网页的浏览 */
-/* code span {
-  white-space: nowrap;
-} */
-.no-border {
-  border: none;
-}
-.left {
-  text-align: left;
-}
-.bhh {
-  display: inline;
-}
+          <p>9. 小组项目：简易ATM</p>
+          <img src="./images/assignment/3-day/ATM.gif" alt="" />
+          <ul>
+            <li>里面现存有100块钱</li>
+            <li>
+              如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提示框
+            </li>
+            <li>如果取钱，就减去取的钱数，之后弹出显示余额提示框</li>
+            <li>如果显示余额，就输出余额</li>
+            <li>如果退出，弹出退出信息提示框</li>
+          </ul>
+          <p class="color-red">参考答案：</p>
+          <img src="./images/08-js循环/作业-简易ATM.png" alt="" />
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsMingMingGuiFan">
+        <header>09-JavaScript 命名规范以及语法格式</header>
+        <section id="biaoZhiFuMingMIngGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"
+                ><span class="color-red">标识符命名规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>标识符命名规范</h1>
+          <ul>
+            <li>变量、函数的命名必须要有意义</li>
+            <li>变量的名称一般用名词</li>
+            <li>函数的名称一般用动词</li>
+          </ul>
+        </section>
+        <hr />
+        <section id="chaoZuoFuFuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"
+                ><span class="color-red">操作符规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>2. 操作符的规范</h1>
+          <code
+            >//运算符(也叫操作符)的左右两侧各保留一个空格,例如下面的“=”赋值运算符,“<="比较运算符，“==”判断运算符，比较特殊的就是“i++”的++不用保留空格<br />
+            for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;&nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;&nbsp;console.log('这个包子有虫子，扔掉');<br />
+            &nbsp;&nbsp;&nbsp;continue; // 跳出本次循环，跳出的是第3次循环<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="danHangZhuShiGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"
+                ><span class="color-red">单行注释规范</span></a
+              >
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span>其他规范</span></a>
+            </li>
+          </ul>
+          <h1>3. 单行注释规范</h1>
+          <code
+            >for (var i = 1; i <= 5; i++) {<br />
+            &nbsp;if (i == 3) {<br />
+            &nbsp;&nbsp;break; // 单行注释前面注意有个空格，（//+空格+文本）<br />
+            &nbsp;}<br />
+            &nbsp;console.log('我正在吃第' + i + '个包子呢');<br />
+            }</code
+          >
+        </section>
+        <hr />
+        <section id="otherGuiFan">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#biaoZhiFuMingMIngGuiFan"><span>标识符命名规范</span></a>
+            </li>
+            <li>
+              <a href="#chaoZuoFuFuiFan"><span>操作符规范</span></a>
+            </li>
+            <li>
+              <a href="#danHangZhuShiGuiFan"><span>单行注释规范</span></a>
+            </li>
+            <li>
+              <a href="#otherGuiFan"><span class="color-red">其他规范</span></a>
+            </li>
+          </ul>
+          <h1>4. 其他规范</h1>
+          <img
+            src="./images/09-JavaScript 命名规范以及语法格式/4-其他规范.png"
+            alt=""
+          />
+          <ul>
+            <li>小括号两侧包含空格</li>
+            <li>左大括号和if在同一行上</li>
+            <li>右大括号和if的i对其</li>
+          </ul>
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsShuZhu">
+        <header>10-JavaScript 数组</header>
+        <section id="shuZhuGaiLian">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"
+                ><span class="color-red">数组的概念</span></a
+              >
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"><span>创建数组</span></a>
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"><span>获取数组中的元素</span></a>
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"><span>遍历数组</span></a>
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"><span>数组中新增元素</span></a>
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span>数组案例</span></a>
+            </li>
+          </ul>
+          <h1>1. 数组的概念</h1>
+          <p>
+            问:之前学习的变量，只能存储一个值。如果我们想存储班级中所有学生的姓名，那么该如何存储呢?
+          </p>
+          <p>
+            答:可以使用数组(Array)。数组可以把一组相关的数据一起存放，并提供方便的访问(获取)方式。
+          </p>
+          <p>问:什么是数组呢?</p>
+          <p>
+            答:数组是指
+            <span class="color-red">一组数据的集合</span>，其中的每个数据被称作
+            <span class="color-red">元素</span>，在数组中可以
+            <span class="color-red">存放任意类型的元素。</span>数组是一种将
+            <span class="color-red">一组数据存储在单个变量名下</span
+            >的优雅方式。
+          </p>
+          <code
+            >//普通变量一次只能存储一个值<br />
+            var num = 10: //数组一次可以存储多个值<br />
+            var arr = [1,2,3,4,5];</code
+          >
+        </section>
+        <hr />
+        <section id="chuanJianShuZhu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"><span>数组的概念</span></a>
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"
+                ><span class="color-red">创建数组</span></a
+              >
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"><span>获取数组中的元素</span></a>
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"><span>遍历数组</span></a>
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"><span>数组中新增元素</span></a>
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span>数组案例</span></a>
+            </li>
+          </ul>
+          <h1>2.创建变量</h1>
+          <h2>2.1数组的创建方式</h2>
+          <p>JS中创建数组有两种方式：</p>
+          <ul>
+            <li>利用 new 创建数组</li>
+            <li>利用数组字面量创建数组</li>
+          </ul>
+          <h2>2.2利用 new 创建数组</h2>
+          <code
+            >var 数组名 = new Array() ;<br />
+            var arr = new Array(); // 创建一个新的空数组
+          </code>
+          <ul>
+            <li>这种方式暂且了解，等学完对象再看</li>
+            <li>注意Array()，A要大写</li>
+          </ul>
+          <h2>2.3利用数组字面量创建数组</h2>
+          <code
+            >//1.使用数组字面量方式创建空的数组<br />
+            var 数组名 = []<br />
+            //2.使用数组字面量方式创建带初始值的数组<br />
+            var 数组名 = 小白，小黑"，大黄”，"瑞奇 ];</code
+          >
+          <ul>
+            <li>数组的字面量是方括号[]</li>
+            <li>声明数组并赋值称为数组的初始化</li>
+            <li>
+              这种字面量方式也是我们以后<span class="color-red"
+                >最多使用的方式</span
+              >
+            </li>
+          </ul>
+          <h2>2.4数组元素的类型</h2>
+          <p>
+            数组中可以存放<span class="color-red bold">任意类型</span
+            >的数据，例如字符串，数字，布尔值等
+          </p>
+          <code>var arrStus = ['小白',12,true,28.9];</code>
+          <img src="./images/10-js数组/数组的概念.png" alt="" />
+        </section>
+        <hr />
+        <section id="huoQuShuZhuYuanShu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"><span>数组的概念</span></a>
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"><span>创建数组</span></a>
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"
+                ><span class="color-red">获取数组中的元素</span></a
+              >
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"><span>遍历数组</span></a>
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"><span>数组中新增元素</span></a>
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span>数组案例</span></a>
+            </li>
+          </ul>
+          <h1>3.获取数组元素</h1>
+          <h2>3.1数组的索引</h2>
+          <p>
+            <span class="color-red bold">索引(下标):</span
+            >用来访问数组元素的序号(数组下标从0开始).
+          </p>
+          <table class="no-border">
+            <tr class="no-border">
+              <td class="no-border">var arr =</td>
+              <td class="no-border">[</td>
+              <td class="no-border">'小白'</td>
+              <td class="no-border">,</td>
+              <td class="no-border">'小黑'</td>
+              <td class="no-border">,</td>
+              <td class="no-border">'大黄'</td>
+              <td class="no-border">,</td>
+              <td class="no-border">'瑞奇'</td>
+              <td class="no-border">};</td>
+            </tr>
+            <tr>
+              <td class="no-border">索引号:</td>
+              <td class="no-border">&nbsp;</td>
+              <td class="no-border">0</td>
+              <td class="no-border">&nbsp;</td>
+              <td class="no-border">1</td>
+              <td class="no-border">&nbsp;</td>
+              <td class="no-border">2</td>
+              <td class="no-border">&nbsp;</td>
+              <td class="no-border">3</td>
+              <td class="no-border">&nbsp;</td>
+            </tr>
+          </table>
+          <p>
+            数组可以通过<span class="bold color-red">索引</span
+            >来访问、设置、修改对应的数组元索、我们可以通过<span
+              class="color-red"
+              >“数组名[索引]”</span
+            >的形式来获取数组中的元素。
+          </p>
+          <p>
+            这里的<span class="color-red bold">访问</span>就是获取得到的意思
+          </p>
+          <code
+            >//定义数组 var arrStus = [1,2,3];<br />
+            //获取数组中的第2个元素<br />
+            alert(arrStus[1]]);</code
+          >
+          <img src="./images/10-js数组/获取数组.png" alt="" />
+        </section>
+        <hr />
+        <section id="bianLiShuZhu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"><span>数组的概念</span></a>
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"><span>创建数组</span></a>
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"><span>获取数组中的元素</span></a>
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"
+                ><span class="color-red">遍历数组</span></a
+              >
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"><span>数组中新增元素</span></a>
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span>数组案例</span></a>
+            </li>
+          </ul>
+          <h1>4.遍历数组</h1>
+          <p>问:数组中的每一项我们怎么取出来?</p>
+          <p>
+            答:可以通过<span class="color-red">“数组名[索引号]”</span
+            >的方式一项项的取出来
+          </p>
+          <code
+            >var arr = ['red', green',"blue'];<br />
+            console.log(arr[0]) // red<br />
+            console.log(arr[1]) // green<br />
+            console.log(arr[2]) // blue</code
+          >
+          <p>问:怎么把数组里面的元素全部取出来?</p>
+          <p class="color-red bold">规律:</p>
+          <p>
+            从代码中我们可以发现，从数组中取出每一个元素时，代码是重复的，有所不一样的是<span
+              class="color-red bold"
+              >索引值在递增</span
+            >
+          </p>
+          <p class="color-red bold">答案就是 循环</p>
+          <p>
+            <span class="color-red bold">遍历: </span
+            >就是把数组中的每个元案从头到尾都访问一次(类似我们每天早上学生的点名)。
+          </p>
+          <img src="./images/10-js数组/数组遍历.png" alt="" />
+          <h2>4.1 数组的长度</h2>
+          <p>
+            使用<span class="color-red">“数组名.length”</span
+            >可以访问数组元素的数量（数组长度）。
+          </p>
+          <h3 class="color-red">课堂案例1 : 遍历数组</h3>
+          <p>
+            请将[“关羽“ “张飞” “马超” “赵云" “黄忠“ “刘备” “姜维”];
+            数组里的元素依次打印到控制台。
+          </p>
+          <img src="./images/10-js数组/数组长度.png" alt="" />
+          <p class="bold">提问：</p>
+          <p>问题一：for里面的i是什么?当什么使用? for里面的数组元察怎么写?</p>
+          <p class="color-red">
+            答：i 是计数器，当索引号使用 ，arr[i] 是数组元素第i个数组元素
+          </p>
+          <p>问题二： 数组索引号和数组长度有什么关系?</p>
+          <p class="color-red">索引号从0开始 ，数组长度是元素个数</p>
+          <h3 class="color-red">课堂案例 2: 数组求和及平均值</h3>
+          <p>
+            求数组[2,6,1,74 里面所有元素的<span class="color-red">和</span
+            >以及<span class="color-red">平均值。</span>
+          </p>
+          <h3 class="color-red">案例分析</h3>
+          <p>① 声明一个求和变量sum</p>
+          <p>② 遍历这个数组，把里面每个数组元素加到sum里面。</p>
+          <p>③ 用求和变量sum 除以数组的长度就可以得到数组的平均值。</p>
+          <img src="./images/10-js数组/案例2.png" alt="" />
+          <h3 class="color-red">课堂案例3 : 数组最大值</h3>
+          <p>求数组[2,6,1,77,52,25,7]中的最大值。</p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>声明一个保存最大元素的变量 max。</li>
+            <li>默认最大值可以取数组中的第一个元素</li>
+            <li>遍历这个数组，把里面每个数组元素和 max 相比较。</li>
+            <li>
+              如果这个数组元素大于max 就把这个数组元素存到 max
+              里面，否则继续下一轮比较。
+            </li>
+            <li>最后输出这个 max。</li>
+          </ol>
+          <h3 class="color-red">实现代码</h3>
+          <code>
+            var arrNum = [2,6,1,77,52,25,7];<br />
+            var maxNum = arrNum[0]; //<br />
+            用来保存最大元素,默认最大值是数组中的第一个元素<br />
+            // 从0 开始循环数组里的每个元素<br />
+            for(var i = 0;i< arrNum.length; i++){<br />
+            &nbsp;// 如果数组里当前循环的元素大于maxNum，则保存这个元素和下标<br />
+            &nbsp;if(arrNum[i] > maxNum){<br />
+            &nbsp;&nbsp;&nbsp;maxNum = arrNum[i]; // 保存数值到变量 maxNum<br />
+            &nbsp;}<br />
+            }
+          </code>
+          <img src="./images/10-js数组/代码-数组最大值.png" alt="" />
+          <h3 class="color-red">课堂案例 4： 数组转换为字符串</h3>
+          <p>
+            要求：将数组 ['red', 'green', 'blue', 'pink']
+            里面的元素转换为字符串<br />
+            输出： 'redgreenbluepink'
+          </p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>
+              思路：
+              <span class="color-red bold"
+                >就是把里面的元素相加就好了，但是注意保证是字符相加。</span
+              >
+            </li>
+            <li>需要一个新变量 str 用于存放转换完的字符串。</li>
+            <li>
+              遍历原来的数组，分别把里面数据取出来，加到字符串变量 str 里面。
+            </li>
+          </ol>
+          <h3 class="color-red">实现代码</h3>
+          <code
+            >var arr = ['red', 'green', 'blue', 'pink'];<br />
+            var str = '';<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;str += arr[i];<br />
+            }<br />
+            console.log(str);
+          </code>
+          <h3 class="color-red">课堂案例 5： 数组转换为分割字符串</h3>
+          <p>
+            要求：将数组 ['red', 'green', 'blue', 'pink'] 转换为字符串，并且用 |
+            或其他符号分割
+          </p>
+          <p>输出： 'red|green|blue|pink'</p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>需要一个新变量用于存放转换完的字符串 str。</li>
+            <li>遍历原来的数组，分别把里面数据取出来，加到字符串里面。</li>
+            <li>同时在后面多加一个分隔符。</li>
+          </ol>
+          <h3 class="color-red">实现代码</h3>
+          <code
+            >var arr = ['red', 'green', 'blue', 'pink'];<br />
+            var str = '';<br />
+            var separator = '|'<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;str += arr[i] + separator;<br />
+            }<br />
+            console.log(str);
+          </code>
+          <p>该代码的分割符号为“*”</p>
+          <img src="./images/10-js数组/代码-数组转换成字符型.png" alt="" />
+        </section>
+        <hr />
+        <section id="xingZhenShuZhu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"><span>数组的概念</span></a>
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"><span>创建数组</span></a>
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"><span>获取数组中的元素</span></a>
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"><span>遍历数组</span></a>
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"
+                ><span class="color-red">数组中新增元素</span></a
+              >
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span>数组案例</span></a>
+            </li>
+          </ul>
+          <h1>5. 数组中新增元素</h1>
+          <h2>5.1 通过修改 length 长度新增数组元素</h2>
+          <ul>
+            <li>可以通过修改 length 长度来实现数组扩容的目的</li>
+            <li>length 属性是可读写的</li>
+          </ul>
+          <code
+            >var arr = ['red', 'green', 'blue', 'pink'];<br />
+            arr.length = 7;<br />
+            console.log(arr);<br />
+            console.log(arr[4]);<br />
+            console.log(arr[5]);<br />
+            console.log(arr[6]);
+          </code>
+          <p>
+            其中索引号是 4，5，6
+            的空间没有给值，就是声明变量未给值，默认值就是<span
+              class="color-red"
+              >undefined。</span
+            >
+          </p>
+          <img src="./images/10-js数组/5.1-length长度.png" alt="" />
+          <img src="./images/10-js数组/代码-新增数组元素01.png" alt="" />
+          <h2>5.2 通过修改数组索引新增数组元素</h2>
+          <ul>
+            <li>可以通过修改数组索引的方式追加数组元素</li>
+            <li>不能直接给数组名赋值，否则会覆盖掉以前的数据</li>
+          </ul>
+          <code
+            >var arr = ['red', 'green', 'blue', 'pink'];<br />
+            <span class="color-red">arr[4] = 'hotpink';</span><br />
+            console.log(arr);
+          </code>
+          <p>这种方式也是我们最常用的一种方式。</p>
+          <img src="./images/10-js数组/代码-新增数组元素02.png" alt="" />
+          <h3 class="color-red">课堂案例 1： 数组新增元素</h3>
+          <p>
+            新建一个数组，里面存放10个整数（ 1~10），
+            要求使用循环追加的方式输出： [1,2,3,4,5,6,7,8,9,10]
+          </p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>使用循环来追加数组。</li>
+            <li>声明一个空数组 arr。</li>
+            <li>循环中的计数器 i 可以作为数组元素存入。</li>
+            <li>
+              由于数组的索引号是从0开始的， 因此计数器从 0
+              开始更合适，存入的数组元素要+1。
+            </li>
+          </ol>
+          <code
+            >var arr = [];<br />
+            for (var i = 0; i < 10; i++) {<br />
+            &nbsp;&nbsp;arr[i] = i + 1;<br />
+            }<br />
+            console.log(arr);
+          </code>
+          <img src="./images/10-js数组/代码-数组存放.png" alt="" />
+          <h3 class="color-red">课堂案例 2：筛选数组</h3>
+          <p>
+            要求：将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于 10
+            的元素选出来，放入新数组。
+          </p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>声明一个新的数组用于存放新数据。</li>
+            <li>遍历原来的数组，找出大于等于 10 的元素。</li>
+            <li>依次追加给新数组 newArr。</li>
+          </ol>
+          <code
+            >var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+            var newArr = [];<br />
+            // 定义一个变量 用来计算 新数组的索引号<br />
+            var j = 0;<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;if (arr[i] >= 10) {<br />
+            &nbsp;&nbsp;&nbsp;// 给新数组<br />
+            &nbsp;&nbsp;&nbsp;newArr[j] = arr[i];<br />
+            &nbsp;&nbsp;&nbsp;// 索引号 不断自加<br />
+            &nbsp;&nbsp;&nbsp;j++;<br />
+            &nbsp;&nbsp;}<br />
+            }<br />
+            console.log(newArr);
+          </code>
+          <img src="./images/10-js数组/代码-筛选数组01.png" alt="" />
+          <h3 class="color-red">实现代码 2</h3>
+          <code
+            >var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+            var newArr = [];<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;if (arr[i] >= 10) {<br />
+            &nbsp;&nbsp;&nbsp;// 给新数组<br />
+            &nbsp;&nbsp;&nbsp;newArr[newArr.length] = arr[i];<br />
+            &nbsp;&nbsp;}<br />
+            }<br />
+            console.log(newArr);
+          </code>
+          <img src="./images/10-js数组/代码-筛选数组02.png" alt="" />
+        </section>
+        <hr />
+        <section id="shuZhuAnLi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#shuZhuGaiLian"><span>数组的概念</span></a>
+            </li>
+            <li>
+              <a href="#chuanJianShuZhu"><span>创建数组</span></a>
+            </li>
+            <li>
+              <a href="#huoQuShuZhuYuanShu"><span>获取数组中的元素</span></a>
+            </li>
+            <li>
+              <a href="#bianLiShuZhu"><span>遍历数组</span></a>
+            </li>
+            <li>
+              <a href="#xingZhenShuZhu"><span>数组中新增元素</span></a>
+            </li>
+            <li>
+              <a href="#shuZhuAnLi"><span class="color-red">数组案例</span></a>
+            </li>
+          </ul>
+          <h1>6. 数组案例</h1>
+          <h3 class="color-red">课堂案例 1： 删除指定数组元素</h3>
+          <p>
+            要求：将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中的 0
+            去掉后，形成一个不包含 0 的新数组。
+          </p>
+          <h3 class="color-red">案例分析</h3>
+          <ol>
+            <li>需要一个新数组用于存放筛选之后的数据。</li>
+            <li>
+              遍历原来的数组，把不是 0 的数据添加到新数组里面(
+              此时要注意采用<span class="color-red">数组名+索引</span
+              >的格式接收数据)。
+            </li>
+            <li>新数组里面的个数，用 length 不断累加。</li>
+          </ol>
+          <h3 class="color-red">实现代码</h3>
+          <code
+            >var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+            var newArr = []; // 空数组的默认的长度为 0<br />
+            // 定义一个变量 i 用来计算新数组的索引号<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;// 找出大于 10 的数<br />
+            &nbsp;&nbsp;if (arr[i] != 0) {<br />
+            &nbsp;&nbsp;&nbsp;// 给新数组<br />
+            &nbsp;&nbsp;&nbsp; // 每次存入一个值，newArr长度都会 +1<br />
+            &nbsp;&nbsp;&nbsp;newArr[newArr.length] = arr[i];<br />
+            &nbsp;&nbsp;}<br />
+            }<br />
+            console.log(newArr);
+          </code>
+          <img src="./images/10-js数组/代码-数据去重.png" alt="" />
+          <h3 class="color-red">课堂案例 2： 翻转数组</h3>
+          <p>
+            要求: 将数组 ['red', 'green', 'blue', 'pink', 'purple']
+            的内容反过来存放。
+          </p>
+          <p>输出： ['purple', 'pink', 'blue', 'green', 'red']</p>
+          <img src="./images/10-js数组/案例2翻转数组.png" alt="" />
+          <h3 class="color-red">实现代码</h3>
+          <code
+            >var arr = ['red', 'green', 'blue', 'pink', 'purple'];<br />
+            var newArr = [];<br />
+            for (var i = 0; i < arr.length; i++) {<br />
+            &nbsp;&nbsp;// newArr 是接收方，arr 是输送方<br />
+            &nbsp;&nbsp;newArr[i] = arr[arr.length - i - 1];<br />
+            }<br />
+            console.log(newArr);
+          </code>
+          <img src="./images/10-js数组/代码-翻转数组.png" alt="" />
+          <h3 class="color-red">课堂案例 3： 数组排序（冒泡排序</h3>
+          <p>我们先复习下如何把2个变量交换数据</p>
+          <code
+            >// 利用第三个变量<br />
+            var num1 = 10;<br />
+            var num2 = 20;<br />
+            var temp = num1;<br />
+            num1 = num2;<br />
+            num2 = temp;<br />
+            console.log(num1, num2);
+          </code>
+          <p>
+            冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示(从小到大或从大到小）。
+          </p>
+          <p>
+            例如，我们可以将数组 [5, 4, 3, 2,
+            1]中的元素按照从小到大的顺序排序，输出： 1，2，3，4，5
+          </p>
+          <img src="./images/10-js数组/冒泡排列.png" alt="" />
+          <h3 class="color-red">实现代码</h3>
+          <code
+            >var arr = [5, 4, 3, 2, 1];<br />
+            &nbsp;for (var i = 0; i < arr.length - 1; i++) {<br />
+            &nbsp;&nbsp;for (var j = 0; j < arr.length - i - 1; j++) {<br />
+            &nbsp;&nbsp;&nbsp;if (arr[j] > arr[j + 1]) {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;var temp = arr[j];<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;arr[j] = arr[j + 1];<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;arr[j + 1] = temp;<br />
+            &nbsp;&nbsp;&nbsp; }<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp; }<br />
+            console.log(arr);
+          </code>
+          <img src="./images/10-js数组/代码-冒泡排序.png" alt="" />
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsHanShu">
+        <header>11-JavaScript 函数</header>
+        <section id="hanShuGaiLian">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"
+                ><span class="color-red">函数的概念</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>1. 函数的概念</h1>
+          <p>
+            在 JS
+            里面，可能会定义非常多的相同代码或者功能相似的代码，这些代码可能需要大量重复使用。
+          </p>
+          <p>
+            虽然
+            for循环语句也能实现一些简单的重复操作，但是比较具有局限性，此时我们就可以使用<span
+              class="color-red"
+              >JS 中的函数。</span
+            >
+          </p>
+          <p>
+            <span class="color-red bold">函数：</span>就是封装了一段<span
+              class="color-red"
+              >可被重复调用执行的<b>代码块</b>。</span
+            >通过此代码块可以实现大量代码的重复使用。
+          </p>
+        </section>
+        <hr />
+        <section id="hanShuShiYong">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"
+                ><span class="color-red">函数的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>2. 函数的使用</h1>
+          <p>
+            函数在使用时分为两步：<span class="color-red">声明函数</span
+            >和调用函数
+          </p>
+          <h2>2.1 声明函数</h2>
+          <pre><code
+            >// 声明函数
+            <span class="color-red">function 函数名() {</span>
+            &nbsp;&nbsp;//函数体代码
+            <span class="color-red">}</span></code
+          ></pre>
+          <ul>
+            <li>
+              <span class="color-red">function</span>是声明函数的关键字<span
+                class="color-red"
+                >必须小写</span
+              >
+            </li>
+            <li>
+              由于函数一般是为了实现某个功能才定义的， 所以通常我们将
+              <span class="color-red">函数名</span>命名为<span class="color-red"
+                >动词，</span
+              >比如 getSum
+            </li>
+          </ul>
+          <p>
+            函数在使用时分为两步：声明函数和<span class="color-red"
+              >调用函数。</span
+            >
+          </p>
+          <h2>2.2 调用函数</h2>
+          <pre><code
+            >// 调用函数
+            <span class="color-red">函数名();</span> //通过调用函数名来执行函数体代码</code
+          ></pre>
+          <ul>
+            <li>
+              调用的时候千万<span class="color-red">不要忘记添加小括号</span>
+            </li>
+            <li>口诀：函数不调用，自己不执行。</li>
+          </ul>
+          <p class="color-red">
+            <b>注意：</b
+            >：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码
+          </p>
+          <h2>2.3 函数的封装</h2>
+          <ul>
+            <li>
+              函数的封装是把一个或者多个功能通过<span class="color-red bold"
+                >函数的方式封装起来，</span
+              >对外只提供一个简单的函数接口
+            </li>
+            <li>
+              简单理解：封装类似于将电脑配件整合组装到机箱中 ( 类似快递打包）
+            </li>
+          </ul>
+          <img src="./images/11-函数/函数封存.png" alt="" />
+          <h3>案例：利用函数计算1-100之间的累加和</h3>
+          <pre><code
+            >/*
+            &nbsp;&nbsp;计算1-100之间值的函数
+            */
+            // 声明函数
+            function getSum(){
+            &nbsp;&nbsp;var sumNum = 0;// 准备一个变量，保存数字和
+            &nbsp;&nbsp;for (var i = 1; i <= 100; i++) {
+            &nbsp;&nbsp;&nbsp;&nbsp;sumNum += i;// 把每个数值 都累加 到变量中
+            &nbsp;&nbsp;}
+            &nbsp;&nbsp;alert(sumNum);
+            }
+            // 调用函数
+            getSum();
+          </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuChanShu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"
+                ><span class="color-red">函数的参数</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>3. 函数的参数</h1>
+          <h2>3.1 形参和实参</h2>
+          <p>
+            在<span class="color-red">声明函数时，</span
+            >可以在函数名称后面的小括号中添加一些参数，这些参数被称为<span
+              class="color-red bold"
+              >形参，</span
+            >而在<span class="color-red">调用该函数时，</span
+            >同样也需要传递相应的参数，这些参数被称为<span
+              class="color-red bold"
+              >实参。</span
+            >
+          </p>
+          <table>
+            <tr>
+              <th class="bold left">参数&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th class="bold left">说明&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            </tr>
+            <tr>
+              <td class="bold left">形参</td>
+              <td>
+                <span class="bold">形</span>式上的<b>参</b>数
+                <b>函数定义</b>的时候 传递的函数
+                当时并不知道是什么&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td class="bold left">实参</td>
+              <td>
+                <span class="bold">实</span>际上的<b>参</b>数
+                <b>函数调用</b>的时候 传递的函数
+                实参是传递给形参的&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+          <p>
+            <span class="color-red bold">参数的作用 : </span>在<span
+              class="color-red bold"
+              >函数内部</span
+            >某些值不能固定，我们可以通过参数在<span class="color-red bold"
+              >调用函数时传递</span
+            >不同的值进去
+          </p>
+          <p>
+            在
+            <span class="color-red">声明函数时，</span
+            >可以在函数名称后面的小括号中添加一些参数，这些参数被称为<span
+              class="color-red bold"
+              >形参，</span
+            >而在<span class="color-red">调用该函数时，</span
+            >同样也需要传递相应的参数，这些参数被称为<span
+              class="color-red bold"
+              >实参。</span
+            >
+          </p>
+          <pre></pre>
+          <pre><code>// 带参数的函数声明
+          function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的参数，用逗号分隔
+            // 函数体
+          }
+          // 带参数的函数调用
+          函数名(实参1, 实参2, 实参3...); 
+          </code></pre>
+          <h3 class="color-red">案例：利用函数求任意两个数的和</h3>
+          <pre><code>function getSum(num1, num2) {
+             console.log(num1 + num2);
+          }
+          getSum(1, 3); // 4
+          getSum(6, 5); // 11
+          </code></pre>
+          <h2>3.2 函数参数的传递过程</h2>
+          <pre><code
+            >// 声明函数
+            function getSum(num1, num2) {
+            &nbsp;&nbsp;console.log(num1 + num2);
+            }
+            // 调用函数
+            getSum(1, 3); // 4
+            getSum(6, 5); // 11
+          </code></pre>
+          <ol>
+            <li>调用的时候实参值是传递给形参的</li>
+            <li>
+              形参简单理解为：<span class="color-red bold">不用声明的变量</span>
+            </li>
+            <li>实参和形参的多个参数之间用逗号（,）分隔</li>
+          </ol>
+          <img src="./images/11-函数/代码-形参和实参的执行过程.png" alt="" />
+          <h2>3.3 函数形参和实参个数不匹配问题</h2>
+          <table>
+            <tr>
+              <th class="bold left">参数个数</th>
+              <th class="bold left">说明</th>
+            </tr>
+            <tr>
+              <td class="left">实参个数等于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">输出正确结果</td>
+            </tr>
+            <tr>
+              <td class="left">实参个数多于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">只取到形参的个数</td>
+            </tr>
+            <tr>
+              <td class="left">实参个数小于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">多的形参定义为undefined，结果为NaN</td>
+            </tr>
+          </table>
+          <pre><code
+            >function sum(num1, num2) {
+                console.log(num1 + num2);
+            }
+            sum(100, 200);       // 形参和实参个数相等，输出正确结果
+            sum(100, 400, 500, 700);  // 实参个数多于形参，只取到形参的个数
+            sum(200);          // 实参个数少于形参，多的形参定义为undefined，结果为NaN
+          </code></pre>
+          <p>
+            <span class="color-red bold">注意：</span
+            >在JavaScript中，形参的默认值是<span class="color-red"
+              >undefined。
+            </span>
+          </p>
+          <h2>3.4 小结</h2>
+          <ul>
+            <li>函数可以带参数也可以不带参数</li>
+            <li>
+              声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined
+            </li>
+            <li>调用函数的时候，函数名括号里面的是实参</li>
+            <li>多个参数中间用逗号分隔</li>
+            <li>
+              形参的个数可以和实参个数不匹配，但是结果不可预计，我们尽量要匹配
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section id="hanShuFanHuiZhi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"
+                ><span class="color-red">函数的返回值 return</span></a
+              >
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>4. 函数的返回值 return</h1>
+          <h2>4.1 return 语句</h2>
+          <p>
+            有的时候，我们会希望函数将值返回给调用者，此时通过使用 return
+            语句就可以实现。
+          </p>
+          <p>return 语句的语法格式如下：</p>
+          <pre>
+          <code>// 声明函数
+            function 函数名（）{
+               ...
+               return  需要返回的值；
+            }
+            // 调用函数
+            函数名();  // 此时调用函数就可以得到函数体内return 后面的值
+          </code>
+        </pre>
+          <ul>
+            <li>在使用 return 语句时，函数会停止执行，并返回指定的值</li>
+            <li>
+              如果函数
+              <span class="color-red">没有 return ，</span>返回的值是<span
+                class="color-red"
+              >
+                undefined
+              </span>
+            </li>
+          </ul>
+          <p>例如，声明了一个sum()函数，该函数的返回值为666，其代码如下：</p>
+          <pre><code>// 声明函数
+                function sum（）{
+                   ...
+                   return  666；
+                }
+                // 调用函数
+                sum();      // 此时 sum 的值就等于666，因为 return 语句会把自身后面的值返回给调用者 
+              </code></pre>
+          <h3 class="color-red">案例 1：利用函数求任意两个数的最大值</h3>
+          <pre><code>function getMax(num1, num2) {
+                  return num1 > num2 ? num1 : num2;
+                }
+                console.log(getMax(1, 2));
+                console.log(getMax(11, 2));
+              </code></pre>
+          <h3 class="color-red">案例 2：利用函数求任意一个数组中的最大值</h3>
+          <p>求数组 [5,2,99,101,67,77] 中的最大数值。</p>
+          <pre><code>//定义一个获取数组中最大数的函数
+            function getMaxFromArr(numArray){
+              var maxNum = 0;
+              for(var i =0;i < numArray.length;i++){
+               if(numArray[i] > maxNum){
+                 maxNum = numArray[i];
+                }
+              }
+              return maxNum;
+            }
+            var arrNum = [5,2,99,101,67,77];
+            var maxN = getMaxFromArr(arrNum); // 这个实参是个数组
+            alert('最大值为：'+ maxN);
+          </code></pre>
+          <h2>4.2 return 终止函数</h2>
+          <p>return 语句之后的代码不被执行。</p>
+          <pre>
+            <code>function add(num1，num2){
+                 //函数体
+                 return num1 + num2; // 注意：return 后的代码不执行
+                 alert('我不会被执行，因为前面有 return');
+              }
+              var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+              alert(resNum);     // 27
+            </code>
+          </pre>
+          <h2>4.3 return 的返回值</h2>
+          <p>
+            <span class="color-red bold">return 只能返回一个值。</span
+            >如果用逗号隔开多个值，以最后一个为准。
+          </p>
+          <pre>
+            <code>function add(num1，num2){
+                 //函数体
+                 return num1，num2;
+              }
+              var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+              alert(resNum);     // 6
+              </code>
+          </pre>
+          <h3 class="color-red">
+            案例：创建一个函数，实现两个数之间的加减乘除运算，并将结果返回
+          </h3>
+          <pre>
+            <code>var a = parseFloat(prompt('请输入第一个数'));
+              var b = parseFloat(prompt('请输入第二个数'));
+              function count(a, b) {
+                 var arr = [a + b, a - b, a * b, a / b];
+                 return arr;
+              }
+              var result = count(a, b);
+              console.log(result);
+              </code>
+          </pre>
+          <h2>4.4 函数没有 return 返回 undefined</h2>
+          <p>函数都是有返回值的</p>
+          <ol>
+            <li>如果有return 则返回 return 后面的值</li>
+            <li>如果没有return 则返回 undefined</li>
+          </ol>
+          <h2>4.5 break ,continue ,return 的区别</h2>
+          <ul>
+            <li>break ：结束当前的循环体（如 for、while）</li>
+            <li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
+            <li>
+              return ：不仅可以退出循环，还能够返回 return
+              语句中的值，同时还可以结束当前的函数体内的代码
+            </li>
+          </ul>
+          <h2>4.6 通过榨汁机看透函数</h2>
+          <img src="./images/11-函数/通过榨汁机看函数.png" alt="" />
+          <h2>4.7 作业</h2>
+          <ul>
+            <li>
+              写一个函数，用户输入任意两个数字的任意算术运算（简单的计算器小功能），并能弹出运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入任意两个数字的最大值，并能出弹运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入任意三个不同数字的最大值，并能弹出运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入一个数判断是否是素数，并返弹出回值(又叫质数，只能被1和自身整数的数)
+            </li>
+          </ul>
+        </section>
+        <section id="argumentsShiYong">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"
+                ><span class="color-red">arguments的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>5. arguments的使用</h1>
+          <p>
+            当我们不确定有多少个参数传递的时候，可以用
+            <span class="color-red"> arguments </span
+            ><span class="color-red"
+              >来获取。在 JavaScript 中，arguments
+              实际上它是当前函数的一个</span
+            ><span class="color-red">内置对象。</span>所有函数都内置了一个
+            arguments 对象，arguments 对象中<span class="color-red"
+              >存储了传递的所有实参。
+            </span>
+          </p>
+          <p>
+            <span class="color-red bold">arguments展示形式是一个伪数组，</span
+            >因此可以进行遍历。伪数组具有以下特点：
+          </p>
+          <ul>
+            <li>具有 length 属性</li>
+            <li>按索引方式储存数据</li>
+            <li>不具有数组的 push , pop 等方法</li>
+          </ul>
+          <img src="./images/11-函数/代码-arguments的使用.png" alt="" />
+          <h3>案例：利用函数求任意个数的最大值</h3>
+          <pre><code>function maxValue() {
+                     var max = arguments[0];
+                     for (var i = 0; i < arguments.length; i++) {
+                        if (max < arguments[i]) {
+                              max = arguments[i];
+                        }
+                     }
+                     return max;
+                  }
+                  console.log(maxValue(2, 4, 5, 9));
+                  console.log(maxValue(12, 4, 9));
+                </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuAnLi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span class="color-red">函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h3 class="color-red bold">
+            案例 1： 利用函数封装方式，翻转任意一个数组 (reverse 翻转)
+          </h3>
+          <pre><code>function reverse(arr) {
+                  var newArr = [];
+                  for (var i = arr.length - 1; i >= 0; i--) {
+                  newArr[newArr.length] = arr[i];
+                  }
+                  return newArr;
+                  }
+                  var arr1 = reverse([1, 3, 4, 6, 9]);
+                  console.log(arr1);
+                </code></pre>
+          <h3 class="color-red bold">
+            案例 2： 利用函数封装方式，对数组排序 -- 冒泡排序 (sort 排序)
+          </h3>
+          <pre><code>function sort(arr) {
+                  for (var i = 0; i < arr.length - 1; i++) {
+                  for (var j = 0; j < arr.length - i - 1; j++) {
+                  if (arr[j] > arr[j + 1]) {
+                  var temp = arr[j];
+                  arr[j] = arr[j + 1];
+                  arr[j + 1] = temp;
+                  }
+                  }
+                  }
+                  return arr;
+                  }
+                </code></pre>
+          <h3 class="color-red bold">案例 3： 判断闰年</h3>
+          <p>
+            要求：输入一个年份，判断是否是闰年（闰年：能被4整除并且不能被100整数，或者能被400整除）
+          </p>
+          <p>
+            注意：下面的函数的意思是"如果是闰年我们返回 true 否则 返回 false"
+          </p>
+          <pre><code>function isRun(year) {
+                     var flag = false;
+                     if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                       flag = true;
+                     }
+                    return flag;
+                  }
+                  console.log(isRun(2010));
+                  console.log(isRun(2012));
+                  </code></pre>
+          <h3>函数可以调用另外一个函数</h3>
+          <p>
+            因为每个函数都是独立的代码块，用于完成特殊任务，因此经常会用到函数相互调用的情况。
+          </p>
+          <div style="display: flex; flex: 1">
+            <img src="./images/11-函数/汽车.png" alt="" />
+            <img src="./images/11-函数/轮胎.png" alt="" />
+          </div>
+          <pre><code>function <b>fn1()</b> {
+                   console.log(111);
+                   <b>fn2();</b>
+                   console.log('fn1');
+                  }
+                  function <b>fn2()</b> {
+                   console.log(222);
+                   console.log('fn2');
+                  }
+                  <b>fn1();</b>
+                </code></pre>
+          <h3 class="color-red bold">
+            案例 4： 用户输入年份，输出当前年份2月份的天数
+          </h3>
+          <p>如果是闰年，则2月份是 29天， 如果是平年，则2月份是 28天</p>
+          <pre><code>// 用户输入年份，输出当前年份2月份的天数
+                  function backDay() {
+                     var year = prompt('请您输入年份:');
+                     if (isRunYear(year)) { // 调用函数需要加小括号
+                       alert('当前年份是闰年2月份有29天');
+                     } else {
+                       alert('当前年份是平年2月份有28天');
+                     }
+                     }
+                  backDay();
+      
+                // 判断是否为闰年的函数
+                  function isRunYear(year) {
+                    // 如果是闰年我们返回 true  否则 返回 false 
+                    var flag = false;
+                    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                      flag = true;
+                    }
+                    return flag;
+                  }
+           </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuShenMing">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"
+                ><span class="color-red">函数的两种声明方式</span></a
+              >
+            </li>
+          </ul>
+          <h1>7.1 自定义函数方式(命名函数)</h1>
+          <p>利用函数关键字 function 自定义函数方式。</p>
+          <pre>
+            <code>// 声明定义方式
+              function fn() {...}
+              // 调用  
+              fn();  
+            </code>
+          </pre>
+          <ul>
+            <li>
+              因为有名字，所以也被称为<span class="color-red">命名函数</span>
+            </li>
+            <li>
+              调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面
+            </li>
+          </ul>
+          <h1>7.2 函数表达式方式(匿名函数）</h1>
+          <p>利用函数表达式方式的写法如下：</p>
+          <pre><code>// 这是函数表达式写法，匿名函数后面跟分号结束
+                  var fn = function(){...}；
+                  // 调用的方式，函数调用必须写到函数体下面
+                  fn();
+                </code></pre>
+          <ul>
+            <li>
+              因为函数没有名字，所以也被称为<span class="color-red"
+                >匿名函数
+              </span>
+            </li>
+            <li>这个fn 里面存储的是一个函数</li>
+            <li>函数表达式方式原理跟声明变量方式是一致的</li>
+            <li>函数调用的代码必须写到函数体后面</li>
+          </ul>
+          <img src="./images/11-函数/代码-函数的两种声明方式.png" alt="" />
+          <h3>作业</h3>
+          <ol>
+            <li>写一个函数，实现反转任意数组。</li>
+            <li>写一个函数，实现对数字数组的排序。</li>
+          </ol>
+          <h3 class="color-red">小组项目： 做一个简易计算器</h3>
+          <img src="./images/11-函数/做一个简易计算器.png" alt="" />
+        </section>
+      </div>
+      <hr />
+      <hr />
+      <section class="main-section" id="while_statement">
+        <header>12</header>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>13</header>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>14</header>
+      </section>
+    </main>
+  </body>
+</html>
