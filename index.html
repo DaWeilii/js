@@ -44,7 +44,7 @@
         </li>
         <li><a class="nav-link" href="#jsShuZhu">10-数组</a></li>
         <li>
-          <a class="nav-link" href="#if...else_statement">11</a>
+          <a class="nav-link" href="#jsHanShu">11-函数</a>
         </li>
         <li><a class="nav-link" href="#while_statement">12</a></li>
         <li>
@@ -222,6 +222,8 @@
           </p>
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="csjs">
         <header>02-初识JavaScript</header>
         <section id="chuShijs">
@@ -490,6 +492,8 @@
           </p>
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="bianLiang">
         <header>03-变量</header>
         <section id="bianLiangGaiShu">
@@ -743,6 +747,8 @@
           </p>
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="shuJuLeiXing">
         <header>04-数据类型</header>
         <section id="ShuJuLeiXingJianJie">
@@ -1257,6 +1263,8 @@
         </section>
         <hr />
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="kzydyjzy">
         <header>05-扩展阅读以及作业</header>
         <section id="jieShiXingBianYiXing">
@@ -1382,6 +1390,8 @@
         </section>
         <hr />
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="jsYunShuanFu">
         <header>06-JavaScript 运算符</header>
         <section id="yunShuanFu">
@@ -1791,6 +1801,8 @@
         </section>
         <hr />
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="jslckzfz">
         <header>07-JavaScript 流程控制-分支</header>
         <section id="liuChenKongZhi">
@@ -2308,6 +2320,8 @@
           <p>⑦ 7. 预习下 循环控制 for 循环</p>
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="jsXunHuan">
         <header>08-JavaScript 流程控制-循环</header>
         <section id="XunHuan">
@@ -3118,6 +3132,8 @@
           <img src="./images/08-js循环/作业-简易ATM.png" alt="" />
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="jsMingMingGuiFan">
         <header>09-JavaScript 命名规范以及语法格式</header>
         <section id="biaoZhiFuMingMIngGuiFan">
@@ -3234,6 +3250,8 @@
           </ul>
         </section>
       </div>
+      <hr />
+      <hr />
       <div class="main-section" id="jsShuZhu">
         <header>10-JavaScript 数组</header>
         <section id="shuZhuGaiLian">
@@ -3813,9 +3831,736 @@
           <img src="./images/10-js数组/代码-冒泡排序.png" alt="" />
         </section>
       </div>
-      <section class="main-section" id="if...else_statement">
-        <header>11</header>
-      </section>
+      <hr />
+      <hr />
+      <div class="main-section" id="jsHanShu">
+        <header>11-JavaScript 函数</header>
+        <section id="hanShuGaiLian">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"
+                ><span class="color-red">函数的概念</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>1. 函数的概念</h1>
+          <p>
+            在 JS
+            里面，可能会定义非常多的相同代码或者功能相似的代码，这些代码可能需要大量重复使用。
+          </p>
+          <p>
+            虽然
+            for循环语句也能实现一些简单的重复操作，但是比较具有局限性，此时我们就可以使用<span
+              class="color-red"
+              >JS 中的函数。</span
+            >
+          </p>
+          <p>
+            <span class="color-red bold">函数：</span>就是封装了一段<span
+              class="color-red"
+              >可被重复调用执行的<b>代码块</b>。</span
+            >通过此代码块可以实现大量代码的重复使用。
+          </p>
+        </section>
+        <hr />
+        <section id="hanShuShiYong">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"
+                ><span class="color-red">函数的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>2. 函数的使用</h1>
+          <p>
+            函数在使用时分为两步：<span class="color-red">声明函数</span
+            >和调用函数
+          </p>
+          <h2>2.1 声明函数</h2>
+          <pre><code
+            >// 声明函数
+            <span class="color-red">function 函数名() {</span>
+            &nbsp;&nbsp;//函数体代码
+            <span class="color-red">}</span></code
+          ></pre>
+          <ul>
+            <li>
+              <span class="color-red">function</span>是声明函数的关键字<span
+                class="color-red"
+                >必须小写</span
+              >
+            </li>
+            <li>
+              由于函数一般是为了实现某个功能才定义的， 所以通常我们将
+              <span class="color-red">函数名</span>命名为<span class="color-red"
+                >动词，</span
+              >比如 getSum
+            </li>
+          </ul>
+          <p>
+            函数在使用时分为两步：声明函数和<span class="color-red"
+              >调用函数。</span
+            >
+          </p>
+          <h2>2.2 调用函数</h2>
+          <pre><code
+            >// 调用函数
+            <span class="color-red">函数名();</span> //通过调用函数名来执行函数体代码</code
+          ></pre>
+          <ul>
+            <li>
+              调用的时候千万<span class="color-red">不要忘记添加小括号</span>
+            </li>
+            <li>口诀：函数不调用，自己不执行。</li>
+          </ul>
+          <p class="color-red">
+            <b>注意：</b
+            >：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码
+          </p>
+          <h2>2.3 函数的封装</h2>
+          <ul>
+            <li>
+              函数的封装是把一个或者多个功能通过<span class="color-red bold"
+                >函数的方式封装起来，</span
+              >对外只提供一个简单的函数接口
+            </li>
+            <li>
+              简单理解：封装类似于将电脑配件整合组装到机箱中 ( 类似快递打包）
+            </li>
+          </ul>
+          <img src="./images/11-函数/函数封存.png" alt="" />
+          <h3>案例：利用函数计算1-100之间的累加和</h3>
+          <pre><code
+            >/*
+            &nbsp;&nbsp;计算1-100之间值的函数
+            */
+            // 声明函数
+            function getSum(){
+            &nbsp;&nbsp;var sumNum = 0;// 准备一个变量，保存数字和
+            &nbsp;&nbsp;for (var i = 1; i <= 100; i++) {
+            &nbsp;&nbsp;&nbsp;&nbsp;sumNum += i;// 把每个数值 都累加 到变量中
+            &nbsp;&nbsp;}
+            &nbsp;&nbsp;alert(sumNum);
+            }
+            // 调用函数
+            getSum();
+          </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuChanShu">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"
+                ><span class="color-red">函数的参数</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>3. 函数的参数</h1>
+          <h2>3.1 形参和实参</h2>
+          <p>
+            在<span class="color-red">声明函数时，</span
+            >可以在函数名称后面的小括号中添加一些参数，这些参数被称为<span
+              class="color-red bold"
+              >形参，</span
+            >而在<span class="color-red">调用该函数时，</span
+            >同样也需要传递相应的参数，这些参数被称为<span
+              class="color-red bold"
+              >实参。</span
+            >
+          </p>
+          <table>
+            <tr>
+              <th class="bold left">参数&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th class="bold left">说明&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            </tr>
+            <tr>
+              <td class="bold left">形参</td>
+              <td>
+                <span class="bold">形</span>式上的<b>参</b>数
+                <b>函数定义</b>的时候 传递的函数
+                当时并不知道是什么&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td class="bold left">实参</td>
+              <td>
+                <span class="bold">实</span>际上的<b>参</b>数
+                <b>函数调用</b>的时候 传递的函数
+                实参是传递给形参的&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+          <p>
+            <span class="color-red bold">参数的作用 : </span>在<span
+              class="color-red bold"
+              >函数内部</span
+            >某些值不能固定，我们可以通过参数在<span class="color-red bold"
+              >调用函数时传递</span
+            >不同的值进去
+          </p>
+          <p>
+            在
+            <span class="color-red">声明函数时，</span
+            >可以在函数名称后面的小括号中添加一些参数，这些参数被称为<span
+              class="color-red bold"
+              >形参，</span
+            >而在<span class="color-red">调用该函数时，</span
+            >同样也需要传递相应的参数，这些参数被称为<span
+              class="color-red bold"
+              >实参。</span
+            >
+          </p>
+          <pre></pre>
+          <pre><code>// 带参数的函数声明
+          function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的参数，用逗号分隔
+            // 函数体
+          }
+          // 带参数的函数调用
+          函数名(实参1, 实参2, 实参3...); 
+          </code></pre>
+          <h3 class="color-red">案例：利用函数求任意两个数的和</h3>
+          <pre><code>function getSum(num1, num2) {
+             console.log(num1 + num2);
+          }
+          getSum(1, 3); // 4
+          getSum(6, 5); // 11
+          </code></pre>
+          <h2>3.2 函数参数的传递过程</h2>
+          <pre><code
+            >// 声明函数
+            function getSum(num1, num2) {
+            &nbsp;&nbsp;console.log(num1 + num2);
+            }
+            // 调用函数
+            getSum(1, 3); // 4
+            getSum(6, 5); // 11
+          </code></pre>
+          <ol>
+            <li>调用的时候实参值是传递给形参的</li>
+            <li>
+              形参简单理解为：<span class="color-red bold">不用声明的变量</span>
+            </li>
+            <li>实参和形参的多个参数之间用逗号（,）分隔</li>
+          </ol>
+          <img src="./images/11-函数/代码-形参和实参的执行过程.png" alt="" />
+          <h2>3.3 函数形参和实参个数不匹配问题</h2>
+          <table>
+            <tr>
+              <th class="bold left">参数个数</th>
+              <th class="bold left">说明</th>
+            </tr>
+            <tr>
+              <td class="left">实参个数等于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">输出正确结果</td>
+            </tr>
+            <tr>
+              <td class="left">实参个数多于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">只取到形参的个数</td>
+            </tr>
+            <tr>
+              <td class="left">实参个数小于形参个数&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td class="left">多的形参定义为undefined，结果为NaN</td>
+            </tr>
+          </table>
+          <pre><code
+            >function sum(num1, num2) {
+                console.log(num1 + num2);
+            }
+            sum(100, 200);       // 形参和实参个数相等，输出正确结果
+            sum(100, 400, 500, 700);  // 实参个数多于形参，只取到形参的个数
+            sum(200);          // 实参个数少于形参，多的形参定义为undefined，结果为NaN
+          </code></pre>
+          <p>
+            <span class="color-red bold">注意：</span
+            >在JavaScript中，形参的默认值是<span class="color-red"
+              >undefined。
+            </span>
+          </p>
+          <h2>3.4 小结</h2>
+          <ul>
+            <li>函数可以带参数也可以不带参数</li>
+            <li>
+              声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined
+            </li>
+            <li>调用函数的时候，函数名括号里面的是实参</li>
+            <li>多个参数中间用逗号分隔</li>
+            <li>
+              形参的个数可以和实参个数不匹配，但是结果不可预计，我们尽量要匹配
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section id="hanShuFanHuiZhi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"
+                ><span class="color-red">函数的返回值 return</span></a
+              >
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>4. 函数的返回值 return</h1>
+          <h2>4.1 return 语句</h2>
+          <p>
+            有的时候，我们会希望函数将值返回给调用者，此时通过使用 return
+            语句就可以实现。
+          </p>
+          <p>return 语句的语法格式如下：</p>
+          <pre>
+          <code>// 声明函数
+            function 函数名（）{
+               ...
+               return  需要返回的值；
+            }
+            // 调用函数
+            函数名();  // 此时调用函数就可以得到函数体内return 后面的值
+          </code>
+        </pre>
+          <ul>
+            <li>在使用 return 语句时，函数会停止执行，并返回指定的值</li>
+            <li>
+              如果函数
+              <span class="color-red">没有 return ，</span>返回的值是<span
+                class="color-red"
+              >
+                undefined
+              </span>
+            </li>
+          </ul>
+          <p>例如，声明了一个sum()函数，该函数的返回值为666，其代码如下：</p>
+          <pre><code>// 声明函数
+                function sum（）{
+                   ...
+                   return  666；
+                }
+                // 调用函数
+                sum();      // 此时 sum 的值就等于666，因为 return 语句会把自身后面的值返回给调用者 
+              </code></pre>
+          <h3 class="color-red">案例 1：利用函数求任意两个数的最大值</h3>
+          <pre><code>function getMax(num1, num2) {
+                  return num1 > num2 ? num1 : num2;
+                }
+                console.log(getMax(1, 2));
+                console.log(getMax(11, 2));
+              </code></pre>
+          <h3 class="color-red">案例 2：利用函数求任意一个数组中的最大值</h3>
+          <p>求数组 [5,2,99,101,67,77] 中的最大数值。</p>
+          <pre><code>//定义一个获取数组中最大数的函数
+            function getMaxFromArr(numArray){
+              var maxNum = 0;
+              for(var i =0;i < numArray.length;i++){
+               if(numArray[i] > maxNum){
+                 maxNum = numArray[i];
+                }
+              }
+              return maxNum;
+            }
+            var arrNum = [5,2,99,101,67,77];
+            var maxN = getMaxFromArr(arrNum); // 这个实参是个数组
+            alert('最大值为：'+ maxN);
+          </code></pre>
+          <h2>4.2 return 终止函数</h2>
+          <p>return 语句之后的代码不被执行。</p>
+          <pre>
+            <code>function add(num1，num2){
+                 //函数体
+                 return num1 + num2; // 注意：return 后的代码不执行
+                 alert('我不会被执行，因为前面有 return');
+              }
+              var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+              alert(resNum);     // 27
+            </code>
+          </pre>
+          <h2>4.3 return 的返回值</h2>
+          <p>
+            <span class="color-red bold">return 只能返回一个值。</span
+            >如果用逗号隔开多个值，以最后一个为准。
+          </p>
+          <pre>
+            <code>function add(num1，num2){
+                 //函数体
+                 return num1，num2;
+              }
+              var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+              alert(resNum);     // 6
+              </code>
+          </pre>
+          <h3 class="color-red">
+            案例：创建一个函数，实现两个数之间的加减乘除运算，并将结果返回
+          </h3>
+          <pre>
+            <code>var a = parseFloat(prompt('请输入第一个数'));
+              var b = parseFloat(prompt('请输入第二个数'));
+              function count(a, b) {
+                 var arr = [a + b, a - b, a * b, a / b];
+                 return arr;
+              }
+              var result = count(a, b);
+              console.log(result);
+              </code>
+          </pre>
+          <h2>4.4 函数没有 return 返回 undefined</h2>
+          <p>函数都是有返回值的</p>
+          <ol>
+            <li>如果有return 则返回 return 后面的值</li>
+            <li>如果没有return 则返回 undefined</li>
+          </ol>
+          <h2>4.5 break ,continue ,return 的区别</h2>
+          <ul>
+            <li>break ：结束当前的循环体（如 for、while）</li>
+            <li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
+            <li>
+              return ：不仅可以退出循环，还能够返回 return
+              语句中的值，同时还可以结束当前的函数体内的代码
+            </li>
+          </ul>
+          <h2>4.6 通过榨汁机看透函数</h2>
+          <img src="./images/11-函数/通过榨汁机看函数.png" alt="" />
+          <h2>4.7 作业</h2>
+          <ul>
+            <li>
+              写一个函数，用户输入任意两个数字的任意算术运算（简单的计算器小功能），并能弹出运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入任意两个数字的最大值，并能出弹运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入任意三个不同数字的最大值，并能弹出运算后的结果。
+            </li>
+            <li>
+              写一个函数，用户输入一个数判断是否是素数，并返弹出回值(又叫质数，只能被1和自身整数的数)
+            </li>
+          </ul>
+        </section>
+        <section id="argumentsShiYong">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"
+                ><span class="color-red">arguments的使用</span></a
+              >
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h1>5. arguments的使用</h1>
+          <p>
+            当我们不确定有多少个参数传递的时候，可以用
+            <span class="color-red"> arguments </span
+            ><span class="color-red"
+              >来获取。在 JavaScript 中，arguments
+              实际上它是当前函数的一个</span
+            ><span class="color-red">内置对象。</span>所有函数都内置了一个
+            arguments 对象，arguments 对象中<span class="color-red"
+              >存储了传递的所有实参。
+            </span>
+          </p>
+          <p>
+            <span class="color-red bold">arguments展示形式是一个伪数组，</span
+            >因此可以进行遍历。伪数组具有以下特点：
+          </p>
+          <ul>
+            <li>具有 length 属性</li>
+            <li>按索引方式储存数据</li>
+            <li>不具有数组的 push , pop 等方法</li>
+          </ul>
+          <img src="./images/11-函数/代码-arguments的使用.png" alt="" />
+          <h3>案例：利用函数求任意个数的最大值</h3>
+          <pre><code>function maxValue() {
+                     var max = arguments[0];
+                     for (var i = 0; i < arguments.length; i++) {
+                        if (max < arguments[i]) {
+                              max = arguments[i];
+                        }
+                     }
+                     return max;
+                  }
+                  console.log(maxValue(2, 4, 5, 9));
+                  console.log(maxValue(12, 4, 9));
+                </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuAnLi">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span class="color-red">函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"><span>函数的两种声明方式</span></a>
+            </li>
+          </ul>
+          <h3 class="color-red bold">
+            案例 1： 利用函数封装方式，翻转任意一个数组 (reverse 翻转)
+          </h3>
+          <pre><code>function reverse(arr) {
+                  var newArr = [];
+                  for (var i = arr.length - 1; i >= 0; i--) {
+                  newArr[newArr.length] = arr[i];
+                  }
+                  return newArr;
+                  }
+                  var arr1 = reverse([1, 3, 4, 6, 9]);
+                  console.log(arr1);
+                </code></pre>
+          <h3 class="color-red bold">
+            案例 2： 利用函数封装方式，对数组排序 -- 冒泡排序 (sort 排序)
+          </h3>
+          <pre><code>function sort(arr) {
+                  for (var i = 0; i < arr.length - 1; i++) {
+                  for (var j = 0; j < arr.length - i - 1; j++) {
+                  if (arr[j] > arr[j + 1]) {
+                  var temp = arr[j];
+                  arr[j] = arr[j + 1];
+                  arr[j + 1] = temp;
+                  }
+                  }
+                  }
+                  return arr;
+                  }
+                </code></pre>
+          <h3 class="color-red bold">案例 3： 判断闰年</h3>
+          <p>
+            要求：输入一个年份，判断是否是闰年（闰年：能被4整除并且不能被100整数，或者能被400整除）
+          </p>
+          <p>
+            注意：下面的函数的意思是"如果是闰年我们返回 true 否则 返回 false"
+          </p>
+          <pre><code>function isRun(year) {
+                     var flag = false;
+                     if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                       flag = true;
+                     }
+                    return flag;
+                  }
+                  console.log(isRun(2010));
+                  console.log(isRun(2012));
+                  </code></pre>
+          <h3>函数可以调用另外一个函数</h3>
+          <p>
+            因为每个函数都是独立的代码块，用于完成特殊任务，因此经常会用到函数相互调用的情况。
+          </p>
+          <div style="display: flex; flex: 1">
+            <img src="./images/11-函数/汽车.png" alt="" />
+            <img src="./images/11-函数/轮胎.png" alt="" />
+          </div>
+          <pre><code>function <b>fn1()</b> {
+                   console.log(111);
+                   <b>fn2();</b>
+                   console.log('fn1');
+                  }
+                  function <b>fn2()</b> {
+                   console.log(222);
+                   console.log('fn2');
+                  }
+                  <b>fn1();</b>
+                </code></pre>
+          <h3 class="color-red bold">
+            案例 4： 用户输入年份，输出当前年份2月份的天数
+          </h3>
+          <p>如果是闰年，则2月份是 29天， 如果是平年，则2月份是 28天</p>
+          <pre><code>// 用户输入年份，输出当前年份2月份的天数
+                  function backDay() {
+                     var year = prompt('请您输入年份:');
+                     if (isRunYear(year)) { // 调用函数需要加小括号
+                       alert('当前年份是闰年2月份有29天');
+                     } else {
+                       alert('当前年份是平年2月份有28天');
+                     }
+                     }
+                  backDay();
+      
+                // 判断是否为闰年的函数
+                  function isRunYear(year) {
+                    // 如果是闰年我们返回 true  否则 返回 false 
+                    var flag = false;
+                    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                      flag = true;
+                    }
+                    return flag;
+                  }
+           </code></pre>
+        </section>
+        <hr />
+        <section id="hanShuShenMing">
+          <p>目录介绍：</p>
+          <ul>
+            <li>
+              <a href="#hanShuGaiLian"><span>函数的概念</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShiYong"><span>函数的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuChanShu"><span>函数的参数</span></a>
+            </li>
+            <li>
+              <a href="#hanShuFanHuiZhi"><span>函数的返回值 return</span></a>
+            </li>
+            <li>
+              <a href="#argumentsShiYong"><span>arguments的使用</span></a>
+            </li>
+            <li>
+              <a href="#hanShuAnLi"><span>函数案例</span></a>
+            </li>
+            <li>
+              <a href="#hanShuShenMing"
+                ><span class="color-red">函数的两种声明方式</span></a
+              >
+            </li>
+          </ul>
+          <h1>7.1 自定义函数方式(命名函数)</h1>
+          <p>利用函数关键字 function 自定义函数方式。</p>
+          <pre>
+            <code>// 声明定义方式
+              function fn() {...}
+              // 调用  
+              fn();  
+            </code>
+          </pre>
+          <ul>
+            <li>
+              因为有名字，所以也被称为<span class="color-red">命名函数</span>
+            </li>
+            <li>
+              调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面
+            </li>
+          </ul>
+          <h1>7.2 函数表达式方式(匿名函数）</h1>
+          <p>利用函数表达式方式的写法如下：</p>
+          <pre><code>// 这是函数表达式写法，匿名函数后面跟分号结束
+                  var fn = function(){...}；
+                  // 调用的方式，函数调用必须写到函数体下面
+                  fn();
+                </code></pre>
+          <ul>
+            <li>
+              因为函数没有名字，所以也被称为<span class="color-red"
+                >匿名函数
+              </span>
+            </li>
+            <li>这个fn 里面存储的是一个函数</li>
+            <li>函数表达式方式原理跟声明变量方式是一致的</li>
+            <li>函数调用的代码必须写到函数体后面</li>
+          </ul>
+          <img src="./images/11-函数/代码-函数的两种声明方式.png" alt="" />
+          <h3>作业</h3>
+          <ol>
+            <li>写一个函数，实现反转任意数组。</li>
+            <li>写一个函数，实现对数字数组的排序。</li>
+          </ol>
+          <h3 class="color-red">小组项目： 做一个简易计算器</h3>
+          <img src="./images/11-函数/做一个简易计算器.png" alt="" />
+        </section>
+      </div>
+      <hr />
+      <hr />
       <section class="main-section" id="while_statement">
         <header>12</header>
       </section>
