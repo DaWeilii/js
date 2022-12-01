@@ -5,6 +5,8 @@ body {
   background-color: #ffffff;
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.5;
+  /* 以下自己添加 */
+  overflow-x: hidden;
 }
 
 #navbar {
@@ -176,4 +178,10 @@ img {
 } */
 .no-border {
   border: none;
+}
+.left {
+  text-align: left;
+}
+.bhh {
+  display: inline;
 }
